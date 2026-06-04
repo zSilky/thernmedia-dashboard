@@ -37,7 +37,7 @@ html,body{height:100%;background:#060606;}
 .page{display:none;}
 .page.active{display:block;}
 
-/* ── HOME ── */
+/* ââ HOME ââ */
 .home-grid{display:grid;grid-template-columns:265px 1fr 235px;grid-template-rows:auto auto auto;gap:1px;background:var(--border);min-height:calc(100vh - var(--tab-h));}
 .panel{background:var(--bg);padding:15px 17px;}
 .plabel{font-family:var(--font-mono);font-size:9px;color:var(--text3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:6px;}
@@ -103,7 +103,7 @@ html,body{height:100%;background:#060606;}
 .hcard.done{border-color:var(--green-dim);}
 .hcheck{width:13px;height:13px;border-radius:3px;border:1px solid var(--border2);margin-bottom:7px;display:flex;align-items:center;justify-content:center;}
 .hcheck.on{background:var(--gold);border-color:var(--gold);}
-.hcheck.on::after{content:'✓';font-size:9px;color:#000;font-weight:700;}
+.hcheck.on::after{content:'â';font-size:9px;color:#000;font-weight:700;}
 .hname{font-size:11px;font-weight:600;margin-bottom:2px;}
 .htag{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;}
 .hcount{font-family:var(--font-mono);font-size:9px;color:var(--text3);margin-top:5px;}
@@ -113,7 +113,7 @@ html,body{height:100%;background:#060606;}
 .titem:hover{background:var(--bg3);}
 .tcheck{width:13px;height:13px;border-radius:3px;border:1px solid var(--border2);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;}
 .tcheck.on{background:var(--gold);border-color:var(--gold);}
-.tcheck.on::after{content:'✓';font-size:9px;color:#000;font-weight:700;}
+.tcheck.on::after{content:'â';font-size:9px;color:#000;font-weight:700;}
 .tname{font-size:12px;color:#c8c8c0;line-height:1.3;}
 .tname.done{text-decoration:line-through;color:var(--text3);}
 .ttag{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-top:2px;}
@@ -163,7 +163,7 @@ html,body{height:100%;background:#060606;}
 .meal-n{font-size:11px;color:var(--text2);}
 .meal-k{font-family:var(--font-mono);font-size:10px;color:var(--gold);}
 
-/* ── RESALE ── */
+/* ââ RESALE ââ */
 .resale-page{display:flex;flex-direction:column;height:calc(100vh - var(--tab-h));}
 .r-topbar{display:flex;align-items:center;gap:8px;padding:10px 18px;border-bottom:1px solid var(--border);background:var(--bg2);flex-shrink:0;flex-wrap:wrap;row-gap:6px;}
 .r-topbar h2{font-size:13px;font-weight:700;margin-right:4px;}
@@ -188,8 +188,8 @@ html,body{height:100%;background:#060606;}
 .inv-table{width:100%;border-collapse:collapse;font-size:11px;}
 .inv-table th{background:var(--bg2);color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:.1em;padding:8px 11px;text-align:left;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border);white-space:nowrap;font-weight:400;cursor:pointer;user-select:none;}
 .inv-table th:hover{color:var(--text2);}
-.inv-table th.sort-asc::after{content:' ▲';color:var(--gold);}
-.inv-table th.sort-desc::after{content:' ▼';color:var(--gold);}
+.inv-table th.sort-asc::after{content:' â²';color:var(--gold);}
+.inv-table th.sort-desc::after{content:' â¼';color:var(--gold);}
 .inv-table td{padding:9px 11px;border-bottom:1px solid var(--border);vertical-align:middle;color:var(--text2);}
 .inv-table tr:hover td{background:var(--bg3);}
 .item-name{color:var(--text);font-weight:600;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -206,7 +206,7 @@ html,body{height:100%;background:#060606;}
 .note-cell::placeholder{color:var(--border2);}
 .loading-row td{text-align:center;padding:30px;color:var(--text3);font-family:var(--font-mono);font-size:11px;}
 
-/* ── FINANCE ── */
+/* ââ FINANCE ââ */
 .finance-page{padding:18px 20px;overflow-y:auto;max-height:calc(100vh - var(--tab-h));}
 .fin-header{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;font-family:var(--font-mono);}
 .fin-platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
@@ -242,7 +242,7 @@ html,body{height:100%;background:#060606;}
 .exp-total label{font-size:10px;color:var(--red);text-transform:uppercase;letter-spacing:.1em;}
 .exp-total .v{font-family:var(--font-mono);font-size:15px;color:var(--red);font-weight:700;}
 
-/* ── CONTENT ── */
+/* ââ CONTENT ââ */
 .content-page{padding:18px 20px;overflow-y:auto;max-height:calc(100vh - var(--tab-h));}
 .content-tips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
 .tip-card{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:14px;}
@@ -274,7 +274,7 @@ html,body{height:100%;background:#060606;}
     <button class="tab" onclick="switchTab('content')">Content</button>
     <button class="tab" onclick="switchTab('finance')">Finance</button>
   </div>
-  <div class="topbar-right" id="tr-time">— : —</div>
+  <div class="topbar-right" id="tr-time">â : â</div>
 </div>
 
 <!-- HOME -->
@@ -286,7 +286,7 @@ html,body{height:100%;background:#060606;}
     <div class="plabel"><span class="n">01</span> // OPERATOR <span style="margin-left:auto"><span class="online-dot"></span>ONLINE</span></div>
     <div class="avatar">T</div>
     <div class="op-name">Thomas</div>
-    <div class="op-sub">TH Sales · Los Angeles</div>
+    <div class="op-sub">TH Sales Â· Los Angeles</div>
     <div class="focus-txt">Building the brand. Stack the bag.</div>
     <div class="divider"></div>
     <div class="stat-row">
@@ -294,10 +294,10 @@ html,body{height:100%;background:#060606;}
       <div class="stat"><label>2026 Profit</label><div class="v">$7,291</div></div>
     </div>
     <div class="pills">
-      <div class="pill">TT <span id="tt-f">—</span></div>
-      <div class="pill">IG <span id="ig-f">—</span></div>
-      <div class="pill">TTS <span style="color:var(--green)">▲ON</span></div>
-      <div class="pill">EBAY <span style="color:var(--green)">▲</span></div>
+      <div class="pill">TT <span id="tt-f">â</span></div>
+      <div class="pill">IG <span id="ig-f">â</span></div>
+      <div class="pill">TTS <span style="color:var(--green)">â²ON</span></div>
+      <div class="pill">EBAY <span style="color:var(--green)">â²</span></div>
     </div>
   </div>
 
@@ -310,14 +310,14 @@ html,body{height:100%;background:#060606;}
         <div class="session-meta" id="session-date">LOADING...</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
-        <div class="clock" id="clock-disp">—:—<sup>—</sup></div>
+        <div class="clock" id="clock-disp">â:â<sup>â</sup></div>
         <div style="font-size:9px;color:var(--text3);letter-spacing:.1em;">LOCAL TIME</div>
       </div>
     </div>
     <div class="capture-bar">
-      <span style="font-family:var(--font-mono);font-size:10px;color:var(--text3);">⌘</span>
+      <span style="font-family:var(--font-mono);font-size:10px;color:var(--text3);">â</span>
       <input type="text" id="cap-in" placeholder="Capture a thought, task, or idea..."/>
-      <button class="cap-btn" onclick="captureNote()">↗ CAPTURE</button>
+      <button class="cap-btn" onclick="captureNote()">â CAPTURE</button>
     </div>
     <div id="captured"></div>
   </div>
@@ -365,15 +365,15 @@ html,body{height:100%;background:#060606;}
   <!-- FINANCE PULSE -->
   <div class="panel" style="grid-column:1;grid-row:2;">
     <div class="plabel"><span class="n">07</span> // FINANCE PULSE</div>
-    <div class="fp-badge">▲ $7,291.89 YTD</div>
+    <div class="fp-badge">â² $7,291.89 YTD</div>
     <svg class="sparkline" viewBox="0 0 220 30" preserveAspectRatio="none">
       <polyline points="0,27 40,22 80,18 120,13 160,10 220,6" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity=".5"/>
     </svg>
     <div class="fp-grid">
-      <div class="fp-cell"><label>TikTok Shop</label><div class="amt">$2,853</div><div class="sub">▲ #1 channel</div></div>
-      <div class="fp-cell"><label>eBay</label><div class="amt">$2,088</div><div class="sub">▲ #2 earner</div></div>
-      <div class="fp-cell"><label>Mercari</label><div class="amt">$1,394</div><div class="sub">▲ steady</div></div>
-      <div class="fp-cell"><label>In Person</label><div class="amt">$485</div><div class="sub">↑ growing</div></div>
+      <div class="fp-cell"><label>TikTok Shop</label><div class="amt">$2,853</div><div class="sub">â² #1 channel</div></div>
+      <div class="fp-cell"><label>eBay</label><div class="amt">$2,088</div><div class="sub">â² #2 earner</div></div>
+      <div class="fp-cell"><label>Mercari</label><div class="amt">$1,394</div><div class="sub">â² steady</div></div>
+      <div class="fp-cell"><label>In Person</label><div class="amt">$485</div><div class="sub">â growing</div></div>
       <div class="fp-cell"><label>Cashout</label><div class="amt">$262</div><div class="sub">Amazon</div></div>
       <div class="fp-cell"><label>StockX</label><div class="amt">$207</div><div class="sub">selective</div></div>
     </div>
@@ -381,11 +381,11 @@ html,body{height:100%;background:#060606;}
 
   <!-- HABITS -->
   <div class="panel" style="grid-column:2;grid-row:2;">
-    <div class="plabel"><span class="n">03</span> // HABITS <span style="margin-left:auto;color:var(--text3);" id="h-score-lbl">0/6 · 0%</span></div>
+    <div class="plabel"><span class="n">03</span> // HABITS <span style="margin-left:auto;color:var(--text3);" id="h-score-lbl">0/6 Â· 0%</span></div>
     <div class="habit-header">
       <div class="h-score" id="h-score-circle">0</div>
       <div class="h-meta">
-        <strong>Daily score</strong> · resets 00:00<br>
+        <strong>Daily score</strong> Â· resets 00:00<br>
         <span id="h-encourage">Start with one.</span>
         <div class="hbars">
           <div class="hbar" id="hb0"></div><div class="hbar" id="hb1"></div>
@@ -399,7 +399,7 @@ html,body{height:100%;background:#060606;}
 
   <!-- TASKS -->
   <div class="panel" style="grid-column:1;grid-row:3;">
-    <div class="plabel"><span class="n">06</span> // TODAY · KEY <span style="margin-left:auto;color:var(--gold);" id="task-count">5</span></div>
+    <div class="plabel"><span class="n">06</span> // TODAY Â· KEY <span style="margin-left:auto;color:var(--gold);" id="task-count">5</span></div>
     <div id="tasks-list"></div>
     <div class="task-add">
       <input type="text" id="task-in" placeholder="Add a task..." onkeydown="if(event.key==='Enter')addTask()"/>
@@ -411,7 +411,7 @@ html,body{height:100%;background:#060606;}
   <div class="panel" style="grid-column:2;grid-row:3;">
     <div class="plabel"><span class="n">04</span> // CALENDAR <span style="margin-left:auto;color:var(--text3);" id="cal-month"></span></div>
     <div class="cal-week" id="cal-week"></div>
-    <div style="font-size:9px;color:var(--text3);margin-bottom:7px;letter-spacing:.08em;" id="cal-count">TODAY · — EVENTS</div>
+    <div style="font-size:9px;color:var(--text3);margin-bottom:7px;letter-spacing:.08em;" id="cal-count">TODAY Â· â EVENTS</div>
     <div id="cal-events"></div>
   </div>
 
@@ -419,14 +419,14 @@ html,body{height:100%;background:#060606;}
   <div class="panel" style="grid-column:3;grid-row:3;">
     <div class="plabel"><span class="n">08</span> // NUTRITION <span style="margin-left:auto;color:var(--text3);">TODAY</span></div>
     <div class="kcal-big" id="kcal-big" style="color:var(--border);">0</div>
-    <div class="kcal-lbl">kcal today · goal: 2,200</div>
+    <div class="kcal-lbl">kcal today Â· goal: 2,200</div>
     <div class="macros">
       <span class="macro" id="prot-d">0g protein</span>
       <span class="macro" id="carb-d">0g carbs</span>
       <span class="macro" id="fat-d">0g fat</span>
     </div>
     <div class="pbar"><div class="pfill" id="kcal-bar" style="width:0%"></div></div>
-    <input class="meal-input" type="text" id="meal-in" placeholder='Log — "chicken, rice, broccoli"' onkeydown="if(event.key==='Enter')logMeal()"/>
+    <input class="meal-input" type="text" id="meal-in" placeholder='Log â "chicken, rice, broccoli"' onkeydown="if(event.key==='Enter')logMeal()"/>
     <div id="meals-list"><div class="no-meals">No meals logged yet.</div></div>
   </div>
 
@@ -436,14 +436,14 @@ html,body{height:100%;background:#060606;}
 <!-- RESALE -->
 <div id="page-resale" class="page resale-page">
   <div class="r-topbar">
-    <h2>Inventory · Live from Google Sheets</h2>
+    <h2>Inventory Â· Live from Google Sheets</h2>
     <button class="rtab active" id="rf-all" onclick="setFilter('all')">All</button>
     <button class="rtab" id="rf-unsold" onclick="setFilter('unsold')">Unsold</button>
     <button class="rtab" id="rf-sold" onclick="setFilter('sold')">Sold</button>
     <button class="rtab" id="rf-return" onclick="setFilter('return')">Returned</button>
-    <button class="rtab" id="rf-warn" onclick="setFilter('warn')">⚠ Can't Return</button>
-    <button class="r-btn" onclick="loadSheet()" style="margin-left:auto;">↻ Refresh</button>
-    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text3);" id="inv-count">—</span>
+    <button class="rtab" id="rf-warn" onclick="setFilter('warn')">â  Can't Return</button>
+    <button class="r-btn" onclick="loadSheet()" style="margin-left:auto;">â» Refresh</button>
+    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text3);" id="inv-count">â</span>
   </div>
   <div class="r-stats">
     <div class="rstat"><label>Total Profit</label><div class="rv pos">$7,291.89</div><div class="rsub">all platforms</div></div>
@@ -464,12 +464,12 @@ html,body{height:100%;background:#060606;}
     </select>
     <select class="r-select" id="sort-col" onchange="renderTable()">
       <option value="">Sort by...</option>
-      <option value="profit-desc">Profit ↓</option>
-      <option value="profit-asc">Profit ↑</option>
-      <option value="cost-desc">Cost ↓</option>
-      <option value="cost-asc">Cost ↑</option>
-      <option value="date-desc">Date Sold ↓</option>
-      <option value="date-asc">Date Sold ↑</option>
+      <option value="profit-desc">Profit â</option>
+      <option value="profit-asc">Profit â</option>
+      <option value="cost-desc">Cost â</option>
+      <option value="cost-asc">Cost â</option>
+      <option value="date-desc">Date Sold â</option>
+      <option value="date-asc">Date Sold â</option>
       <option value="name-asc">Name A-Z</option>
     </select>
   </div>
@@ -487,7 +487,7 @@ html,body{height:100%;background:#060606;}
         </tr>
       </thead>
       <tbody id="inv-body">
-        <tr class="loading-row"><td colspan="10">⟳ Loading inventory from Google Sheets...</td></tr>
+        <tr class="loading-row"><td colspan="10">â³ Loading inventory from Google Sheets...</td></tr>
       </tbody>
     </table>
   </div>
@@ -495,22 +495,22 @@ html,body{height:100%;background:#060606;}
 
 <!-- CONTENT -->
 <div id="page-content" class="page content-page">
-  <div class="fin-header">@thernmedia · Content Tracker</div>
+  <div class="fin-header">@thernmedia Â· Content Tracker</div>
   <div class="content-tips">
-    <div class="tip-card"><div class="tip-title">Reels Reach</div><div class="tip-val">~300</div><div class="tip-sub">Average views. Consistency unlocks the algorithm — post every day even if it's short.</div></div>
+    <div class="tip-card"><div class="tip-title">Reels Reach</div><div class="tip-val">~300</div><div class="tip-sub">Average views. Consistency unlocks the algorithm â post every day even if it's short.</div></div>
     <div class="tip-card"><div class="tip-title">Best Format</div><div class="tip-val">Reels</div><div class="tip-sub">Text overlay + punchy hook beats carousels for discovery. Carousels don't hit the FYP.</div></div>
-    <div class="tip-card"><div class="tip-title">Topics Done</div><div class="tip-val">20+</div><div class="tip-sub">Compound interest, credit score, Roth IRA, net worth, debt payoff, passive income — all used.</div></div>
+    <div class="tip-card"><div class="tip-title">Topics Done</div><div class="tip-val">20+</div><div class="tip-sub">Compound interest, credit score, Roth IRA, net worth, debt payoff, passive income â all used.</div></div>
     <div class="tip-card"><div class="tip-title">Next Milestone</div><div class="tip-val">200 followers</div><div class="tip-sub">Trial Reels unlock at 200 on Instagram. Daily posts get you there fastest.</div></div>
   </div>
   <div class="insight-block">
     <div class="insight-title">Strategy Insight</div>
-    <div class="insight-body">Your reels hit <strong>~300 views</strong> which means the hook is working but the profile isn't converting. <strong>Fix: end every reel with a direct follow CTA</strong> tied to exactly what they just learned — "follow if you want more moves like this." Your real advantage is relatability — you're building from scratch, doing retail arb, juggling school. <strong>Show the process, not just the results</strong>. That's what Rai Tryna can't replicate because he started with capital.</div>
+    <div class="insight-body">Your reels hit <strong>~300 views</strong> which means the hook is working but the profile isn't converting. <strong>Fix: end every reel with a direct follow CTA</strong> tied to exactly what they just learned â "follow if you want more moves like this." Your real advantage is relatability â you're building from scratch, doing retail arb, juggling school. <strong>Show the process, not just the results</strong>. That's what Rai Tryna can't replicate because he started with capital.</div>
   </div>
   <div class="insight-block">
     <div class="insight-title">Post Tracker</div>
     <div id="post-tracker">
       <div class="post-item"><div class="post-platform">Instagram</div><div class="post-topic">$100/month compound growth overlay reel</div><div class="post-date">Recent</div><div class="post-status ps-live">Live</div></div>
-      <div class="post-item"><div class="post-platform">TikTok</div><div class="post-topic">Small daily amounts → big yearly results</div><div class="post-date">Recent</div><div class="post-status ps-live">Live</div></div>
+      <div class="post-item"><div class="post-platform">TikTok</div><div class="post-topic">Small daily amounts â big yearly results</div><div class="post-date">Recent</div><div class="post-status ps-live">Live</div></div>
       <div class="post-item"><div class="post-platform">Instagram</div><div class="post-topic">Credit score quick wins carousel</div><div class="post-date">Past</div><div class="post-status ps-live">Live</div></div>
     </div>
     <button class="add-post-btn" style="margin-top:8px;" onclick="addPost()">+ Log a new post</button>
@@ -519,14 +519,14 @@ html,body{height:100%;background:#060606;}
 
 <!-- FINANCE -->
 <div id="page-finance" class="page finance-page">
-  <div class="fin-header">TH Sales — Financial Overview 2026</div>
+  <div class="fin-header">TH Sales â Financial Overview 2026</div>
   <div class="fin-platform-grid">
-    <div class="fin-card"><div class="fin-card-label">TikTok Shop</div><div class="fin-card-amount">$2,853</div><div class="fin-card-sub">Revenue $7,255 · Cost $4,401</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:39%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">eBay</div><div class="fin-card-amount">$2,088</div><div class="fin-card-sub">Revenue $6,718 · Cost $4,629</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:28.6%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">Mercari</div><div class="fin-card-amount">$1,394</div><div class="fin-card-sub">Revenue $5,707 · Cost $4,306</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:19.1%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">In Person</div><div class="fin-card-amount">$485</div><div class="fin-card-sub">Revenue $1,211 · Cost $725</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:6.6%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">Cashouts (Amazon)</div><div class="fin-card-amount">$262</div><div class="fin-card-sub">Revenue $17,585 · Cost $17,531</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:3.6%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">StockX</div><div class="fin-card-amount">$207</div><div class="fin-card-sub">Revenue $796 · Cost $589</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:2.8%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">TikTok Shop</div><div class="fin-card-amount">$2,853</div><div class="fin-card-sub">Revenue $7,255 Â· Cost $4,401</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:39%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">eBay</div><div class="fin-card-amount">$2,088</div><div class="fin-card-sub">Revenue $6,718 Â· Cost $4,629</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:28.6%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">Mercari</div><div class="fin-card-amount">$1,394</div><div class="fin-card-sub">Revenue $5,707 Â· Cost $4,306</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:19.1%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">In Person</div><div class="fin-card-amount">$485</div><div class="fin-card-sub">Revenue $1,211 Â· Cost $725</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:6.6%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">Cashouts (Amazon)</div><div class="fin-card-amount">$262</div><div class="fin-card-sub">Revenue $17,585 Â· Cost $17,531</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:3.6%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">StockX</div><div class="fin-card-amount">$207</div><div class="fin-card-sub">Revenue $796 Â· Cost $589</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:2.8%"></div></div></div>
   </div>
   <div class="fin-section">
     <div class="fin-section-title">P&L Summary</div>
@@ -545,11 +545,11 @@ html,body{height:100%;background:#060606;}
   </div>
   <div class="fin-section">
     <div class="fin-section-title">Current Losers / At Risk</div>
-    <div class="fin-row"><span class="fin-row-label">Ultra Software Zip-Up Pink ×2 — Unsold</span><span class="fin-row-val neg">-$343.52</span></div>
-    <div class="fin-row"><span class="fin-row-label">Samba OG ID1481 unsold ×5 — Need price drop</span><span class="fin-row-val neg">-$248.55</span></div>
-    <div class="fin-row"><span class="fin-row-label">Skullector Killer Klowns ×2 — Unsold</span><span class="fin-row-val neg">-$155.14</span></div>
-    <div class="fin-row"><span class="fin-row-label">Royal Blue AJ1 553558-124 — Cant Return</span><span class="fin-row-val neg">-$140.00</span></div>
-    <div class="fin-row"><span class="fin-row-label">2026 Club Cameron Kit — Listed low</span><span class="fin-row-val neg">-$138.84</span></div>
+    <div class="fin-row"><span class="fin-row-label">Ultra Software Zip-Up Pink Ã2 â Unsold</span><span class="fin-row-val neg">-$343.52</span></div>
+    <div class="fin-row"><span class="fin-row-label">Samba OG ID1481 unsold Ã5 â Need price drop</span><span class="fin-row-val neg">-$248.55</span></div>
+    <div class="fin-row"><span class="fin-row-label">Skullector Killer Klowns Ã2 â Unsold</span><span class="fin-row-val neg">-$155.14</span></div>
+    <div class="fin-row"><span class="fin-row-label">Royal Blue AJ1 553558-124 â Cant Return</span><span class="fin-row-val neg">-$140.00</span></div>
+    <div class="fin-row"><span class="fin-row-label">2026 Club Cameron Kit â Listed low</span><span class="fin-row-val neg">-$138.84</span></div>
   </div>
 
   <!-- EXPENSE LOGGER -->
@@ -575,10 +575,10 @@ html,body{height:100%;background:#060606;}
 </div><!-- .os -->
 
 <script>
-// ── CSV URL ──
+// ââ CSV URL ââ
 const CSV_URL = '/api/sheet';
 
-// ── INVENTORY STATE ──
+// ââ INVENTORY STATE ââ
 let rawRows = [];
 let notes = {};        // per-row user notes (keyed by index)
 let invFilter = 'all';
@@ -586,16 +586,16 @@ let sortKey = '';
 let sortDir = 1;
 let expenses = [];
 
-// ── LOAD SHEET ──
+// ââ LOAD SHEET ââ
 async function loadSheet() {
-  document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">⟳ Loading inventory...</td></tr>';
+  document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">â³ Loading inventory...</td></tr>';
   try {
     const res = await fetch(CSV_URL);
     const data = await res.json();
     rawRows = parseJSON(data);
     renderTable();
   } catch(e) {
-    document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">⚠ Could not load sheet.</td></tr>';
+    document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">â  Could not load sheet.</td></tr>';
   }
 }
 
@@ -628,7 +628,7 @@ function parseMoney(s) {
   return isNaN(n) ? 0 : n;
 }
 
-// ── RENDER TABLE ──
+// ââ RENDER TABLE ââ
 function renderTable() {
   const q = (document.getElementById('inv-search')?.value || '').toLowerCase();
   const pfilt = document.getElementById('filter-platform')?.value || '';
@@ -678,12 +678,12 @@ function renderTable() {
       <td>${r.from}</td>
       <td>${r.size}</td>
       <td class="profit-zero">$${r.cost.toFixed(2)}</td>
-      <td class="profit-zero">${r.soldAmt ? '$'+r.soldAmt.toFixed(2) : '—'}</td>
+      <td class="profit-zero">${r.soldAmt ? '$'+r.soldAmt.toFixed(2) : 'â'}</td>
       <td class="${pc}">${ps}$${r.profit.toFixed(2)}</td>
       <td><span class="status-pill ${sc}">${sl}</span></td>
-      <td style="font-family:var(--font-mono);font-size:10px;color:var(--text3);">${r.dateSold || '—'}</td>
+      <td style="font-family:var(--font-mono);font-size:10px;color:var(--text3);">${r.dateSold || 'â'}</td>
       <td><span class="status-pill ${sc}">${sl}</span></td>
-      <td>${r.warn ? `<span class="warn-badge">⚠ ${r.warn}</span>` : ''}<input class="note-cell" placeholder="Add note..." value="${noteVal}" oninput="saveNote(${origIdx},this.value)"/></td>
+      <td>${r.warn ? `<span class="warn-badge">â  ${r.warn}</span>` : ''}<input class="note-cell" placeholder="Add note..." value="${noteVal}" oninput="saveNote(${origIdx},this.value)"/></td>
     </tr>`;
   }).join('');
 }
@@ -711,7 +711,7 @@ function cycleSortCol(col) {
   renderTable();
 }
 
-// ── TABS ──
+// ââ TABS ââ
 function switchTab(tab) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -721,7 +721,7 @@ function switchTab(tab) {
   if (tab === 'resale' && rawRows.length === 0) loadSheet();
 }
 
-// ── HABITS ──
+// ââ HABITS ââ
 const HABITS = [
   {name:'Post content',tag:'BRAND',goal:1},
   {name:'List inventory',tag:'RESALE',goal:3},
@@ -748,19 +748,19 @@ function updateHabitScore() {
   const circ = document.getElementById('h-score-circle');
   circ.textContent = done;
   circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} · ${pct}%`;
+  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} Â· ${pct}%`;
   const msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
   document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
   for (let j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
 }
 
-// ── TASKS ──
+// ââ TASKS ââ
 let TASKS = [
   {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
   {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
   {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
   {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs — 5 unsold',tag:'RESALE',priority:true,done:false},
+  {name:'Price drop Samba OGs â 5 unsold',tag:'RESALE',priority:true,done:false},
 ];
 function buildTasks() {
   const list = document.getElementById('tasks-list');
@@ -770,7 +770,7 @@ function buildTasks() {
     if (!t.done) remaining++;
     const el = document.createElement('div');
     el.className = 'titem';
-    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}">★</div>`;
+    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}">â</div>`;
     el.onclick = () => { TASKS[i].done=!TASKS[i].done; buildTasks(); };
     list.appendChild(el);
   });
@@ -785,7 +785,7 @@ function addTask() {
   buildTasks();
 }
 
-// ── GOALS ──
+// ââ GOALS ââ
 const goals = {w:'',m:'',y:''};
 function saveGoal(t) {
   const val = document.getElementById(t+'g').value.trim();
@@ -799,7 +799,7 @@ function editGoal(t) {
   document.getElementById(t+'g').focus();
 }
 
-// ── CAPTURE ──
+// ââ CAPTURE ââ
 let capturedNotes = [];
 function captureNote() {
   const inp = document.getElementById('cap-in');
@@ -811,7 +811,7 @@ function captureNote() {
 }
 document.getElementById('cap-in').addEventListener('keydown', e=>{ if(e.key==='Enter') captureNote(); });
 
-// ── DAILY SALES ──
+// ââ DAILY SALES ââ
 function calcDaily() {
   const ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
   const total = ids.reduce((s,id)=>{
@@ -821,7 +821,7 @@ function calcDaily() {
   document.getElementById('ds-total').textContent = '$'+total.toFixed(2);
 }
 
-// ── NUTRITION ──
+// ââ NUTRITION ââ
 let meals = [];
 function logMeal() {
   const inp = document.getElementById('meal-in');
@@ -845,7 +845,7 @@ function renderMeals() {
   list.innerHTML=meals.map(m=>`<div class="meal-row"><span class="meal-n">${m.name}</span><span class="meal-k">${m.kcal} kcal</span></div>`).join('');
 }
 
-// ── CALENDAR ──
+// ââ CALENDAR ââ
 function buildCalendar() {
   const now=new Date(), today=now.getDate();
   const dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
@@ -863,17 +863,17 @@ function buildCalendar() {
     {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
     {time:'11:00',title:'Film reel content',color:'var(--green)'},
     {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items — eBay/Mercari',color:'var(--blue)'},
+    {time:'15:00',title:'List items â eBay/Mercari',color:'var(--blue)'},
   ];
-  document.getElementById('cal-count').textContent=`TODAY · ${events.length} EVENTS`;
+  document.getElementById('cal-count').textContent=`TODAY Â· ${events.length} EVENTS`;
   const ev=document.getElementById('cal-events'); ev.innerHTML='';
   events.forEach(e=>{
-    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW · ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
+    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW Â· ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
     const el=document.createElement('div');el.className='cal-event';el.innerHTML=`<div class="cal-dot" style="background:${e.color}"></div><div class="cal-time">${e.time}</div><div class="cal-title">${e.title}</div>`;ev.appendChild(el);
   });
 }
 
-// ── CLOCK ──
+// ââ CLOCK ââ
 function updateClock() {
   const now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
   const ampm=h>=12?'PM':'AM', h12=h%12||12;
@@ -883,10 +883,10 @@ function updateClock() {
   const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
   document.getElementById('greeting-txt').innerHTML=`${g}, <em>Thomas.</em>`;
   document.getElementById('session-date').textContent=`${days[now.getDay()].toUpperCase()}, ${months[now.getMonth()].toUpperCase()} ${now.getDate()}`;
-  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} · <span>${h12}:${m} ${ampm}</span>`;
+  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} Â· <span>${h12}:${m} ${ampm}</span>`;
 }
 
-// ── EXPENSES ──
+// ââ EXPENSES ââ
 function addExpense() {
   const name=document.getElementById('exp-name').value.trim();
   const type=document.getElementById('exp-type').value;
@@ -900,14 +900,14 @@ function addExpense() {
 function removeExpense(i) { expenses.splice(i,1); renderExpenses(); }
 function renderExpenses() {
   const list=document.getElementById('exp-list');
-  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})">×</button></div>`).join('');
+  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})">Ã</button></div>`).join('');
   const total=expenses.reduce((s,e)=>s+e.amt,0);
   const tot=document.getElementById('exp-total');
   tot.style.display=expenses.length?'flex':'none';
   document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
 }
 
-// ── CONTENT POSTS ──
+// ââ CONTENT POSTS ââ
 function addPost() {
   const platform=prompt('Platform (Instagram / TikTok / Both):');
   const topic=prompt('Post topic or title:');
@@ -919,7 +919,7 @@ function addPost() {
   document.getElementById('post-tracker').appendChild(el);
 }
 
-// ── INIT ──
+// ââ INIT ââ
 setInterval(updateClock,1000);
 updateClock();
 buildCalendar();
