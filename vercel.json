@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/api/sheet", "destination": "/api.js" }
+    { "source": "/api/sheet", "destination": "/api/sheet.js" }
   ]
 }
