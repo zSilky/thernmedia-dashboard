@@ -1,22 +1,11 @@
-function doGet(e) {
-  var ss = SpreadsheetApp.openById('1XhORgZD4vYFYOwIzUh9Zj2VxH2I58bhtcQC9DrO6Qtg');
-  var sheets = ['Inventory','Ebay Sales','Mercari Sales','Cashouts','TikTok Shop','InPerson Sales'];
-  var result = {};
-  sheets.forEach(function(name) {
-    try {
-      var sheet = ss.getSheetByName(name);
-      if (sheet) {
-        var data = sheet.getDataRange().getValues();
-        result[name] = data.filter(function(row, i) {
-          return i === 0 || (row[0] && String(row[0]).trim() !== '');
-        });
-      }
-    } catch(err) {}
-  });
-  var json = JSON.stringify(result);
-  var callback = e.parameter.callback;
-  if (callback) {
-    return ContentService.createTextOutput(callback + '(' + json + ')').setMimeType(ContentService.MimeType.JAVASCRIPT);
+export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxBLoqqD41Hcwxqyr2jrwAGAlEMNlYemZ8_Mg9lo3xDLRMHpWXKgGRxeLfunfxv5Dr0ew/exec');
+    const data = await response.json();
+    const filtered = data.filter((row, i) => i === 0 || (row[0] && String(row[0]).trim() !== ''));
+    res.status(200).json(filtered);
+  } catch(e) {
+    res.status(500).json({ error: e.message });
   }
-  return ContentService.createTextOutput(json).setMimeType(ContentService.MimeType.JSON);
 }
