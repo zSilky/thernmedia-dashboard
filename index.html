@@ -738,6 +738,92 @@ function calcLiveFinance(data) {
   calcDaily();
 }
 
+
+function parseDataObj(rows) {
+  if (!rows || !rows.length) return [];
+  var result = [];
+  for (var i = 0; i < rows.length; i++) {
+    var r = rows[i];
+    if (!r) continue;
+    var item = String(r['Item'] || r['Item Name'] || '').trim();
+    if (!item) continue;
+    var from = String(r['Purchased From'] || r['From'] || '').trim();
+    var size = String(r['Size'] || '').trim();
+    var cost = parseMoney(r['Subtotal'] || r['Cost'] || r['cost'] || 0);
+    var soldAmt = parseMoney(r['Sale Price'] || r['SALES'] || r['Sold For'] || 0);
+    var profit = parseMoney(r['Profit'] || r['PROFIT'] || r['profit'] || 0);
+    var status = String(r['Status'] || r['Platform'] || '').trim();
+    var dateSold = String(r['Date Sold'] || r['Date'] || '').trim();
+    var orderNum = String(r['Order Number'] || r['Notes'] || '').trim();
+    var warn = orderNum.toUpperCase().indexOf('CANT RETURN') >= 0 ? 'CANT RETURN' : '';
+    result.push({item:item, from:from, size:size, cost:cost, soldAmt:soldAmt, profit:profit, status:status, dateSold:dateSold, orderNum:orderNum, warn:warn});
+  }
+  return result;
+}
+
+function calcLiveFinanceObj(allData) {
+  var totals = {ebay:0, mercari:0, tiktok:0, stockx:0, cashout:0, inperson:0};
+  var today = new Date(); today.setHours(0,0,0,0);
+  var todayE=0, todayM=0, todayT=0, todayP=0;
+
+  // Sum from each sales sheet using Profit column
+  function sumSheet(rows, key) {
+    if (!rows || !Array.isArray(rows)) return 0;
+    return rows.reduce(function(s,r){ return s + parseMoney(r['Profit'] || r['PROFIT'] || r['profit'] || 0); }, 0);
+  }
+
+  totals.ebay = sumSheet(allData['eBay Sales'], 'Profit');
+  totals.mercari = sumSheet(allData['Mercari Sales'], 'Profit');
+  totals.stockx = sumSheet(allData['StockX'], 'Profit');
+
+  // TikTok Shop - check for PROFIT key
+  if (allData['TikTok Shop'] && allData['TikTok Shop'].length) {
+    var tt = allData['TikTok Shop'][0];
+    var profitKey = Object.keys(tt).find(function(k){ return k.toUpperCase()==='PROFIT'; });
+    if (profitKey) {
+      totals.tiktok = allData['TikTok Shop'].reduce(function(s,r){ return s+parseMoney(r[profitKey]||0); },0);
+    }
+  }
+
+  // Cashout - from Inventory rows where status is Cashout
+  if (allData['Inventory']) {
+    allData['Inventory'].forEach(function(r){
+      var st = String(r['Status']||'');
+      var p = parseMoney(r['Profit']||0);
+      if (st==='Cashout') totals.cashout+=p;
+      if (st==='In Person') totals.inperson+=p;
+      // Today's sales
+      var ds = String(r['Date Sold']||'');
+      if (ds) {
+        try {
+          var d=new Date(ds); d.setHours(0,0,0,0);
+          if(d.getTime()===today.getTime()){
+            if(st==='Ebay') todayE+=p;
+            else if(st==='Mercari') todayM+=p;
+            else if(st.indexOf('Tiktok')>=0||st.indexOf('TikTok')>=0) todayT+=p;
+            else if(st==='In Person') todayP+=p;
+          }
+        } catch(err){}
+      }
+    });
+  }
+
+  var total = totals.ebay+totals.mercari+totals.tiktok+totals.stockx+totals.cashout+totals.inperson;
+  function fmt(n){return '$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+
+  var amts = document.querySelectorAll('.fp-cell .amt');
+  var order = [totals.tiktok, totals.ebay, totals.mercari, totals.inperson, totals.cashout, totals.stockx];
+  amts.forEach(function(el,i){ if(order[i]>0) el.textContent=fmt(order[i]); });
+
+  var badge = document.querySelector('.fp-badge');
+  if(badge && total>0) badge.textContent='^ '+fmt(total)+' YTD';
+
+  if(todayE){var e=document.getElementById('ds-ebay');if(e)e.value='$'+todayE.toFixed(2);}
+  if(todayM){var m=document.getElementById('ds-mercari');if(m)m.value='$'+todayM.toFixed(2);}
+  if(todayT){var t=document.getElementById('ds-tiktok');if(t)t.value='$'+todayT.toFixed(2);}
+  if(todayP){var p=document.getElementById('ds-inperson');if(p)p.value='$'+todayP.toFixed(2);}
+  calcDaily();
+}
 function setFilter(f) {
   invFilter = f;
   ['all','unsold','sold','return','warn'].forEach(function(x) {
