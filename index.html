@@ -589,20 +589,32 @@ function parseMoney(s) {
 
 function parseData(data) {
   var rows = [];
+  // Find column indices from header row
+  var header = data[0] || [];
+  var colProfit = 8, colStatus = 9, colDateSold = 12, colNotes = 13;
+  for (var h = 0; h < header.length; h++) {
+    var hname = String(header[h]||'').trim().toLowerCase();
+    if (hname === 'profit') colProfit = h;
+    if (hname === 'status' || hname === 'status ') colStatus = h;
+    if (hname.indexOf('date') >= 0 && hname.indexOf('sold') >= 0) colDateSold = h;
+  }
   for (var i = 1; i < data.length; i++) {
     var r = data[i];
     var item = String(r[0]||'').trim();
+    if (!item) continue;
     var from = String(r[1]||'').trim();
     var size = String(r[2]||'').trim();
     var cost = parseMoney(r[6]);
     var soldAmt = parseMoney(r[7]);
-    var profit = parseMoney(r[8]);
-    var status = String(r[9]||'').trim();
-    var dateSold = String(r[12]||'').trim();
-    var orderNum = String(r[13]||'').trim();
-    if (!item) continue;
-    var warn = orderNum.toUpperCase().indexOf('CANT RETURN') >= 0 ? 'CANT RETURN' : '';
-    rows.push({item:item, from:from, size:size, cost:cost, soldAmt:soldAmt, profit:profit, status:status, dateSold:dateSold, orderNum:orderNum, warn:warn});
+    var profit = parseMoney(r[colProfit]);
+    var status = String(r[colStatus]||'').trim();
+    var dateSold = String(r[colDateSold]||'').trim();
+    // Check ALL columns for cant return flag
+    var warn = '';
+    for (var c = 0; c < r.length; c++) {
+      if (String(r[c]||'').toUpperCase().indexOf('CANT RETURN') >= 0) { warn = 'CANT RETURN'; break; }
+    }
+    rows.push({item:item, from:from, size:size, cost:cost, soldAmt:soldAmt, profit:profit, status:status, dateSold:dateSold, warn:warn});
   }
   return rows;
 }
@@ -679,43 +691,53 @@ function renderTable() {
 
 function calcLiveFinance(data) {
   var totals = {Mercari:0,Ebay:0,StockX:0};
-  totals['In Person']=0; totals['Cashout']=0; totals['FBT Tiktok']=0;
-  totals['Whatnot']=0; totals['Locations Sold']=0;
-  var today = new Date(); today.setHours(0,0,0,0);
-  var todayEbay=0,todayMercari=0,todayTiktok=0,todayPerson=0;
-  for (var i=1; i<data.length; i++) {
+  totals['In Person']=0;totals['Cashout']=0;totals['FBT Tiktok']=0;
+  totals['Whatnot']=0;totals['Locations Sold']=0;
+  var today=new Date();today.setHours(0,0,0,0);
+  var tE=0,tM=0,tT=0,tP=0;
+  // Dynamically find column indices from header row
+  var header=data[0]||[];
+  var colP=8,colS=9,colD=12;
+  for(var h=0;h<header.length;h++){
+    var hn=String(header[h]||'').trim().toLowerCase();
+    if(hn==='profit')colP=h;
+    if(hn==='status'||hn==='status ')colS=h;
+    if(hn.indexOf('date')>=0&&hn.indexOf('sold')>=0&&hn.indexOf('purchas')<0)colD=h;
+  }
+  for(var i=1;i<data.length;i++){
     var row=data[i];
-    var profit=parseMoney(row[8]);
-    var status=String(row[9]||'').trim();
-    var dateSold=String(row[12]||'').trim();
-    if (!status||status==='Unsold'||status==='Return/Cancel'||status==='Kept') continue;
-    if (profit===0) continue;
-    if (totals.hasOwnProperty(status)) totals[status]+=profit;
-    if (dateSold) {
-      try {
-        var d=new Date(dateSold); d.setHours(0,0,0,0);
-        if (d.getTime()===today.getTime()) {
-          if(status==='Ebay') todayEbay+=profit;
-          else if(status==='Mercari') todayMercari+=profit;
-          else if(status==='FBT Tiktok') todayTiktok+=profit;
-          else if(status==='In Person') todayPerson+=profit;
+    var profit=parseMoney(row[colP]);
+    var status=String(row[colS]||'').trim();
+    var dateSold=String(row[colD]||'').trim();
+    if(!status||status==='Unsold'||status==='Return/Cancel'||status==='Kept')continue;
+    if(profit===0)continue;
+    if(totals.hasOwnProperty(status))totals[status]+=profit;
+    if(dateSold){
+      try{
+        var d=new Date(dateSold);d.setHours(0,0,0,0);
+        if(d.getTime()===today.getTime()){
+          if(status==='Ebay')tE+=profit;
+          else if(status==='Mercari')tM+=profit;
+          else if(status==='FBT Tiktok')tT+=profit;
+          else if(status==='In Person')tP+=profit;
         }
-      } catch(err){}
+      }catch(err){}
     }
   }
   var total=Object.keys(totals).reduce(function(s,k){return s+totals[k];},0);
   function fmt(n){return '$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
   var amts=document.querySelectorAll('.fp-cell .amt');
   var order=['FBT Tiktok','Ebay','Mercari','In Person','Cashout','StockX'];
-  amts.forEach(function(el,i){var k=order[i];if(k&&totals[k]>0)el.textContent=fmt(totals[k]);});
+  amts.forEach(function(el,i){var k=order[i];if(k&&totals[k]!==0&&totals[k]!==undefined)el.textContent=fmt(totals[k]);});
   var badge=document.querySelector('.fp-badge');
-  if(badge&&total>0) badge.textContent='^ '+fmt(total)+' YTD';
-  if(todayEbay){var e=document.getElementById('ds-ebay');if(e)e.value='$'+todayEbay.toFixed(2);}
-  if(todayMercari){var m=document.getElementById('ds-mercari');if(m)m.value='$'+todayMercari.toFixed(2);}
-  if(todayTiktok){var t=document.getElementById('ds-tiktok');if(t)t.value='$'+todayTiktok.toFixed(2);}
-  if(todayPerson){var p=document.getElementById('ds-inperson');if(p)p.value='$'+todayPerson.toFixed(2);}
+  if(badge&&total>0)badge.textContent='^ '+fmt(total)+' YTD';
+  if(tE){var e=document.getElementById('ds-ebay');if(e)e.value='$'+tE.toFixed(2);}
+  if(tM){var m=document.getElementById('ds-mercari');if(m)m.value='$'+tM.toFixed(2);}
+  if(tT){var t=document.getElementById('ds-tiktok');if(t)t.value='$'+tT.toFixed(2);}
+  if(tP){var p=document.getElementById('ds-inperson');if(p)p.value='$'+tP.toFixed(2);}
   calcDaily();
 }
+
 function setFilter(f) {
   invFilter = f;
   ['all','unsold','sold','return','warn'].forEach(function(x) {
