@@ -745,16 +745,19 @@ function parseDataObj(rows) {
   for (var i = 0; i < rows.length; i++) {
     var r = rows[i];
     if (!r) continue;
-    var item = String(r['Item'] || r['Item Name'] || '').trim();
+    // Normalize keys - trim all whitespace from key names
+    var norm = {};
+    Object.keys(r).forEach(function(k){ norm[k.trim()] = r[k]; });
+    var item = String(norm['Item'] || norm['Item Name'] || '').trim();
     if (!item) continue;
-    var from = String(r['Purchased From'] || r['From'] || '').trim();
-    var size = String(r['Size'] || '').trim();
-    var cost = parseMoney(r['Subtotal'] || r['Cost'] || r['cost'] || 0);
-    var soldAmt = parseMoney(r['Sale Price'] || r['SALES'] || r['Sold For'] || 0);
-    var profit = parseMoney(r['Profit'] || r['PROFIT'] || r['profit'] || 0);
-    var status = String(r['Status'] || r['Platform'] || '').trim();
-    var dateSold = String(r['Date Sold'] || r['Date'] || '').trim();
-    var orderNum = String(r['Order Number'] || r['Notes'] || '').trim();
+    var from = String(norm['Purchased From'] || norm['From'] || '').trim();
+    var size = String(norm['Size'] || '').trim();
+    var cost = parseMoney(norm['Total Cost'] || norm['Subtotal'] || norm['Cost'] || 0);
+    var soldAmt = parseMoney(norm['Sold Amount'] || norm['Sale Price'] || norm['SALES'] || 0);
+    var profit = parseMoney(norm['Profit'] || norm['PROFIT'] || 0);
+    var status = String(norm['Status'] || norm['Platform'] || '').trim();
+    var dateSold = String(norm['Date Sold'] || norm['Date'] || '').trim();
+    var orderNum = String(norm['Order #'] || norm['Order Number'] || norm['Notes'] || '').trim();
     var warn = orderNum.toUpperCase().indexOf('CANT RETURN') >= 0 ? 'CANT RETURN' : '';
     result.push({item:item, from:from, size:size, cost:cost, soldAmt:soldAmt, profit:profit, status:status, dateSold:dateSold, orderNum:orderNum, warn:warn});
   }
@@ -788,12 +791,13 @@ function calcLiveFinanceObj(allData) {
   // Cashout - from Inventory rows where status is Cashout
   if (allData['Inventory']) {
     allData['Inventory'].forEach(function(r){
-      var st = String(r['Status']||'');
-      var p = parseMoney(r['Profit']||0);
+      var norm2={};Object.keys(r).forEach(function(k){norm2[k.trim()]=r[k];});
+      var st = String(norm2['Status']||'').trim();
+      var p = parseMoney(norm2['Profit']||0);
       if (st==='Cashout') totals.cashout+=p;
       if (st==='In Person') totals.inperson+=p;
       // Today's sales
-      var ds = String(r['Date Sold']||'');
+      var ds = String(norm2['Date Sold']||'');
       if (ds) {
         try {
           var d=new Date(ds); d.setHours(0,0,0,0);
