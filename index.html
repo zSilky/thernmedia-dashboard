@@ -21,8 +21,6 @@ html,body{height:100%;background:#060606;}
   --sans:'Syne',sans-serif;
 }
 .os{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;font-size:13px;}
-
-/* TOPBAR */
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:var(--tab-h);border-bottom:1px solid var(--border);background:var(--bg2);position:sticky;top:0;z-index:200;}
 .brand{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:.12em;}
 .brand span{color:var(--gold);}
@@ -32,18 +30,14 @@ html,body{height:100%;background:#060606;}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 .topbar-right{font-family:var(--mono);font-size:10px;color:var(--text3);}
 .topbar-right span{color:var(--gold);}
-
-/* PAGES */
 .page{display:none;}
 .page.active{display:block;}
 
-/* HOME GRID */
+/* HOME */
 .home-grid{display:grid;grid-template-columns:265px 1fr 235px;grid-template-rows:auto auto auto;gap:1px;background:var(--border);min-height:calc(100vh - var(--tab-h));}
 .panel{background:var(--bg);padding:15px 17px;}
 .plabel{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:6px;}
 .plabel .n{color:var(--gold);}
-
-/* OPERATOR */
 .avatar{width:42px;height:42px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#000;margin-bottom:9px;}
 .op-name{font-size:17px;font-weight:800;font-style:italic;}
 .op-sub{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:11px;}
@@ -56,8 +50,6 @@ html,body{height:100%;background:#060606;}
 .pills{display:flex;gap:4px;flex-wrap:wrap;}
 .pill{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;}
 .pill span{font-family:var(--mono);color:var(--gold);font-weight:700;}
-
-/* SESSION */
 .greeting{font-size:26px;font-weight:800;line-height:1.1;margin-bottom:4px;}
 .greeting em{font-style:italic;color:var(--gold);}
 .session-meta{font-family:var(--mono);font-size:10px;color:var(--text3);margin-bottom:13px;}
@@ -66,10 +58,8 @@ html,body{height:100%;background:#060606;}
 .capture-bar{display:flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:11px;}
 .capture-bar input{background:none;border:none;outline:none;color:var(--text);font-family:var(--sans);font-size:12px;flex:1;}
 .capture-bar input::placeholder{color:var(--text3);}
-.cap-btn{background:var(--bg4);border:1px solid var(--border2);color:var(--gold);font-family:var(--mono);font-size:9px;padding:5px 10px;border-radius:4px;cursor:pointer;white-space:nowrap;}
+.cap-btn{background:var(--bg4);border:1px solid var(--border2);color:var(--gold);font-family:var(--mono);font-size:9px;padding:5px 10px;border-radius:4px;cursor:pointer;}
 .note-chip{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:5px 10px;font-size:11px;color:var(--text2);margin-top:5px;}
-
-/* FINANCE PULSE */
 .fp-badge{display:inline-flex;align-items:center;gap:4px;background:var(--green-bg);border:1px solid var(--green-dim);border-radius:4px;padding:2px 8px;font-family:var(--mono);font-size:10px;color:var(--green);margin-bottom:8px;}
 .fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px;}
 .fp-cell{background:var(--bg3);border-radius:6px;padding:8px 10px;}
@@ -77,8 +67,6 @@ html,body{height:100%;background:#060606;}
 .fp-cell .amt{font-family:var(--mono);font-size:14px;color:var(--gold);font-weight:700;}
 .fp-cell .sub{font-size:9px;color:var(--green);}
 .sparkline{width:100%;height:30px;margin:5px 0;}
-
-/* DAILY SALES */
 .ds-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;}
 .ds-cell{background:var(--bg3);border-radius:6px;padding:8px 10px;}
 .ds-cell label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:3px;}
@@ -86,8 +74,6 @@ html,body{height:100%;background:#060606;}
 .ds-total{background:var(--green-bg);border:1px solid var(--green-dim);border-radius:6px;padding:10px;margin-top:6px;display:flex;justify-content:space-between;align-items:center;}
 .ds-total label{font-size:9px;color:var(--green);text-transform:uppercase;letter-spacing:.1em;}
 .ds-total .v{font-family:var(--mono);font-size:18px;color:var(--green);font-weight:700;}
-
-/* HABITS */
 .habit-header{display:flex;align-items:center;gap:13px;margin-bottom:11px;}
 .h-score{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:17px;font-weight:700;color:var(--text3);flex-shrink:0;transition:all .3s;}
 .h-score.on{border-color:var(--gold);color:var(--gold);}
@@ -105,8 +91,6 @@ html,body{height:100%;background:#060606;}
 .hname{font-size:11px;font-weight:600;margin-bottom:2px;}
 .htag{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;}
 .hcount{font-family:var(--mono);font-size:9px;color:var(--text3);margin-top:5px;}
-
-/* TASKS */
 .titem{display:flex;align-items:flex-start;gap:8px;padding:7px 5px;border-radius:5px;cursor:pointer;transition:background .1s;}
 .titem:hover{background:var(--bg3);}
 .tcheck{width:13px;height:13px;border-radius:3px;border:1px solid var(--border2);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;}
@@ -120,8 +104,6 @@ html,body{height:100%;background:#060606;}
 .task-add input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 10px;font-family:var(--sans);font-size:11px;color:var(--text);outline:none;}
 .task-add input::placeholder{color:var(--text3);}
 .task-add button{background:var(--bg4);border:1px solid var(--border2);color:var(--gold);font-family:var(--mono);font-size:11px;padding:6px 11px;border-radius:5px;cursor:pointer;}
-
-/* GOALS */
 .goals-list{display:flex;flex-direction:column;gap:8px;}
 .goal-item{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px;}
 .glabel{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
@@ -131,8 +113,6 @@ html,body{height:100%;background:#060606;}
 .gedit{font-size:9px;color:var(--text3);margin-top:3px;cursor:pointer;}
 .pbar{height:2px;background:var(--border);border-radius:1px;overflow:hidden;margin-top:7px;}
 .pfill{height:100%;background:var(--gold);border-radius:1px;transition:width .5s;}
-
-/* CALENDAR */
 .cal-week{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:10px;}
 .cal-day{text-align:center;padding:4px 2px;border-radius:4px;}
 .cal-day .dn{font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:3px;}
@@ -147,8 +127,6 @@ html,body{height:100%;background:#060606;}
 .now-line{border-top:1px solid rgba(200,169,110,.2);display:flex;align-items:center;gap:6px;margin:3px 0;}
 .now-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
 .now-lbl{font-family:var(--mono);font-size:9px;color:var(--gold);}
-
-/* NUTRITION */
 .kcal-big{font-family:var(--mono);font-size:30px;font-weight:700;margin:5px 0 2px;transition:color .3s;}
 .kcal-lbl{font-size:10px;color:var(--text3);margin-bottom:7px;}
 .macros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:9px;}
@@ -190,17 +168,34 @@ html,body{height:100%;background:#060606;}
 .inv-table tr:hover td{background:var(--bg3);}
 .item-name{color:var(--text);font-weight:600;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .pill-s{display:inline-flex;align-items:center;padding:3px 8px;border-radius:3px;font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;white-space:nowrap;}
-.s-sold{background:var(--green-bg);color:var(--green);border:1px solid var(--green-dim);}
-.s-unsold{background:#141414;color:var(--text3);border:1px solid var(--border);}
-.s-return{background:var(--red-bg);color:var(--red);border:1px solid var(--red-dim);}
-.s-kept{background:var(--gold-dark);color:var(--gold);border:1px solid var(--gold-dim);}
+.plat-mercari{background:#2d1a4a;color:#b39ddb;border:1px solid #7e57c2;}
+.plat-ebay{background:#2a2200;color:#ffee58;border:1px solid #f9a825;}
+.plat-stockx{background:#001a2a;color:#64b5f6;border:1px solid #1976d2;}
+.plat-inperson{background:#0a2a0a;color:#81c784;border:1px solid #388e3c;}
+.plat-tiktok{background:#1a0a1a;color:#f48fb1;border:1px solid #c2185b;}
+.plat-cashout{background:#2a1a00;color:#ffb74d;border:1px solid #e65100;}
+.plat-whatnot{background:#0a0a2a;color:#ce93d8;border:1px solid #7b1fa2;}
+.plat-locations{background:#001a1a;color:#80deea;border:1px solid #00838f;}
+.plat-unsold{background:#141414;color:#6a6a6a;border:1px solid #1e1e1e;}
+.plat-return{background:#1a0808;color:#e05252;border:1px solid #6b1f1f;}
+.plat-kept{background:#3a2806;color:#c8a96e;border:1px solid #8b6914;}
 .profit-pos{color:var(--green);font-family:var(--mono);font-size:11px;}
 .profit-neg{color:var(--red);font-family:var(--mono);font-size:11px;}
 .profit-zero{color:var(--text3);font-family:var(--mono);font-size:11px;}
-.warn-badge{background:#1f1510;color:#e09052;border:1px solid #6b3a1f;padding:2px 6px;border-radius:3px;font-size:8px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;}
+.warn-badge{background:#1f1510;color:#e09052;border:1px solid #6b3a1f;padding:2px 6px;border-radius:3px;font-size:8px;text-transform:uppercase;letter-spacing:.06em;}
 .note-cell{background:none;border:none;border-bottom:1px solid var(--border);outline:none;color:var(--text2);font-family:var(--sans);font-size:11px;width:120px;padding:2px 4px;}
 .note-cell::placeholder{color:var(--border2);}
 .loading-row td{text-align:center;padding:30px;color:var(--text3);font-family:var(--mono);font-size:11px;}
+
+/* CONTENT */
+.content-page{padding:18px 20px;overflow-y:auto;max-height:calc(100vh - var(--tab-h));}
+.post-item{display:flex;align-items:center;gap:9px;padding:10px;background:var(--bg3);border:1px solid var(--border);border-radius:7px;margin-bottom:6px;}
+.post-platform{font-size:9px;color:var(--text3);text-transform:uppercase;background:var(--bg4);border:1px solid var(--border);padding:3px 7px;border-radius:3px;letter-spacing:.06em;min-width:58px;text-align:center;white-space:nowrap;}
+.post-topic{flex:1;font-size:12px;color:var(--text2);}
+.post-date{font-family:var(--mono);font-size:9px;color:var(--text3);white-space:nowrap;}
+.post-status{font-size:9px;padding:3px 7px;border-radius:3px;white-space:nowrap;}
+.ps-live{background:var(--green-bg);color:var(--green);border:1px solid var(--green-dim);}
+.done-tag{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:3px 9px;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;}
 
 /* FINANCE */
 .finance-page{padding:18px 20px;overflow-y:auto;max-height:calc(100vh - var(--tab-h));}
@@ -221,51 +216,6 @@ html,body{height:100%;background:#060606;}
 .fin-row-val.pos{color:var(--green);}
 .fin-row-val.neg{color:var(--red);}
 .fin-row-val.gold{color:var(--gold);}
-.exp-form{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;align-items:center;}
-.exp-form input,.exp-form select{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 10px;font-family:var(--sans);font-size:11px;color:var(--text);outline:none;}
-.exp-form input::placeholder{color:var(--text3);}
-.exp-btn{background:var(--gold);border:none;color:#000;font-family:var(--sans);font-size:11px;font-weight:700;padding:6px 14px;border-radius:5px;cursor:pointer;}
-.exp-item{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border-radius:6px;border:1px solid var(--border);margin-bottom:4px;}
-.exp-item .ei-name{font-size:12px;color:var(--text2);}
-.exp-item .ei-type{font-size:9px;color:var(--text3);text-transform:uppercase;background:var(--bg4);border:1px solid var(--border);padding:2px 6px;border-radius:3px;}
-.exp-item .ei-amt{font-family:var(--mono);font-size:12px;color:var(--red);font-weight:700;}
-.exp-item .ei-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;padding:0 4px;}
-.exp-total{display:flex;justify-content:space-between;padding:9px 10px;background:var(--red-bg);border:1px solid var(--red-dim);border-radius:6px;margin-top:8px;}
-.exp-total label{font-size:10px;color:var(--red);text-transform:uppercase;letter-spacing:.1em;}
-.exp-total .v{font-family:var(--mono);font-size:15px;color:var(--red);font-weight:700;}
-
-/* CONTENT */
-.content-page{padding:18px 20px;overflow-y:auto;max-height:calc(100vh - var(--tab-h));}
-.content-tips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
-.tip-card{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:14px;}
-.tip-title{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px;}
-.tip-val{font-size:20px;font-weight:800;color:var(--gold);margin-bottom:3px;}
-.tip-sub{font-size:11px;color:var(--text2);line-height:1.5;}
-.insight-block{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:14px;margin-bottom:12px;}
-.insight-title{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px;}
-.insight-body{font-size:12px;color:var(--text2);line-height:1.6;}
-.insight-body strong{color:var(--gold);}
-.post-item{display:flex;align-items:center;gap:9px;padding:10px;background:var(--bg3);border:1px solid var(--border);border-radius:7px;margin-bottom:6px;}
-.post-platform{font-size:9px;color:var(--text3);text-transform:uppercase;background:var(--bg4);border:1px solid var(--border);padding:3px 7px;border-radius:3px;letter-spacing:.06em;min-width:58px;text-align:center;white-space:nowrap;}
-.post-topic{flex:1;font-size:12px;color:var(--text2);}
-.post-date{font-family:var(--mono);font-size:9px;color:var(--text3);white-space:nowrap;}
-.post-status{font-size:9px;padding:3px 7px;border-radius:3px;white-space:nowrap;}
-.ps-live{background:var(--green-bg);color:var(--green);border:1px solid var(--green-dim);}
-.ps-draft{background:#141414;color:var(--text3);border:1px solid var(--border);}
-.add-post-btn{background:var(--bg3);border:1px dashed var(--border);border-radius:7px;padding:11px;color:var(--text3);font-family:var(--sans);font-size:11px;cursor:pointer;width:100%;text-align:center;}
-.add-post-btn:hover{border-color:var(--border2);color:var(--text2);}
-
-.plat-mercari{background:#2d1a4a;color:#b39ddb;border:1px solid #7e57c2;}
-.plat-ebay{background:#2a2200;color:#ffee58;border:1px solid #f9a825;}
-.plat-stockx{background:#001a2a;color:#64b5f6;border:1px solid #1976d2;}
-.plat-inperson{background:#0a2a0a;color:#81c784;border:1px solid #388e3c;}
-.plat-tiktok{background:#1a0a1a;color:#f48fb1;border:1px solid #c2185b;}
-.plat-cashout{background:#2a1a00;color:#ffb74d;border:1px solid #e65100;}
-.plat-whatnot{background:#0a0a2a;color:#ce93d8;border:1px solid #7b1fa2;}
-.plat-locations{background:#001a1a;color:#80deea;border:1px solid #00838f;}
-.plat-unsold{background:#141414;color:#6a6a6a;border:1px solid #1e1e1e;}
-.plat-return{background:#1a0808;color:#e05252;border:1px solid #6b1f1f;}
-.plat-kept{background:#3a2806;color:#c8a96e;border:1px solid #8b6914;}
 </style>
 </head>
 <body>
@@ -281,7 +231,7 @@ html,body{height:100%;background:#060606;}
   <div class="topbar-right" id="tr-time">-- : --</div>
 </div>
 
-<!-- HOME -->
+<!-- ===== HOME ===== -->
 <div id="page-home" class="page active">
 <div class="home-grid">
 
@@ -294,7 +244,7 @@ html,body{height:100%;background:#060606;}
     <div class="divider"></div>
     <div class="stat-row">
       <div class="stat"><label>Streak</label><div class="v">0 days</div></div>
-      <div class="stat"><label>2026 Profit</label><div class="v">$7,291</div></div>
+      <div class="stat"><label>2026 Profit</label><div class="v" id="home-profit-stat">$7,291</div></div>
     </div>
     <div class="pills">
       <div class="pill">TT <span id="tt-f">--</span></div>
@@ -341,9 +291,9 @@ html,body{height:100%;background:#060606;}
       </div>
       <div class="goal-item" style="background:var(--green-bg);border-color:var(--green-dim);">
         <div class="glabel" style="color:var(--green);">2026 Profit Goal</div>
-        <div style="font-family:var(--mono);font-size:18px;color:var(--green);font-weight:700;">$7,291 / $15,000</div>
-        <div class="pbar" style="background:#0f2a0f;"><div class="pfill" style="width:48.6%;background:var(--green);"></div></div>
-        <div style="font-size:9px;color:var(--green-dim);margin-top:3px;">48.6% to goal</div>
+        <div style="font-family:var(--mono);font-size:18px;color:var(--green);font-weight:700;" id="goal-progress-txt">$7,291 / $15,000</div>
+        <div class="pbar" style="background:#0f2a0f;"><div class="pfill" id="goal-bar" style="width:48.6%;background:var(--green);"></div></div>
+        <div style="font-size:9px;color:var(--green-dim);margin-top:3px;" id="goal-pct">48.6% to goal</div>
       </div>
       <div class="goal-item">
         <div class="glabel">Daily Sales Log</div>
@@ -363,17 +313,17 @@ html,body{height:100%;background:#060606;}
 
   <div class="panel" style="grid-column:1;grid-row:2;">
     <div class="plabel"><span class="n">07</span> // FINANCE PULSE</div>
-    <div class="fp-badge">^ $7,291.89 YTD</div>
+    <div class="fp-badge" id="fp-badge">^ $7,291.89 YTD</div>
     <svg class="sparkline" viewBox="0 0 220 30" preserveAspectRatio="none">
       <polyline points="0,27 40,22 80,18 120,13 160,10 220,6" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity=".5"/>
     </svg>
     <div class="fp-grid">
-      <div class="fp-cell"><label>TikTok Shop</label><div class="amt">$2,853</div><div class="sub">^ #1 channel</div></div>
-      <div class="fp-cell"><label>eBay</label><div class="amt">$2,088</div><div class="sub">^ #2 earner</div></div>
-      <div class="fp-cell"><label>Mercari</label><div class="amt">$1,394</div><div class="sub">steady</div></div>
-      <div class="fp-cell"><label>In Person</label><div class="amt">$485</div><div class="sub">growing</div></div>
-      <div class="fp-cell"><label>Cashout</label><div class="amt">$262</div><div class="sub">Amazon</div></div>
-      <div class="fp-cell"><label>StockX</label><div class="amt">$207</div><div class="sub">selective</div></div>
+      <div class="fp-cell"><label>TikTok Shop</label><div class="amt" id="fp-tiktok">$2,853</div><div class="sub">^ #1 channel</div></div>
+      <div class="fp-cell"><label>eBay</label><div class="amt" id="fp-ebay">$2,088</div><div class="sub">^ #2 earner</div></div>
+      <div class="fp-cell"><label>Mercari</label><div class="amt" id="fp-mercari">$1,394</div><div class="sub">steady</div></div>
+      <div class="fp-cell"><label>In Person</label><div class="amt" id="fp-person">$485</div><div class="sub">growing</div></div>
+      <div class="fp-cell"><label>Cashout</label><div class="amt" id="fp-cashout">$262</div><div class="sub">Amazon</div></div>
+      <div class="fp-cell"><label>StockX</label><div class="amt" id="fp-stockx">$207</div><div class="sub">selective</div></div>
     </div>
   </div>
 
@@ -406,7 +356,7 @@ html,body{height:100%;background:#060606;}
   <div class="panel" style="grid-column:2;grid-row:3;">
     <div class="plabel"><span class="n">04</span> // CALENDAR <span style="margin-left:auto;color:var(--text3);" id="cal-month"></span></div>
     <div class="cal-week" id="cal-week"></div>
-    <div style="font-size:9px;color:var(--text3);margin-bottom:7px;letter-spacing:.08em;" id="cal-count">TODAY - 4 EVENTS</div>
+    <div style="font-size:9px;color:var(--text3);margin-bottom:7px;letter-spacing:.08em;">TODAY - 4 EVENTS</div>
     <div id="cal-events"></div>
   </div>
 
@@ -420,14 +370,14 @@ html,body{height:100%;background:#060606;}
       <span class="macro" id="fat-d">0g fat</span>
     </div>
     <div class="nutr-bar"><div class="nutr-fill" id="kcal-bar" style="width:0%"></div></div>
-    <input class="meal-input" type="text" id="meal-in" placeholder='Log a meal - e.g. chicken, rice' onkeydown="if(event.key==='Enter')logMeal()"/>
+    <input class="meal-input" type="text" id="meal-in" placeholder="Log a meal e.g. chicken, rice" onkeydown="if(event.key==='Enter')logMeal()"/>
     <div id="meals-list"><div class="no-meals">No meals logged yet.</div></div>
   </div>
 
 </div>
 </div>
 
-<!-- RESALE -->
+<!-- ===== RESALE ===== -->
 <div id="page-resale" class="page resale-page">
   <div class="r-topbar">
     <h2>Inventory - Live from Google Sheets</h2>
@@ -440,12 +390,12 @@ html,body{height:100%;background:#060606;}
     <span style="font-family:var(--mono);font-size:10px;color:var(--text3);" id="inv-count">--</span>
   </div>
   <div class="r-stats">
-    <div class="rstat"><label>Total Profit</label><div class="rv pos">$7,291.89</div><div class="rsub">all platforms</div></div>
-    <div class="rstat"><label>TikTok Shop</label><div class="rv pos">$2,853.21</div><div class="rsub">#1 channel</div></div>
-    <div class="rstat"><label>eBay</label><div class="rv pos">$2,088.81</div><div class="rsub">most volume</div></div>
-    <div class="rstat"><label>Mercari</label><div class="rv pos">$1,394.59</div><div class="rsub">steady</div></div>
-    <div class="rstat"><label>Expenses</label><div class="rv neg">-$414.78</div><div class="rsub">supplies</div></div>
-    <div class="rstat"><label>Net After Exp</label><div class="rv pos">$6,877.11</div><div class="rsub">take-home</div></div>
+    <div class="rstat"><label>Total Profit</label><div class="rv pos" id="rs-total">$7,291.89</div><div class="rsub">all platforms</div></div>
+    <div class="rstat"><label>TikTok Shop</label><div class="rv pos" id="rs-tiktok">$2,853.21</div><div class="rsub">#1 channel</div></div>
+    <div class="rstat"><label>eBay</label><div class="rv pos" id="rs-ebay">$2,088.81</div><div class="rsub">most volume</div></div>
+    <div class="rstat"><label>Mercari</label><div class="rv pos" id="rs-mercari">$1,394.59</div><div class="rsub">steady</div></div>
+    <div class="rstat"><label>Expenses</label><div class="rv neg" id="rs-expenses">-$414.78</div><div class="rsub">supplies</div></div>
+    <div class="rstat"><label>Net After Exp</label><div class="rv pos" id="rs-net">$6,877.11</div><div class="rsub">take-home</div></div>
   </div>
   <div class="r-controls">
     <input class="inv-search" type="text" id="inv-search" placeholder="Search item, platform, size..." oninput="renderTable()"/>
@@ -482,53 +432,29 @@ html,body{height:100%;background:#060606;}
   </div>
 </div>
 
-<!-- CONTENT -->
+<!-- ===== CONTENT ===== -->
 <div id="page-content" class="page content-page">
   <div class="fin-header">@thernmedia - Content Schedule</div>
-
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
-    <div class="fin-card">
-      <div class="fin-card-label">Avg Reach</div>
-      <div class="fin-card-amount">~300</div>
-      <div class="fin-card-sub">views per reel</div>
-    </div>
-    <div class="fin-card">
-      <div class="fin-card-label">Next Goal</div>
-      <div class="fin-card-amount">200</div>
-      <div class="fin-card-sub">followers for Trial Reels</div>
-    </div>
-    <div class="fin-card">
-      <div class="fin-card-label">Best Format</div>
-      <div class="fin-card-amount">Reels</div>
-      <div class="fin-card-sub">beats carousels for discovery</div>
-    </div>
-    <div class="fin-card">
-      <div class="fin-card-label">Posting Streak</div>
-      <div class="fin-card-amount" id="ct-streak">0</div>
-      <div class="fin-card-sub">days in a row</div>
-    </div>
+    <div class="fin-card"><div class="fin-card-label">Avg Reach</div><div class="fin-card-amount">~300</div><div class="fin-card-sub">views per reel</div></div>
+    <div class="fin-card"><div class="fin-card-label">Next Goal</div><div class="fin-card-amount">200</div><div class="fin-card-sub">followers for Trial Reels</div></div>
+    <div class="fin-card"><div class="fin-card-label">Best Format</div><div class="fin-card-amount">Reels</div><div class="fin-card-sub">beats carousels for discovery</div></div>
+    <div class="fin-card"><div class="fin-card-label">Topics Done</div><div class="fin-card-amount">20+</div><div class="fin-card-sub">never repeat these</div></div>
   </div>
-
   <div class="fin-section">
-    <div class="fin-section-title">Carousel Upload Log - Did you post today?</div>
+    <div class="fin-section-title">Log a Post - Did you upload today?</div>
     <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
-      <input type="text" id="ct-topic" placeholder="Topic (e.g. Roth IRA vs 401k)..." style="flex:2;min-width:160px;background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:7px 11px;font-family:var(--sans);font-size:12px;color:var(--text);outline:none;"/>
+      <input type="text" id="ct-topic" placeholder="Topic e.g. Roth IRA vs 401k..." style="flex:2;min-width:160px;background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:7px 11px;font-family:var(--sans);font-size:12px;color:var(--text);outline:none;" onkeydown="if(event.key==='Enter')logPost()"/>
       <select id="ct-platform" style="background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:7px 10px;font-family:var(--sans);font-size:11px;color:var(--text2);outline:none;">
         <option>Instagram</option><option>TikTok</option><option>Both</option>
       </select>
       <select id="ct-type" style="background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:7px 10px;font-family:var(--sans);font-size:11px;color:var(--text2);outline:none;">
         <option>Carousel</option><option>Reel</option><option>Story</option>
       </select>
-      <button onclick="logPost()" style="background:var(--gold);border:none;color:#000;font-family:var(--sans);font-size:11px;font-weight:700;padding:7px 16px;border-radius:5px;cursor:pointer;">+ Log Post</button>
+      <button onclick="logPost()" style="background:var(--gold);border:none;color:#000;font-family:var(--sans);font-size:11px;font-weight:700;padding:7px 16px;border-radius:5px;cursor:pointer;">+ Log</button>
     </div>
-    <div id="ct-posts-list"></div>
+    <div id="ct-posts-list"><div class="no-meals">No posts logged yet. Start tracking above.</div></div>
   </div>
-
-  <div class="fin-section">
-    <div class="fin-section-title">Topics Already Done - Never Repeat</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;" id="ct-done-tags"></div>
-  </div>
-
   <div class="fin-section">
     <div class="fin-section-title">Upcoming Ideas</div>
     <div style="display:flex;gap:8px;margin-bottom:8px;">
@@ -537,82 +463,53 @@ html,body{height:100%;background:#060606;}
     </div>
     <div id="ct-ideas-list"></div>
   </div>
+  <div class="fin-section">
+    <div class="fin-section-title">Topics Already Done - Never Repeat</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;" id="ct-done-tags"></div>
+  </div>
 </div>
 
-<!-- FINANCE
-<!-- FINANCE -->
+<!-- ===== FINANCE ===== -->
 <div id="page-finance" class="page finance-page">
   <div class="fin-header">TH Sales -- Financial Overview 2026</div>
   <div class="fin-grid">
-    <div class="fin-card"><div class="fin-card-label">TikTok Shop</div><div class="fin-card-amount">$2,853</div><div class="fin-card-sub">Revenue $7,255 - Cost $4,401</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:39%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">eBay</div><div class="fin-card-amount">$2,088</div><div class="fin-card-sub">Revenue $6,718 - Cost $4,629</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:28.6%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">Mercari</div><div class="fin-card-amount">$1,394</div><div class="fin-card-sub">Revenue $5,707 - Cost $4,306</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:19.1%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">In Person</div><div class="fin-card-amount">$485</div><div class="fin-card-sub">Revenue $1,211 - Cost $725</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:6.6%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">Cashouts (Amazon)</div><div class="fin-card-amount">$262</div><div class="fin-card-sub">Revenue $17,585 - Cost $17,531</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:3.6%"></div></div></div>
-    <div class="fin-card"><div class="fin-card-label">StockX</div><div class="fin-card-amount">$207</div><div class="fin-card-sub">Revenue $796 - Cost $589</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:2.8%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">TikTok Shop</div><div class="fin-card-amount" id="fin-tiktok">$2,853</div><div class="fin-card-sub">Revenue $7,255 - Cost $4,401</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:39%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">eBay</div><div class="fin-card-amount" id="fin-ebay">$2,088</div><div class="fin-card-sub">Revenue $6,718 - Cost $4,629</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:28.6%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">Mercari</div><div class="fin-card-amount" id="fin-mercari">$1,394</div><div class="fin-card-sub">Revenue $5,707 - Cost $4,306</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:19.1%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">In Person</div><div class="fin-card-amount" id="fin-person">$485</div><div class="fin-card-sub">Revenue $1,211 - Cost $725</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:6.6%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">Cashouts (Amazon)</div><div class="fin-card-amount" id="fin-cashout">$262</div><div class="fin-card-sub">Revenue $17,585 - Cost $17,531</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:3.6%"></div></div></div>
+    <div class="fin-card"><div class="fin-card-label">StockX</div><div class="fin-card-amount" id="fin-stockx">$207</div><div class="fin-card-sub">Revenue $796 - Cost $589</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:2.8%"></div></div></div>
   </div>
   <div class="fin-section">
     <div class="fin-section-title">P&L Summary</div>
-    <div class="fin-row"><span class="fin-row-label">Total Gross Profit (all platforms)</span><span class="fin-row-val pos">+$7,291.89</span></div>
-    <div class="fin-row"><span class="fin-row-label">Business Expenses (boxes, supplies, scale)</span><span class="fin-row-val neg">-$414.78</span></div>
+    <div class="fin-row"><span class="fin-row-label">Total Gross Profit (all platforms)</span><span class="fin-row-val pos" id="fin-gross">+$7,291.89</span></div>
+    <div class="fin-row"><span class="fin-row-label">Business Expenses</span><span class="fin-row-val neg">-$414.78</span></div>
     <div class="fin-row"><span class="fin-row-label">Subscriptions</span><span class="fin-row-val neg">-$245.31</span></div>
     <div class="fin-row" style="border-top:1px solid var(--gold-dark);padding-top:9px;margin-top:3px;"><span class="fin-row-label" style="color:var(--text);font-weight:700;">Net Take-Home 2026</span><span class="fin-row-val gold" style="font-size:15px;">+$6,631.80</span></div>
   </div>
   <div class="fin-section">
     <div class="fin-section-title">Top Earners</div>
-    <div class="fin-row"><span class="fin-row-label">Centerpiece Pro Keyboard (StockX)</span><span class="fin-row-val pos">+$203.07</span></div>
+    <div class="fin-row"><span class="fin-row-label">Centerpiece Pro Keyboard (In Person)</span><span class="fin-row-val pos">+$203.07</span></div>
     <div class="fin-row"><span class="fin-row-label">Y-3 Blue Gazelle JI2069 (eBay)</span><span class="fin-row-val pos">+$163.75</span></div>
+    <div class="fin-row"><span class="fin-row-label">Dunk Low Orange Lobster (Mercari)</span><span class="fin-row-val pos">+$145.30</span></div>
     <div class="fin-row"><span class="fin-row-label">Kanto Region Badge Collection (Mercari)</span><span class="fin-row-val pos">+$121.01</span></div>
-    <div class="fin-row"><span class="fin-row-label">Congratulations Set 2026 Silver (eBay)</span><span class="fin-row-val pos">+$112.15</span></div>
-    <div class="fin-row"><span class="fin-row-label">Phantom Luna 2 Elite (Mercari)</span><span class="fin-row-val pos">+$61.64</span></div>
   </div>
   <div class="fin-section">
     <div class="fin-section-title">At Risk / Unsold</div>
-    <div class="fin-row"><span class="fin-row-label">Ultra Software Zip-Up Pink x2 -- Unsold</span><span class="fin-row-val neg">-$343.52</span></div>
-    <div class="fin-row"><span class="fin-row-label">Samba OG ID1481 unsold x5 -- Need price drop</span><span class="fin-row-val neg">-$248.55</span></div>
-    <div class="fin-row"><span class="fin-row-label">Skullector Killer Klowns x2 -- Unsold</span><span class="fin-row-val neg">-$155.14</span></div>
-    <div class="fin-row"><span class="fin-row-label">Royal Blue AJ1 -- Cant Return</span><span class="fin-row-val neg">-$140.00</span></div>
-    <div class="fin-row"><span class="fin-row-label">2026 Club Cameron Kit -- Listed low</span><span class="fin-row-val neg">-$138.84</span></div>
-  </div>
-  <div class="fin-section">
-    <div class="fin-section-title">Add Expense</div>
-    <div class="exp-form">
-      <input type="text" id="exp-name" placeholder="Expense name..." style="flex:2;min-width:140px;"/>
-      <select id="exp-type"><option>Shipping Supplies</option><option>Subscriptions</option><option>Gas</option><option>Food</option><option>Tools</option><option>Other</option></select>
-      <input type="number" id="exp-amt" placeholder="0.00" step="0.01" style="width:90px;"/>
-      <button class="exp-btn" onclick="addExpense()">+ Add</button>
-    </div>
-    <div id="exp-list"></div>
-    <div class="exp-total" id="exp-total" style="display:none;">
-      <label>Total Logged</label>
-      <div class="v" id="exp-total-val">$0.00</div>
-    </div>
+    <div class="fin-row"><span class="fin-row-label">Ultra Software Zip-Up Pink x2</span><span class="fin-row-val neg">-$343.52</span></div>
+    <div class="fin-row"><span class="fin-row-label">Samba OG ID1481 x5 - price drop needed</span><span class="fin-row-val neg">-$248.55</span></div>
+    <div class="fin-row"><span class="fin-row-label">Skullector Killer Klowns x2</span><span class="fin-row-val neg">-$155.14</span></div>
+    <div class="fin-row"><span class="fin-row-label">Royal Blue AJ1 - Cant Return</span><span class="fin-row-val neg">-$140.00</span></div>
   </div>
 </div>
 
-</div>
+</div><!-- end .os -->
 <script>
 var CSV_URL = '/api/sheet';
 var rawRows = [];
 var notes = {};
 var invFilter = 'all';
-var sortKey = '';
-var sortDir = -1;
-var expenses = [];
-
-async function loadSheet() {
-  document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">Loading inventory...</td></tr>';
-  try {
-    var res = await fetch(CSV_URL + '?t=' + Date.now());
-    var data = await res.json();
-    rawRows = parseData(data);
-    renderTable();
-  calcLiveFinance(data);
-  } catch(e) {
-    document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">Could not load sheet. Error: ' + e.message + '</td></tr>';
-    console.error(e);
-  }
-}
+var allSheetData = null;
 
 function parseMoney(s) {
   if (s === null || s === undefined || s === '') return 0;
@@ -621,36 +518,138 @@ function parseMoney(s) {
   return isNaN(n) ? 0 : n;
 }
 
-function parseData(data) {
-  var rows = [];
-  // Find column indices from header row
-  var header = data[0] || [];
-  var colProfit = 8, colStatus = 9, colDateSold = 12, colNotes = 13;
-  for (var h = 0; h < header.length; h++) {
-    var hname = String(header[h]||'').trim().toLowerCase();
-    if (hname === 'profit') colProfit = h;
-    if (hname === 'status' || hname === 'status ') colStatus = h;
-    if (hname.indexOf('date') >= 0 && hname.indexOf('sold') >= 0) colDateSold = h;
+function fmt(n) {
+  return '$' + Math.round(Math.abs(n)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+function fmtFull(n) {
+  return '$' + Math.abs(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+async function loadSheet() {
+  document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">Loading inventory...</td></tr>';
+  try {
+    var res = await fetch(CSV_URL + '?t=' + Date.now());
+    var data = await res.json();
+    allSheetData = data;
+    // Inventory is now an array of objects
+    var inv = data['Inventory'] || [];
+    rawRows = parseRows(inv);
+    renderTable();
+    updateLiveNumbers(data);
+  } catch(e) {
+    document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">Error: ' + e.message + '</td></tr>';
   }
-  for (var i = 1; i < data.length; i++) {
-    var r = data[i];
-    var item = String(r[0]||'').trim();
+}
+
+function parseRows(rows) {
+  if (!rows || !rows.length) return [];
+  var result = [];
+  for (var i = 0; i < rows.length; i++) {
+    var r = rows[i];
+    // Normalize all keys - trim whitespace
+    var n = {};
+    Object.keys(r).forEach(function(k){ n[k.trim()] = r[k]; });
+    var item = String(n['Item'] || '').trim();
     if (!item) continue;
-    var from = String(r[1]||'').trim();
-    var size = String(r[2]||'').trim();
-    var cost = parseMoney(r[6]);
-    var soldAmt = parseMoney(r[7]);
-    var profit = parseMoney(r[colProfit]);
-    var status = String(r[colStatus]||'').trim();
-    var dateSold = String(r[colDateSold]||'').trim();
-    // Check ALL columns for cant return flag
-    var warn = '';
-    for (var c = 0; c < r.length; c++) {
-      if (String(r[c]||'').toUpperCase().indexOf('CANT RETURN') >= 0) { warn = 'CANT RETURN'; break; }
-    }
-    rows.push({item:item, from:from, size:size, cost:cost, soldAmt:soldAmt, profit:profit, status:status, dateSold:dateSold, warn:warn});
+    var from = String(n['Purchased From'] || '').trim();
+    var size = String(n['Size'] || '').trim();
+    var cost = parseMoney(n['Total Cost'] || n['Subtotal'] || 0);
+    var soldAmt = parseMoney(n['Sold Amount'] || 0);
+    var profit = parseMoney(n['Profit'] || 0);
+    var status = String(n['Status'] || 'Unsold').trim();
+    var dateSold = String(n['Date Sold'] || '').trim();
+    var orderNum = String(n['Order #'] || '').trim();
+    var warn = orderNum.toUpperCase().indexOf('CANT RETURN') >= 0 ? 'CANT RETURN' : '';
+    result.push({item:item, from:from, size:size, cost:cost, soldAmt:soldAmt, profit:profit, status:status, dateSold:dateSold, orderNum:orderNum, warn:warn, _idx:i});
   }
-  return rows;
+  return result;
+}
+
+function updateLiveNumbers(data) {
+  var totals = {tiktok:0, ebay:0, mercari:0, person:0, cashout:0, stockx:0};
+  var today = new Date(); today.setHours(0,0,0,0);
+  var tE=0, tM=0, tT=0, tP=0;
+
+  // Sum from eBay Sales sheet
+  (data['eBay Sales']||[]).forEach(function(r){
+    var n={}; Object.keys(r).forEach(function(k){n[k.trim()]=r[k];});
+    totals.ebay += parseMoney(n['Profit']||0);
+  });
+  // Mercari Sales
+  (data['Mercari Sales']||[]).forEach(function(r){
+    var n={}; Object.keys(r).forEach(function(k){n[k.trim()]=r[k];});
+    totals.mercari += parseMoney(n['Profit']||0);
+  });
+  // StockX
+  (data['StockX']||[]).forEach(function(r){
+    var n={}; Object.keys(r).forEach(function(k){n[k.trim()]=r[k];});
+    totals.stockx += parseMoney(n['Profit']||0);
+  });
+  // TikTok Shop - find PROFIT column
+  var ttRows = data['TikTok Shop']||[];
+  if (ttRows.length) {
+    var firstKeys = Object.keys(ttRows[0]).map(function(k){return k.trim();});
+    var profitKey = firstKeys.find(function(k){return k.toUpperCase()==='PROFIT';});
+    if (profitKey) {
+      ttRows.forEach(function(r){
+        var n={}; Object.keys(r).forEach(function(k){n[k.trim()]=r[k];});
+        totals.tiktok += parseMoney(n[profitKey]||0);
+      });
+    }
+  }
+  // From Inventory - Cashout and In Person, plus today's sales
+  rawRows.forEach(function(r){
+    if (r.status === 'Cashout') totals.cashout += r.profit;
+    if (r.status === 'In Person') totals.person += r.profit;
+    if (r.dateSold) {
+      try {
+        var d = new Date(r.dateSold); d.setHours(0,0,0,0);
+        if (d.getTime() === today.getTime()) {
+          if (r.status==='Ebay') tE+=r.profit;
+          else if (r.status==='Mercari') tM+=r.profit;
+          else if (r.status.indexOf('Tiktok')>=0||r.status.indexOf('TikTok')>=0) tT+=r.profit;
+          else if (r.status==='In Person') tP+=r.profit;
+        }
+      } catch(err){}
+    }
+  });
+
+  var total = totals.tiktok+totals.ebay+totals.mercari+totals.person+totals.cashout+totals.stockx;
+
+  // Update Finance Pulse on home
+  if (totals.tiktok>0) { var e=document.getElementById('fp-tiktok'); if(e) e.textContent=fmt(totals.tiktok); }
+  if (totals.ebay>0) { var e=document.getElementById('fp-ebay'); if(e) e.textContent=fmt(totals.ebay); }
+  if (totals.mercari>0) { var e=document.getElementById('fp-mercari'); if(e) e.textContent=fmt(totals.mercari); }
+  if (totals.person>0) { var e=document.getElementById('fp-person'); if(e) e.textContent=fmt(totals.person); }
+  if (totals.cashout>0) { var e=document.getElementById('fp-cashout'); if(e) e.textContent=fmt(totals.cashout); }
+  if (totals.stockx>0) { var e=document.getElementById('fp-stockx'); if(e) e.textContent=fmt(totals.stockx); }
+  if (total>0) {
+    var b=document.getElementById('fp-badge'); if(b) b.textContent='^ '+fmtFull(total)+' YTD';
+    var s=document.getElementById('home-profit-stat'); if(s) s.textContent=fmt(total);
+    var g=document.getElementById('goal-progress-txt'); if(g) g.textContent=fmt(total)+' / $15,000';
+    var pct=Math.round(total/15000*100);
+    var bar=document.getElementById('goal-bar'); if(bar) bar.style.width=Math.min(pct,100)+'%';
+    var pl=document.getElementById('goal-pct'); if(pl) pl.textContent=pct+'% to goal';
+    // Update resale stats bar
+    var rt=document.getElementById('rs-total'); if(rt) rt.textContent=fmtFull(total);
+    var rt2=document.getElementById('rs-tiktok'); if(rt2) rt2.textContent=fmtFull(totals.tiktok);
+    var re=document.getElementById('rs-ebay'); if(re) re.textContent=fmtFull(totals.ebay);
+    var rm=document.getElementById('rs-mercari'); if(rm) rm.textContent=fmtFull(totals.mercari);
+    // Finance tab cards
+    var ft=document.getElementById('fin-tiktok'); if(ft&&totals.tiktok>0) ft.textContent=fmt(totals.tiktok);
+    var fe=document.getElementById('fin-ebay'); if(fe&&totals.ebay>0) fe.textContent=fmt(totals.ebay);
+    var fm=document.getElementById('fin-mercari'); if(fm&&totals.mercari>0) fm.textContent=fmt(totals.mercari);
+    var fp=document.getElementById('fin-person'); if(fp&&totals.person>0) fp.textContent=fmt(totals.person);
+    var fc=document.getElementById('fin-cashout'); if(fc&&totals.cashout>0) fc.textContent=fmt(totals.cashout);
+    var fs=document.getElementById('fin-stockx'); if(fs&&totals.stockx>0) fs.textContent=fmt(totals.stockx);
+    var fg=document.getElementById('fin-gross'); if(fg) fg.textContent='+'+fmtFull(total);
+  }
+  // Daily sales if today has activity
+  if(tE){var el=document.getElementById('ds-ebay');if(el&&!el.value)el.value='$'+tE.toFixed(2);}
+  if(tM){var el=document.getElementById('ds-mercari');if(el&&!el.value)el.value='$'+tM.toFixed(2);}
+  if(tT){var el=document.getElementById('ds-tiktok');if(el&&!el.value)el.value='$'+tT.toFixed(2);}
+  if(tP){var el=document.getElementById('ds-inperson');if(el&&!el.value)el.value='$'+tP.toFixed(2);}
+  calcDaily();
 }
 
 function renderTable() {
@@ -659,9 +658,10 @@ function renderTable() {
   var sortSel = document.getElementById('sort-col').value||'';
 
   var rows = rawRows.filter(function(r) {
-    if (q && r.item.toLowerCase().indexOf(q)<0 && r.from.toLowerCase().indexOf(q)<0 && r.size.toLowerCase().indexOf(q)<0 && (r.status||'').toLowerCase().indexOf(q)<0) return false;
+    var searchStr = (r.item+' '+r.from+' '+r.size+' '+r.status).toLowerCase();
+    if (q && searchStr.indexOf(q) < 0) return false;
     if (pfilt && r.status !== pfilt) return false;
-    if (invFilter === 'unsold') return r.status === 'Unsold' || !r.status;
+    if (invFilter === 'unsold') return !r.status || r.status === 'Unsold';
     if (invFilter === 'sold') return r.dateSold && r.status !== 'Return/Cancel' && r.status !== 'Kept' && r.status !== 'Unsold';
     if (invFilter === 'return') return r.status === 'Return/Cancel';
     if (invFilter === 'warn') return !!r.warn;
@@ -669,17 +669,19 @@ function renderTable() {
   });
 
   if (sortSel) {
-    var sk2 = sortSel.split('-')[0];
-    var sd2 = sortSel.indexOf('desc') >= 0 ? -1 : 1;
+    var sk = sortSel.split('-')[0];
+    var sd = sortSel.indexOf('desc') >= 0 ? -1 : 1;
     rows.sort(function(a,b) {
-      var av = a[sk2], bv = b[sk2];
-      if (sk2==='profit'||sk2==='cost'||sk2==='soldAmt') { av=parseMoney(av)||0; bv=parseMoney(bv)||0; }
+      var av = a[sk], bv = b[sk];
+      if (sk==='profit'||sk==='cost'||sk==='soldAmt') { av=parseMoney(av)||0; bv=parseMoney(bv)||0; }
+      else if (sk==='name') { av=(a.item||'').toLowerCase(); bv=(b.item||'').toLowerCase(); }
+      else if (sk==='date') { av=a.dateSold||''; bv=b.dateSold||''; }
       else { av=(av||'').toLowerCase(); bv=(bv||'').toLowerCase(); }
-      return av<bv?-sd2:av>bv?sd2:0;
+      return av<bv?-sd:av>bv?sd:0;
     });
   } else {
-    rows.sort(function(a,b) {
-      var sa=(a.status||'Unsold').toLowerCase(), sb=(b.status||'Unsold').toLowerCase();
+    rows.sort(function(a,b){
+      var sa=(a.status||'Unsold'), sb=(b.status||'Unsold');
       return sa<sb?-1:sa>sb?1:0;
     });
   }
@@ -688,200 +690,40 @@ function renderTable() {
   var body = document.getElementById('inv-body');
   if (!rows.length) { body.innerHTML = '<tr class="loading-row"><td colspan="10">No items match.</td></tr>'; return; }
 
-  body.innerHTML = rows.map(function(r, idx) {
-    var origIdx = rawRows.indexOf(r);
-    var sl = r.status||'Unsold';
-    var sc = sl==='Return/Cancel'?'s-return':sl==='Kept'?'s-kept':(sl==='Unsold')?'s-unsold':'s-sold';
-    var pc2='plat-unsold';
-    if(sl==='Mercari')pc2='plat-mercari';
-    else if(sl==='Ebay'||sl==='eBay')pc2='plat-ebay';
-    else if(sl==='StockX')pc2='plat-stockx';
-    else if(sl==='In Person')pc2='plat-inperson';
-    else if(sl.indexOf('Tiktok')>=0||sl.indexOf('TikTok')>=0)pc2='plat-tiktok';
-    else if(sl==='Cashout')pc2='plat-cashout';
-    else if(sl==='Whatnot')pc2='plat-whatnot';
-    else if(sl==='Locations Sold')pc2='plat-locations';
-    else if(sl==='Return/Cancel')pc2='plat-return';
-    else if(sl==='Kept')pc2='plat-kept';
-    else if(sl!=='Unsold')pc2='plat-inperson';
-    var pc = r.profit>0.1?'profit-pos':r.profit<-0.1?'profit-neg':'profit-zero';
+  body.innerHTML = rows.map(function(r) {
+    var sl = r.status || 'Unsold';
+    var pc = 'plat-unsold';
+    if(sl==='Mercari') pc='plat-mercari';
+    else if(sl==='Ebay') pc='plat-ebay';
+    else if(sl==='StockX') pc='plat-stockx';
+    else if(sl==='In Person') pc='plat-inperson';
+    else if(sl.indexOf('Tiktok')>=0||sl.indexOf('TikTok')>=0) pc='plat-tiktok';
+    else if(sl==='Cashout') pc='plat-cashout';
+    else if(sl==='Whatnot') pc='plat-whatnot';
+    else if(sl==='Locations Sold') pc='plat-locations';
+    else if(sl==='Return/Cancel') pc='plat-return';
+    else if(sl==='Kept') pc='plat-kept';
+    else if(sl!=='Unsold') pc='plat-inperson';
+    var profClass = r.profit>0.1?'profit-pos':r.profit<-0.1?'profit-neg':'profit-zero';
     var ps = r.profit>0?'+':'';
-    var noteVal = (notes[origIdx]||'').replace(/"/g,'&quot;');
+    var idx = r._idx;
+    var noteVal = (notes[idx]||'').replace(/"/g,'&quot;');
     return '<tr>'
       +'<td><span class="item-name" title="'+r.item+'">'+r.item+'</span></td>'
       +'<td>'+r.from+'</td>'
       +'<td>'+r.size+'</td>'
       +'<td class="profit-zero">$'+r.cost.toFixed(2)+'</td>'
       +'<td class="profit-zero">'+(r.soldAmt?'$'+r.soldAmt.toFixed(2):'--')+'</td>'
-      +'<td class="'+pc+'">'+ps+'$'+r.profit.toFixed(2)+'</td>'
-      +'<td><span class="pill-s '+pc2+'">'+sl+'</span></td>'
-      +'<td style="font-family:var(--mono);font-size:10px;color:var(--text3);">'+(r.dateSold||'--')+'</td>'
-      +'<td><span class="pill-s '+pc2+'">'+sl+'</span></td>'
-      +'<td>'+(r.warn?'<span class="warn-badge">! '+r.warn+'</span>':'')+'<input class="note-cell" placeholder="Note..." value="'+noteVal+'" oninput="notes['+origIdx+']=this.value"/></td>'
+      +'<td class="'+profClass+'">'+ps+'$'+r.profit.toFixed(2)+'</td>'
+      +'<td><span class="pill-s '+pc+'">'+sl+'</span></td>'
+      +'<td style="font-family:var(--mono);font-size:10px;color:var(--text3);">'+(r.dateSold?r.dateSold.split('T')[0]:'--')+'</td>'
+      +'<td><span class="pill-s '+pc+'">'+sl+'</span></td>'
+      +'<td>'+(r.warn?'<span class="warn-badge">! '+r.warn+'</span>':'')
+      +'<input class="note-cell" placeholder="Note..." value="'+noteVal+'" oninput="notes['+idx+']=this.value"/></td>'
       +'</tr>';
   }).join('');
 }
 
-
-function calcLiveFinance(data) {
-  var totals = {Mercari:0,Ebay:0,StockX:0};
-  totals['In Person']=0;totals['Cashout']=0;totals['FBT Tiktok']=0;
-  totals['Whatnot']=0;totals['Locations Sold']=0;
-  var today=new Date();today.setHours(0,0,0,0);
-  var tE=0,tM=0,tT=0,tP=0;
-  // Dynamically find column indices from header row
-  var header=data[0]||[];
-  var colP=8,colS=9,colD=12;
-  for(var h=0;h<header.length;h++){
-    var hn=String(header[h]||'').trim().toLowerCase();
-    if(hn==='profit')colP=h;
-    if(hn==='status'||hn==='status ')colS=h;
-    if(hn.indexOf('date')>=0&&hn.indexOf('sold')>=0&&hn.indexOf('purchas')<0)colD=h;
-  }
-  for(var i=1;i<data.length;i++){
-    var row=data[i];
-    var profit=parseMoney(row[colP]);
-    var status=String(row[colS]||'').trim();
-    var dateSold=String(row[colD]||'').trim();
-    if(!status||status==='Unsold'||status==='Return/Cancel'||status==='Kept')continue;
-    if(profit===0)continue;
-    if(totals.hasOwnProperty(status))totals[status]+=profit;
-    if(dateSold){
-      try{
-        var d=new Date(dateSold);d.setHours(0,0,0,0);
-        if(d.getTime()===today.getTime()){
-          if(status==='Ebay')tE+=profit;
-          else if(status==='Mercari')tM+=profit;
-          else if(status==='FBT Tiktok')tT+=profit;
-          else if(status==='In Person')tP+=profit;
-        }
-      }catch(err){}
-    }
-  }
-  var total=Object.keys(totals).reduce(function(s,k){return s+totals[k];},0);
-  function fmt(n){return '$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
-  var amts=document.querySelectorAll('.fp-cell .amt');
-  var order=['FBT Tiktok','Ebay','Mercari','In Person','Cashout','StockX'];
-  amts.forEach(function(el,i){var k=order[i];if(k&&totals[k]!==0&&totals[k]!==undefined)el.textContent=fmt(totals[k]);});
-  var badge=document.querySelector('.fp-badge');
-  if(badge&&total>0)badge.textContent='^ '+fmt(total)+' YTD';
-  if(tE){var e=document.getElementById('ds-ebay');if(e)e.value='$'+tE.toFixed(2);}
-  if(tM){var m=document.getElementById('ds-mercari');if(m)m.value='$'+tM.toFixed(2);}
-  if(tT){var t=document.getElementById('ds-tiktok');if(t)t.value='$'+tT.toFixed(2);}
-  if(tP){var p=document.getElementById('ds-inperson');if(p)p.value='$'+tP.toFixed(2);}
-
-  // Update finance tab if elements exist
-  function fmtFull(n){return '$'+Math.abs(n).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
-  var ftEl = document.getElementById('fin-tiktok'); if(ftEl&&totals.tiktok>0) ftEl.textContent=fmtFull(totals.tiktok);
-  var feEl = document.getElementById('fin-ebay'); if(feEl&&totals.ebay>0) feEl.textContent=fmtFull(totals.ebay);
-  var fmEl = document.getElementById('fin-mercari'); if(fmEl&&totals.mercari>0) fmEl.textContent=fmtFull(totals.mercari);
-  var fpEl = document.getElementById('fin-person'); if(fpEl&&totals.inperson>0) fpEl.textContent=fmtFull(totals.inperson);
-  var fcEl = document.getElementById('fin-cashout'); if(fcEl&&totals.cashout>0) fcEl.textContent=fmtFull(totals.cashout);
-  var fsEl = document.getElementById('fin-stockx'); if(fsEl&&totals.stockx>0) fsEl.textContent=fmtFull(totals.stockx);
-  var fgEl = document.getElementById('fin-total-gross'); if(fgEl&&total>0) fgEl.textContent='+$'+total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
-  calcDaily();
-}
-
-
-function parseDataObj(rows) {
-  if (!rows || !rows.length) return [];
-  var result = [];
-  for (var i = 0; i < rows.length; i++) {
-    var r = rows[i];
-    if (!r) continue;
-    // Normalize keys - trim all whitespace from key names
-    var norm = {};
-    Object.keys(r).forEach(function(k){ norm[k.trim()] = r[k]; });
-    var item = String(norm['Item'] || norm['Item Name'] || '').trim();
-    if (!item) continue;
-    var from = String(norm['Purchased From'] || norm['From'] || '').trim();
-    var size = String(norm['Size'] || '').trim();
-    var cost = parseMoney(norm['Total Cost'] || norm['Subtotal'] || norm['Cost'] || 0);
-    var soldAmt = parseMoney(norm['Sold Amount'] || norm['Sale Price'] || norm['SALES'] || 0);
-    var profit = parseMoney(norm['Profit'] || norm['PROFIT'] || 0);
-    var status = String(norm['Status'] || norm['Platform'] || '').trim();
-    var dateSold = String(norm['Date Sold'] || norm['Date'] || '').trim();
-    var orderNum = String(norm['Order #'] || norm['Order Number'] || norm['Notes'] || '').trim();
-    var warn = orderNum.toUpperCase().indexOf('CANT RETURN') >= 0 ? 'CANT RETURN' : '';
-    result.push({item:item, from:from, size:size, cost:cost, soldAmt:soldAmt, profit:profit, status:status, dateSold:dateSold, orderNum:orderNum, warn:warn});
-  }
-  return result;
-}
-
-function calcLiveFinanceObj(allData) {
-  var totals = {ebay:0, mercari:0, tiktok:0, stockx:0, cashout:0, inperson:0};
-  var today = new Date(); today.setHours(0,0,0,0);
-  var todayE=0, todayM=0, todayT=0, todayP=0;
-
-  // Sum from each sales sheet using Profit column
-  function sumSheet(rows, key) {
-    if (!rows || !Array.isArray(rows)) return 0;
-    return rows.reduce(function(s,r){ return s + parseMoney(r['Profit'] || r['PROFIT'] || r['profit'] || 0); }, 0);
-  }
-
-  totals.ebay = sumSheet(allData['eBay Sales'], 'Profit');
-  totals.mercari = sumSheet(allData['Mercari Sales'], 'Profit');
-  totals.stockx = sumSheet(allData['StockX'], 'Profit');
-
-  // TikTok Shop - check for PROFIT key
-  if (allData['TikTok Shop'] && allData['TikTok Shop'].length) {
-    var tt = allData['TikTok Shop'][0];
-    var profitKey = Object.keys(tt).find(function(k){ return k.toUpperCase()==='PROFIT'; });
-    if (profitKey) {
-      totals.tiktok = allData['TikTok Shop'].reduce(function(s,r){ return s+parseMoney(r[profitKey]||0); },0);
-    }
-  }
-
-  // Cashout - from Inventory rows where status is Cashout
-  if (allData['Inventory']) {
-    allData['Inventory'].forEach(function(r){
-      var norm2={};Object.keys(r).forEach(function(k){norm2[k.trim()]=r[k];});
-      var st = String(norm2['Status']||'').trim();
-      var p = parseMoney(norm2['Profit']||0);
-      if (st==='Cashout') totals.cashout+=p;
-      if (st==='In Person') totals.inperson+=p;
-      // Today's sales
-      var ds = String(norm2['Date Sold']||'');
-      if (ds) {
-        try {
-          var d=new Date(ds); d.setHours(0,0,0,0);
-          if(d.getTime()===today.getTime()){
-            if(st==='Ebay') todayE+=p;
-            else if(st==='Mercari') todayM+=p;
-            else if(st.indexOf('Tiktok')>=0||st.indexOf('TikTok')>=0) todayT+=p;
-            else if(st==='In Person') todayP+=p;
-          }
-        } catch(err){}
-      }
-    });
-  }
-
-  var total = totals.ebay+totals.mercari+totals.tiktok+totals.stockx+totals.cashout+totals.inperson;
-  function fmt(n){return '$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
-
-  var amts = document.querySelectorAll('.fp-cell .amt');
-  var order = [totals.tiktok, totals.ebay, totals.mercari, totals.inperson, totals.cashout, totals.stockx];
-  amts.forEach(function(el,i){ if(order[i]>0) el.textContent=fmt(order[i]); });
-
-  var badge = document.querySelector('.fp-badge');
-  if(badge && total>0) badge.textContent='^ '+fmt(total)+' YTD';
-
-  if(todayE){var e=document.getElementById('ds-ebay');if(e)e.value='$'+todayE.toFixed(2);}
-  if(todayM){var m=document.getElementById('ds-mercari');if(m)m.value='$'+todayM.toFixed(2);}
-  if(todayT){var t=document.getElementById('ds-tiktok');if(t)t.value='$'+todayT.toFixed(2);}
-  if(todayP){var p=document.getElementById('ds-inperson');if(p)p.value='$'+todayP.toFixed(2);}
-
-  // Update finance tab if elements exist
-  function fmtFull(n){return '$'+Math.abs(n).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
-  var ftEl = document.getElementById('fin-tiktok'); if(ftEl&&totals.tiktok>0) ftEl.textContent=fmtFull(totals.tiktok);
-  var feEl = document.getElementById('fin-ebay'); if(feEl&&totals.ebay>0) feEl.textContent=fmtFull(totals.ebay);
-  var fmEl = document.getElementById('fin-mercari'); if(fmEl&&totals.mercari>0) fmEl.textContent=fmtFull(totals.mercari);
-  var fpEl = document.getElementById('fin-person'); if(fpEl&&totals.inperson>0) fpEl.textContent=fmtFull(totals.inperson);
-  var fcEl = document.getElementById('fin-cashout'); if(fcEl&&totals.cashout>0) fcEl.textContent=fmtFull(totals.cashout);
-  var fsEl = document.getElementById('fin-stockx'); if(fsEl&&totals.stockx>0) fsEl.textContent=fmtFull(totals.stockx);
-  var fgEl = document.getElementById('fin-total-gross'); if(fgEl&&total>0) fgEl.textContent='+$'+total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
-  calcDaily();
-}
 function setFilter(f) {
   invFilter = f;
   ['all','unsold','sold','return','warn'].forEach(function(x) {
@@ -894,124 +736,97 @@ function switchTab(tab) {
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
   document.getElementById('page-'+tab).classList.add('active');
-  var order = ['home','resale','content','finance'];
+  var order=['home','resale','content','finance'];
   document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
   if (tab==='resale' && rawRows.length===0) loadSheet();
-  if (tab==='content') initContent();
+  if (tab==='content') { renderCtPosts(); renderCtIdeas(); renderDoneTopics(); }
 }
 
-var HABITS = [
-  {name:'Post content',tag:'BRAND',goal:1},
-  {name:'List inventory',tag:'RESALE',goal:3},
-  {name:'Film a reel',tag:'CONTENT',goal:1},
-  {name:'Check metrics',tag:'OPS',goal:1},
-  {name:'Morning routine',tag:'HEALTH',goal:1},
-  {name:'Read 10 mins',tag:'GROWTH',goal:1},
-];
-var habitDone = [false,false,false,false,false,false];
-
-function buildHabits() {
-  var grid = document.getElementById('habits-grid');
-  grid.innerHTML = '';
-  HABITS.forEach(function(h,i) {
-    var c = document.createElement('div');
-    c.className = 'hcard'+(habitDone[i]?' done':'');
-    c.innerHTML = '<div class="hcheck'+(habitDone[i]?' on':'')+'">'+(habitDone[i]?'v':'')+'</div><div class="hname">'+h.name+'</div><div class="htag">'+h.tag+'</div><div class="hcount">'+(habitDone[i]?'1':'0')+'/'+h.goal+'</div>';
-    c.onclick = function(){habitDone[i]=!habitDone[i];buildHabits();updateHabitScore();};
+// HABITS
+var HABITS=[{name:'Post content',tag:'BRAND',goal:1},{name:'List inventory',tag:'RESALE',goal:3},{name:'Film a reel',tag:'CONTENT',goal:1},{name:'Check metrics',tag:'OPS',goal:1},{name:'Morning routine',tag:'HEALTH',goal:1},{name:'Read 10 mins',tag:'GROWTH',goal:1}];
+var habitDone=[false,false,false,false,false,false];
+function buildHabits(){
+  var grid=document.getElementById('habits-grid'); grid.innerHTML='';
+  HABITS.forEach(function(h,i){
+    var c=document.createElement('div');
+    c.className='hcard'+(habitDone[i]?' done':'');
+    c.innerHTML='<div class="hcheck'+(habitDone[i]?' on':'')+'">'+(habitDone[i]?'v':'')+'</div><div class="hname">'+h.name+'</div><div class="htag">'+h.tag+'</div><div class="hcount">'+(habitDone[i]?'1':'0')+'/'+h.goal+'</div>';
+    c.onclick=function(){habitDone[i]=!habitDone[i];buildHabits();updateHabitScore();};
     grid.appendChild(c);
   });
 }
-
-function updateHabitScore() {
-  var done = habitDone.filter(Boolean).length;
-  var pct = Math.round(done/HABITS.length*100);
-  var circ = document.getElementById('h-score-circle');
-  circ.textContent = done;
-  circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = done+'/'+HABITS.length+' - '+pct+'%';
-  var msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
-  document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
-  for (var j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
+function updateHabitScore(){
+  var done=habitDone.filter(Boolean).length, pct=Math.round(done/HABITS.length*100);
+  var circ=document.getElementById('h-score-circle'); circ.textContent=done; circ.className='h-score'+(done>0?' on':'');
+  document.getElementById('h-score-lbl').textContent=done+'/'+HABITS.length+' - '+pct+'%';
+  var msgs=['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
+  document.getElementById('h-encourage').textContent=msgs[Math.min(done,5)];
+  for(var j=0;j<6;j++) document.getElementById('hb'+j).className='hbar'+(j<done?' on':'');
 }
 
-var TASKS = [
-  {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
-  {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
-  {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
-  {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs - 5 unsold',tag:'RESALE',priority:true,done:false},
-];
-
-function buildTasks() {
-  var list = document.getElementById('tasks-list');
-  list.innerHTML = '';
-  var remaining = 0;
-  TASKS.forEach(function(t,i) {
-    if (!t.done) remaining++;
-    var el = document.createElement('div');
-    el.className = 'titem';
-    el.innerHTML = '<div class="tcheck'+(t.done?' on':'')+'">'+(t.done?'v':'')+'</div><div style="flex:1"><div class="tname'+(t.done?' done':'')+'">'+t.name+'</div><div class="ttag">'+t.tag+'</div></div><div class="tstar'+(t.priority?' hi':'')+'">*</div>';
-    el.onclick = function(){TASKS[i].done=!TASKS[i].done;buildTasks();};
+// TASKS
+var TASKS=[{name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},{name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},{name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},{name:'Take inventory photos',tag:'RESALE',priority:true,done:false},{name:'Price drop Samba OGs - 5 unsold',tag:'RESALE',priority:true,done:false}];
+function buildTasks(){
+  var list=document.getElementById('tasks-list'); list.innerHTML='';
+  var remaining=0;
+  TASKS.forEach(function(t,i){
+    if(!t.done)remaining++;
+    var el=document.createElement('div'); el.className='titem';
+    el.innerHTML='<div class="tcheck'+(t.done?' on':'')+'">'+(t.done?'v':'')+'</div><div style="flex:1"><div class="tname'+(t.done?' done':'')+'">'+t.name+'</div><div class="ttag">'+t.tag+'</div></div><div class="tstar'+(t.priority?' hi':'')+'">*</div>';
+    el.onclick=function(){TASKS[i].done=!TASKS[i].done;buildTasks();};
     list.appendChild(el);
   });
-  document.getElementById('task-count').textContent = remaining;
+  document.getElementById('task-count').textContent=remaining;
 }
-
-function addTask() {
-  var inp = document.getElementById('task-in');
-  var v = inp.value.trim();
-  if (!v) return;
+function addTask(){
+  var inp=document.getElementById('task-in'), v=inp.value.trim();
+  if(!v)return;
   TASKS.push({name:v,tag:'PERSONAL',priority:false,done:false});
-  inp.value='';
-  buildTasks();
+  inp.value=''; buildTasks();
 }
 
-var goals = {w:'',m:'',y:''};
-function saveGoal(t) {
-  var val = document.getElementById(t+'g').value.trim();
-  if (!val) return;
+// GOALS
+var goals={w:'',m:'',y:''};
+function saveGoal(t){
+  var val=document.getElementById(t+'g').value.trim(); if(!val)return;
   goals[t]=val;
   document.getElementById(t+'g-wrap').innerHTML='<div class="gsaved">'+val+'</div><div class="gedit" onclick="editGoal(\''+t+'\')">edit</div>';
 }
-function editGoal(t) {
+function editGoal(t){
   document.getElementById(t+'g-wrap').innerHTML='<input class="ginput" id="'+t+'g" value="'+goals[t]+'" onkeydown="if(event.key===\'Enter\')saveGoal(\''+t+'\')" autofocus/>';
   document.getElementById(t+'g').focus();
 }
 
-var capturedNotes = [];
-function captureNote() {
-  var inp = document.getElementById('cap-in');
-  var v = inp.value.trim();
-  if (!v) return;
-  capturedNotes.unshift(v);
-  inp.value='';
+// CAPTURE
+var capturedNotes=[];
+function captureNote(){
+  var inp=document.getElementById('cap-in'), v=inp.value.trim(); if(!v)return;
+  capturedNotes.unshift(v); inp.value='';
   document.getElementById('captured').innerHTML=capturedNotes.slice(0,3).map(function(n){return '<div class="note-chip">'+n+'</div>';}).join('');
 }
 document.getElementById('cap-in').addEventListener('keydown',function(e){if(e.key==='Enter')captureNote();});
 
-function calcDaily() {
-  var ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
-  var total = ids.reduce(function(s,id){return s+(parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0);},0);
+// DAILY SALES
+function calcDaily(){
+  var ids=['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
+  var total=ids.reduce(function(s,id){return s+(parseFloat((document.getElementById(id).value||'').replace(/[$,]/g,''))||0);},0);
   document.getElementById('ds-total').textContent='$'+total.toFixed(2);
 }
 
-var meals = [];
-function logMeal() {
-  var inp = document.getElementById('meal-in');
-  var v = inp.value.trim();
-  if (!v) return;
+// NUTRITION
+var meals=[];
+function logMeal(){
+  var inp=document.getElementById('meal-in'), v=inp.value.trim(); if(!v)return;
   meals.push({name:v,kcal:Math.floor(Math.random()*300)+200,protein:Math.floor(Math.random()*30)+10,carbs:Math.floor(Math.random()*40)+20,fat:Math.floor(Math.random()*15)+5});
-  inp.value='';
-  renderMeals();
+  inp.value=''; renderMeals();
 }
 document.getElementById('meal-in').addEventListener('keydown',function(e){if(e.key==='Enter')logMeal();});
-function renderMeals() {
+function renderMeals(){
   var tk=meals.reduce(function(s,m){return s+m.kcal;},0);
   var tp=meals.reduce(function(s,m){return s+m.protein;},0);
   var tc=meals.reduce(function(s,m){return s+m.carbs;},0);
   var tf=meals.reduce(function(s,m){return s+m.fat;},0);
-  var big=document.getElementById('kcal-big');
-  big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
+  var big=document.getElementById('kcal-big'); big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
   document.getElementById('prot-d').textContent=tp+'g protein';
   document.getElementById('carb-d').textContent=tc+'g carbs';
   document.getElementById('fat-d').textContent=tf+'g fat';
@@ -1021,7 +836,8 @@ function renderMeals() {
   list.innerHTML=meals.map(function(m){return '<div class="meal-row"><span class="meal-n">'+m.name+'</span><span class="meal-k">'+m.kcal+' kcal</span></div>';}).join('');
 }
 
-function buildCalendar() {
+// CALENDAR
+function buildCalendar(){
   var now=new Date(), today=now.getDate();
   var dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
   var mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
@@ -1034,20 +850,18 @@ function buildCalendar() {
     div.innerHTML='<div class="dn">'+dn[d.getDay()]+'</div><div class="dd">'+d.getDate()+'</div>';
     week.appendChild(div);
   }
-  var events=[
-    {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
-    {time:'11:00',title:'Film reel content',color:'var(--green)'},
-    {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items - eBay/Mercari',color:'var(--blue)'},
-  ];
+  var events=[{time:'09:00',title:'Inventory photo session',color:'var(--gold)'},{time:'11:00',title:'Film reel content',color:'var(--green)'},{time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},{time:'15:00',title:'List items - eBay/Mercari',color:'var(--blue)'}];
   var ev=document.getElementById('cal-events'); ev.innerHTML='';
   events.forEach(function(e){
     if(e.isNow){var nl=document.createElement('div');nl.className='now-line';var h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML='<div class="now-dot"></div><span class="now-lbl">NOW - '+String(h).padStart(2,'0')+':'+mi+'</span>';ev.appendChild(nl);}
-    var el=document.createElement('div');el.className='cal-event';el.innerHTML='<div class="cal-dot" style="background:'+e.color+'"></div><div class="cal-time">'+e.time+'</div><div class="cal-title">'+e.title+'</div>';ev.appendChild(el);
+    var el=document.createElement('div'); el.className='cal-event';
+    el.innerHTML='<div class="cal-dot" style="background:'+e.color+'"></div><div class="cal-time">'+e.time+'</div><div class="cal-title">'+e.title+'</div>';
+    ev.appendChild(el);
   });
 }
 
-function updateClock() {
+// CLOCK
+function updateClock(){
   var now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
   var ampm=h>=12?'PM':'AM', h12=h%12||12;
   document.getElementById('clock-disp').innerHTML=h12+':'+m+'<sup>'+ampm+'</sup>';
@@ -1059,98 +873,52 @@ function updateClock() {
   document.getElementById('tr-time').innerHTML=days[now.getDay()].slice(0,3).toUpperCase()+' '+now.getDate()+' - <span>'+h12+':'+m+' '+ampm+'</span>';
 }
 
-var expensesList = [];
-function addExpense() {
-  var name=document.getElementById('exp-name').value.trim();
-  var type=document.getElementById('exp-type').value;
-  var amt=parseFloat(document.getElementById('exp-amt').value)||0;
-  if(!name||!amt)return;
-  expensesList.push({name:name,type:type,amt:amt});
-  document.getElementById('exp-name').value='';
-  document.getElementById('exp-amt').value='';
-  renderExpenses();
-}
-function removeExpense(i){expensesList.splice(i,1);renderExpenses();}
-function renderExpenses() {
-  var list=document.getElementById('exp-list');
-  list.innerHTML=expensesList.map(function(e,i){return '<div class="exp-item"><span class="ei-name">'+e.name+'</span><span class="ei-type">'+e.type+'</span><span class="ei-amt">-$'+e.amt.toFixed(2)+'</span><button class="ei-del" onclick="removeExpense('+i+')">x</button></div>';}).join('');
-  var total=expensesList.reduce(function(s,e){return s+e.amt;},0);
-  var tot=document.getElementById('exp-total');
-  tot.style.display=expensesList.length?'flex':'none';
-  document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
-}
+// CONTENT
+var ctPosts=[];
+var ctIdeas=['Investment accounts for beginners','How to build credit from 0','Emergency fund calculator','What a Roth IRA actually does','Why your credit score dropped'];
+var DONE_TOPICS=['9 money terms','high-5 banking','50/30/20','credit score myths','compound interest','emergency fund','Roth vs Traditional IRA','debt payoff snowball avalanche','credit score quick wins','side hustle math','America money stats','net worth by age','things to stop buying','3 money rules','passive income ideas','money rules in 20s','good vs bad debt','$100/month growth','payday formula','money mindset shifts'];
 
-function addPost() {
-  var platform=prompt('Platform (Instagram / TikTok / Both):');
-  var topic=prompt('Post topic or title:');
-  if(!platform||!topic)return;
+function logPost(){
+  var topic=document.getElementById('ct-topic').value.trim();
+  var platform=document.getElementById('ct-platform').value;
+  var type=document.getElementById('ct-type').value;
+  if(!topic)return;
   var now=new Date();
-  var el=document.createElement('div');
-  el.className='post-item';
-  el.innerHTML='<div class="post-platform">'+platform+'</div><div class="post-topic">'+topic+'</div><div class="post-date">'+(now.getMonth()+1)+'/'+now.getDate()+'/'+now.getFullYear()+'</div><div class="post-status ps-live">Live</div>';
-  document.getElementById('post-tracker').appendChild(el);
-}
-
-
-var ctPosts = [];
-var ctIdeas = ['Investment accounts for beginners', 'How to build credit from 0', 'Emergency fund calculator'];
-var DONE_TOPICS = ['9 money terms','high-5 banking','50/30/20','credit score myths','compound interest','emergency fund','Roth vs Traditional IRA','debt payoff snowball avalanche','credit score quick wins','side hustle math','America money stats','net worth by age','things to stop buying','3 money rules','passive income ideas','money rules in 20s','good vs bad debt','$100/month growth','payday formula','money mindset shifts'];
-
-function logPost() {
-  var topic = document.getElementById('ct-topic').value.trim();
-  var platform = document.getElementById('ct-platform').value;
-  var type = document.getElementById('ct-type').value;
-  if (!topic) return;
-  var now = new Date();
-  ctPosts.unshift({topic:topic, platform:platform, type:type, date:(now.getMonth()+1)+'/'+now.getDate()});
-  document.getElementById('ct-topic').value = '';
+  ctPosts.unshift({topic:topic,platform:platform,type:type,date:(now.getMonth()+1)+'/'+now.getDate()});
+  document.getElementById('ct-topic').value='';
   renderCtPosts();
 }
-function renderCtPosts() {
-  var el = document.getElementById('ct-posts-list');
-  if (!el) return;
-  if (!ctPosts.length) { el.innerHTML='<div style="font-size:11px;color:var(--text3);padding:8px 0;">No posts logged yet today.</div>'; return; }
-  el.innerHTML = ctPosts.map(function(p,i) {
-    return '<div class="post-item"><div class="post-platform">'+p.platform+'</div><div style="flex:1;font-size:12px;color:var(--text2);">'+p.topic+'</div><div style="font-size:9px;color:var(--text3);font-family:var(--mono);">'+p.type+' - '+p.date+'</div><div class="post-status ps-live">Live</div></div>';
+function renderCtPosts(){
+  var el=document.getElementById('ct-posts-list'); if(!el)return;
+  if(!ctPosts.length){el.innerHTML='<div class="no-meals">No posts logged yet.</div>';return;}
+  el.innerHTML=ctPosts.map(function(p){
+    return '<div class="post-item"><div class="post-platform">'+p.platform+'</div><div class="post-topic">'+p.topic+'</div><div class="post-date">'+p.type+' - '+p.date+'</div><div class="post-status ps-live">Live</div></div>';
   }).join('');
 }
-function addIdea() {
-  var v = document.getElementById('ct-idea-in').value.trim();
-  if (!v) return;
-  ctIdeas.unshift(v);
-  document.getElementById('ct-idea-in').value = '';
-  renderCtIdeas();
+function addIdea(){
+  var v=document.getElementById('ct-idea-in').value.trim(); if(!v)return;
+  ctIdeas.unshift(v); document.getElementById('ct-idea-in').value=''; renderCtIdeas();
 }
-function renderCtIdeas() {
-  var el = document.getElementById('ct-ideas-list');
-  if (!el) return;
-  el.innerHTML = ctIdeas.map(function(idea, i) {
-    return '<div class="fin-row"><span class="fin-row-label">'+idea+'</span><button onclick="ctIdeas.splice('+i+',1);renderCtIdeas();" style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;">x</button></div>';
+function renderCtIdeas(){
+  var el=document.getElementById('ct-ideas-list'); if(!el)return;
+  el.innerHTML=ctIdeas.map(function(idea,i){
+    return '<div class="fin-row"><span class="fin-row-label">'+idea+'</span><button onclick="ctIdeas.splice('+i+',1);renderCtIdeas();" style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 4px;">x</button></div>';
   }).join('');
 }
-function renderDoneTopics() {
-  var el = document.getElementById('ct-done-tags');
-  if (!el) return;
-  el.innerHTML = DONE_TOPICS.map(function(t) {
-    return '<span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:3px 9px;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;">'+t+'</span>';
-  }).join('');
+function renderDoneTopics(){
+  var el=document.getElementById('ct-done-tags'); if(!el)return;
+  el.innerHTML=DONE_TOPICS.map(function(t){return '<span class="done-tag">'+t+'</span>';}).join('');
 }
 
-function initContent() {
-  renderCtPosts();
-  renderCtIdeas();
-  renderDoneTopics();
-}
-
+// INIT
 setInterval(updateClock,1000);
 updateClock();
-// Auto-load sheet for Finance Pulse on home
-loadSheet().catch(function(){});
 buildCalendar();
 buildHabits();
 updateHabitScore();
 buildTasks();
-renderExpenses();
+// Auto-load sheet on startup for Finance Pulse
+loadSheet().catch(function(){});
 </script>
 </body>
 </html>
