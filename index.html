@@ -484,28 +484,62 @@ html,body{height:100%;background:#060606;}
 
 <!-- CONTENT -->
 <div id="page-content" class="page content-page">
-  <div class="fin-header">@thernmedia - Content Tracker</div>
-  <div class="content-tips">
-    <div class="tip-card"><div class="tip-title">Reels Reach</div><div class="tip-val">~300</div><div class="tip-sub">Average views. Post every day to unlock the algorithm.</div></div>
-    <div class="tip-card"><div class="tip-title">Best Format</div><div class="tip-val">Reels</div><div class="tip-sub">Text overlay + punchy hook beats carousels for discovery on IG.</div></div>
-    <div class="tip-card"><div class="tip-title">Topics Done</div><div class="tip-val">20+</div><div class="tip-sub">Compound interest, credit score, Roth IRA, net worth, debt payoff and more.</div></div>
-    <div class="tip-card"><div class="tip-title">Next Milestone</div><div class="tip-val">200 followers</div><div class="tip-sub">Trial Reels unlock at 200 on Instagram. Daily posts get you there fastest.</div></div>
-  </div>
-  <div class="insight-block">
-    <div class="insight-title">Strategy Insight</div>
-    <div class="insight-body">Your reels hit <strong>~300 views</strong> which means the hook is working but your profile is not converting. <strong>Fix: end every reel with a direct follow CTA</strong> tied to exactly what they just learned. Your advantage is relatability -- you are building from scratch, doing retail arb, juggling school. <strong>Show the process, not just the results.</strong></div>
-  </div>
-  <div class="insight-block">
-    <div class="insight-title">Post Tracker</div>
-    <div id="post-tracker">
-      <div class="post-item"><div class="post-platform">Instagram</div><div class="post-topic">$100/month compound growth overlay reel</div><div class="post-date">Recent</div><div class="post-status ps-live">Live</div></div>
-      <div class="post-item"><div class="post-platform">TikTok</div><div class="post-topic">Small daily amounts - big yearly results</div><div class="post-date">Recent</div><div class="post-status ps-live">Live</div></div>
-      <div class="post-item"><div class="post-platform">Instagram</div><div class="post-topic">Credit score quick wins carousel</div><div class="post-date">Past</div><div class="post-status ps-live">Live</div></div>
+  <div class="fin-header">@thernmedia - Content Schedule</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+    <div class="fin-card">
+      <div class="fin-card-label">Avg Reach</div>
+      <div class="fin-card-amount">~300</div>
+      <div class="fin-card-sub">views per reel</div>
     </div>
-    <button class="add-post-btn" style="margin-top:8px;" onclick="addPost()">+ Log a new post</button>
+    <div class="fin-card">
+      <div class="fin-card-label">Next Goal</div>
+      <div class="fin-card-amount">200</div>
+      <div class="fin-card-sub">followers for Trial Reels</div>
+    </div>
+    <div class="fin-card">
+      <div class="fin-card-label">Best Format</div>
+      <div class="fin-card-amount">Reels</div>
+      <div class="fin-card-sub">beats carousels for discovery</div>
+    </div>
+    <div class="fin-card">
+      <div class="fin-card-label">Posting Streak</div>
+      <div class="fin-card-amount" id="ct-streak">0</div>
+      <div class="fin-card-sub">days in a row</div>
+    </div>
+  </div>
+
+  <div class="fin-section">
+    <div class="fin-section-title">Carousel Upload Log - Did you post today?</div>
+    <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+      <input type="text" id="ct-topic" placeholder="Topic (e.g. Roth IRA vs 401k)..." style="flex:2;min-width:160px;background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:7px 11px;font-family:var(--sans);font-size:12px;color:var(--text);outline:none;"/>
+      <select id="ct-platform" style="background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:7px 10px;font-family:var(--sans);font-size:11px;color:var(--text2);outline:none;">
+        <option>Instagram</option><option>TikTok</option><option>Both</option>
+      </select>
+      <select id="ct-type" style="background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:7px 10px;font-family:var(--sans);font-size:11px;color:var(--text2);outline:none;">
+        <option>Carousel</option><option>Reel</option><option>Story</option>
+      </select>
+      <button onclick="logPost()" style="background:var(--gold);border:none;color:#000;font-family:var(--sans);font-size:11px;font-weight:700;padding:7px 16px;border-radius:5px;cursor:pointer;">+ Log Post</button>
+    </div>
+    <div id="ct-posts-list"></div>
+  </div>
+
+  <div class="fin-section">
+    <div class="fin-section-title">Topics Already Done - Never Repeat</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;" id="ct-done-tags"></div>
+  </div>
+
+  <div class="fin-section">
+    <div class="fin-section-title">Upcoming Ideas</div>
+    <div style="display:flex;gap:8px;margin-bottom:8px;">
+      <input type="text" id="ct-idea-in" placeholder="New content idea..." style="flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:7px 11px;font-family:var(--sans);font-size:12px;color:var(--text);outline:none;" onkeydown="if(event.key==='Enter')addIdea()"/>
+      <button onclick="addIdea()" style="background:var(--bg3);border:1px solid var(--border2);color:var(--gold);font-family:var(--mono);font-size:11px;padding:7px 14px;border-radius:5px;cursor:pointer;font-weight:700;">+</button>
+    </div>
+    <div id="ct-ideas-list"></div>
   </div>
 </div>
 
+<!-- FINANCE
 <!-- FINANCE -->
 <div id="page-finance" class="page finance-page">
   <div class="fin-header">TH Sales -- Financial Overview 2026</div>
@@ -735,6 +769,16 @@ function calcLiveFinance(data) {
   if(tM){var m=document.getElementById('ds-mercari');if(m)m.value='$'+tM.toFixed(2);}
   if(tT){var t=document.getElementById('ds-tiktok');if(t)t.value='$'+tT.toFixed(2);}
   if(tP){var p=document.getElementById('ds-inperson');if(p)p.value='$'+tP.toFixed(2);}
+
+  // Update finance tab if elements exist
+  function fmtFull(n){return '$'+Math.abs(n).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+  var ftEl = document.getElementById('fin-tiktok'); if(ftEl&&totals.tiktok>0) ftEl.textContent=fmtFull(totals.tiktok);
+  var feEl = document.getElementById('fin-ebay'); if(feEl&&totals.ebay>0) feEl.textContent=fmtFull(totals.ebay);
+  var fmEl = document.getElementById('fin-mercari'); if(fmEl&&totals.mercari>0) fmEl.textContent=fmtFull(totals.mercari);
+  var fpEl = document.getElementById('fin-person'); if(fpEl&&totals.inperson>0) fpEl.textContent=fmtFull(totals.inperson);
+  var fcEl = document.getElementById('fin-cashout'); if(fcEl&&totals.cashout>0) fcEl.textContent=fmtFull(totals.cashout);
+  var fsEl = document.getElementById('fin-stockx'); if(fsEl&&totals.stockx>0) fsEl.textContent=fmtFull(totals.stockx);
+  var fgEl = document.getElementById('fin-total-gross'); if(fgEl&&total>0) fgEl.textContent='+$'+total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
   calcDaily();
 }
 
@@ -826,6 +870,16 @@ function calcLiveFinanceObj(allData) {
   if(todayM){var m=document.getElementById('ds-mercari');if(m)m.value='$'+todayM.toFixed(2);}
   if(todayT){var t=document.getElementById('ds-tiktok');if(t)t.value='$'+todayT.toFixed(2);}
   if(todayP){var p=document.getElementById('ds-inperson');if(p)p.value='$'+todayP.toFixed(2);}
+
+  // Update finance tab if elements exist
+  function fmtFull(n){return '$'+Math.abs(n).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+  var ftEl = document.getElementById('fin-tiktok'); if(ftEl&&totals.tiktok>0) ftEl.textContent=fmtFull(totals.tiktok);
+  var feEl = document.getElementById('fin-ebay'); if(feEl&&totals.ebay>0) feEl.textContent=fmtFull(totals.ebay);
+  var fmEl = document.getElementById('fin-mercari'); if(fmEl&&totals.mercari>0) fmEl.textContent=fmtFull(totals.mercari);
+  var fpEl = document.getElementById('fin-person'); if(fpEl&&totals.inperson>0) fpEl.textContent=fmtFull(totals.inperson);
+  var fcEl = document.getElementById('fin-cashout'); if(fcEl&&totals.cashout>0) fcEl.textContent=fmtFull(totals.cashout);
+  var fsEl = document.getElementById('fin-stockx'); if(fsEl&&totals.stockx>0) fsEl.textContent=fmtFull(totals.stockx);
+  var fgEl = document.getElementById('fin-total-gross'); if(fgEl&&total>0) fgEl.textContent='+$'+total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
   calcDaily();
 }
 function setFilter(f) {
@@ -843,6 +897,7 @@ function switchTab(tab) {
   var order = ['home','resale','content','finance'];
   document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
   if (tab==='resale' && rawRows.length===0) loadSheet();
+  if (tab==='content') initContent();
 }
 
 var HABITS = [
@@ -1036,8 +1091,61 @@ function addPost() {
   document.getElementById('post-tracker').appendChild(el);
 }
 
+
+var ctPosts = [];
+var ctIdeas = ['Investment accounts for beginners', 'How to build credit from 0', 'Emergency fund calculator'];
+var DONE_TOPICS = ['9 money terms','high-5 banking','50/30/20','credit score myths','compound interest','emergency fund','Roth vs Traditional IRA','debt payoff snowball avalanche','credit score quick wins','side hustle math','America money stats','net worth by age','things to stop buying','3 money rules','passive income ideas','money rules in 20s','good vs bad debt','$100/month growth','payday formula','money mindset shifts'];
+
+function logPost() {
+  var topic = document.getElementById('ct-topic').value.trim();
+  var platform = document.getElementById('ct-platform').value;
+  var type = document.getElementById('ct-type').value;
+  if (!topic) return;
+  var now = new Date();
+  ctPosts.unshift({topic:topic, platform:platform, type:type, date:(now.getMonth()+1)+'/'+now.getDate()});
+  document.getElementById('ct-topic').value = '';
+  renderCtPosts();
+}
+function renderCtPosts() {
+  var el = document.getElementById('ct-posts-list');
+  if (!el) return;
+  if (!ctPosts.length) { el.innerHTML='<div style="font-size:11px;color:var(--text3);padding:8px 0;">No posts logged yet today.</div>'; return; }
+  el.innerHTML = ctPosts.map(function(p,i) {
+    return '<div class="post-item"><div class="post-platform">'+p.platform+'</div><div style="flex:1;font-size:12px;color:var(--text2);">'+p.topic+'</div><div style="font-size:9px;color:var(--text3);font-family:var(--mono);">'+p.type+' - '+p.date+'</div><div class="post-status ps-live">Live</div></div>';
+  }).join('');
+}
+function addIdea() {
+  var v = document.getElementById('ct-idea-in').value.trim();
+  if (!v) return;
+  ctIdeas.unshift(v);
+  document.getElementById('ct-idea-in').value = '';
+  renderCtIdeas();
+}
+function renderCtIdeas() {
+  var el = document.getElementById('ct-ideas-list');
+  if (!el) return;
+  el.innerHTML = ctIdeas.map(function(idea, i) {
+    return '<div class="fin-row"><span class="fin-row-label">'+idea+'</span><button onclick="ctIdeas.splice('+i+',1);renderCtIdeas();" style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;">x</button></div>';
+  }).join('');
+}
+function renderDoneTopics() {
+  var el = document.getElementById('ct-done-tags');
+  if (!el) return;
+  el.innerHTML = DONE_TOPICS.map(function(t) {
+    return '<span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:3px 9px;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;">'+t+'</span>';
+  }).join('');
+}
+
+function initContent() {
+  renderCtPosts();
+  renderCtIdeas();
+  renderDoneTopics();
+}
+
 setInterval(updateClock,1000);
 updateClock();
+// Auto-load sheet for Finance Pulse on home
+loadSheet().catch(function(){});
 buildCalendar();
 buildHabits();
 updateHabitScore();
