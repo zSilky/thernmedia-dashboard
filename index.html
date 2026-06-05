@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>TH Sales OS // V3</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;background:#060606;}
@@ -17,33 +17,33 @@ html,body{height:100%;background:#060606;}
   --border:#1e1e1e;--border2:#2a2a2a;
   --text:#e8e4dc;--text2:#b8b4ac;--text3:#6a6a6a;
   --tab-h:42px;
-  --font-mono:'Space Mono',monospace;
-  --font-sans:'Syne',sans-serif;
+  --mono:'Space Mono',monospace;
+  --sans:'Syne',sans-serif;
 }
-.os{background:var(--bg);color:var(--text);font-family:var(--font-sans);min-height:100vh;font-size:13px;}
+.os{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;font-size:13px;}
 
 /* TOPBAR */
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:var(--tab-h);border-bottom:1px solid var(--border);background:var(--bg2);position:sticky;top:0;z-index:200;}
-.brand{font-family:var(--font-mono);font-size:11px;color:var(--text3);letter-spacing:.12em;}
+.brand{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:.12em;}
 .brand span{color:var(--gold);}
 .tabs{display:flex;gap:2px;}
-.tab{background:none;border:none;color:var(--text3);font-family:var(--font-sans);font-size:11px;padding:0 14px;height:var(--tab-h);cursor:pointer;letter-spacing:.06em;text-transform:uppercase;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;}
+.tab{background:none;border:none;color:var(--text3);font-family:var(--sans);font-size:11px;padding:0 14px;height:var(--tab-h);cursor:pointer;letter-spacing:.06em;text-transform:uppercase;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;}
 .tab:hover{color:var(--text2);}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-.topbar-right{font-family:var(--font-mono);font-size:10px;color:var(--text3);}
+.topbar-right{font-family:var(--mono);font-size:10px;color:var(--text3);}
 .topbar-right span{color:var(--gold);}
 
 /* PAGES */
 .page{display:none;}
 .page.active{display:block;}
 
-/*  HOME  */
+/* HOME GRID */
 .home-grid{display:grid;grid-template-columns:265px 1fr 235px;grid-template-rows:auto auto auto;gap:1px;background:var(--border);min-height:calc(100vh - var(--tab-h));}
 .panel{background:var(--bg);padding:15px 17px;}
-.plabel{font-family:var(--font-mono);font-size:9px;color:var(--text3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:6px;}
+.plabel{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:6px;}
 .plabel .n{color:var(--gold);}
 
-/* operator */
+/* OPERATOR */
 .avatar{width:42px;height:42px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#000;margin-bottom:9px;}
 .op-name{font-size:17px;font-weight:800;font-style:italic;}
 .op-sub{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:11px;}
@@ -55,42 +55,41 @@ html,body{height:100%;background:#060606;}
 .stat .v{font-size:13px;font-weight:700;color:var(--gold);}
 .pills{display:flex;gap:4px;flex-wrap:wrap;}
 .pill{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;}
-.pill span{font-family:var(--font-mono);color:var(--gold);font-weight:700;}
+.pill span{font-family:var(--mono);color:var(--gold);font-weight:700;}
 
-/* session */
+/* SESSION */
 .greeting{font-size:26px;font-weight:800;line-height:1.1;margin-bottom:4px;}
 .greeting em{font-style:italic;color:var(--gold);}
-.session-meta{font-family:var(--font-mono);font-size:10px;color:var(--text3);margin-bottom:13px;}
-.clock{font-family:var(--font-mono);font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1;}
+.session-meta{font-family:var(--mono);font-size:10px;color:var(--text3);margin-bottom:13px;}
+.clock{font-family:var(--mono);font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1;}
 .clock sup{font-size:13px;color:var(--text3);vertical-align:super;}
 .capture-bar{display:flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:11px;}
-.capture-bar input{background:none;border:none;outline:none;color:var(--text);font-family:var(--font-sans);font-size:12px;flex:1;}
+.capture-bar input{background:none;border:none;outline:none;color:var(--text);font-family:var(--sans);font-size:12px;flex:1;}
 .capture-bar input::placeholder{color:var(--text3);}
-.cap-btn{background:var(--bg4);border:1px solid var(--border2);color:var(--gold);font-family:var(--font-mono);font-size:9px;padding:5px 10px;border-radius:4px;cursor:pointer;white-space:nowrap;}
-.cap-btn:hover{background:#222;}
+.cap-btn{background:var(--bg4);border:1px solid var(--border2);color:var(--gold);font-family:var(--mono);font-size:9px;padding:5px 10px;border-radius:4px;cursor:pointer;white-space:nowrap;}
 .note-chip{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:5px 10px;font-size:11px;color:var(--text2);margin-top:5px;}
 
-/* finance pulse */
-.fp-badge{display:inline-flex;align-items:center;gap:4px;background:var(--green-bg);border:1px solid var(--green-dim);border-radius:4px;padding:2px 8px;font-family:var(--font-mono);font-size:10px;color:var(--green);margin-bottom:8px;}
+/* FINANCE PULSE */
+.fp-badge{display:inline-flex;align-items:center;gap:4px;background:var(--green-bg);border:1px solid var(--green-dim);border-radius:4px;padding:2px 8px;font-family:var(--mono);font-size:10px;color:var(--green);margin-bottom:8px;}
 .fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px;}
 .fp-cell{background:var(--bg3);border-radius:6px;padding:8px 10px;}
 .fp-cell label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:3px;}
-.fp-cell .amt{font-family:var(--font-mono);font-size:14px;color:var(--gold);font-weight:700;}
+.fp-cell .amt{font-family:var(--mono);font-size:14px;color:var(--gold);font-weight:700;}
 .fp-cell .sub{font-size:9px;color:var(--green);}
 .sparkline{width:100%;height:30px;margin:5px 0;}
 
-/* daily sales */
-.daily-sales-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;}
+/* DAILY SALES */
+.ds-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;}
 .ds-cell{background:var(--bg3);border-radius:6px;padding:8px 10px;}
 .ds-cell label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:3px;}
-.ds-cell input{background:none;border:none;border-bottom:1px solid var(--border);outline:none;color:var(--gold);font-family:var(--font-mono);font-size:15px;font-weight:700;width:100%;padding-bottom:2px;}
+.ds-cell input{background:none;border:none;border-bottom:1px solid var(--border);outline:none;color:var(--gold);font-family:var(--mono);font-size:15px;font-weight:700;width:100%;padding-bottom:2px;}
 .ds-total{background:var(--green-bg);border:1px solid var(--green-dim);border-radius:6px;padding:10px;margin-top:6px;display:flex;justify-content:space-between;align-items:center;}
 .ds-total label{font-size:9px;color:var(--green);text-transform:uppercase;letter-spacing:.1em;}
-.ds-total .v{font-family:var(--font-mono);font-size:18px;color:var(--green);font-weight:700;}
+.ds-total .v{font-family:var(--mono);font-size:18px;color:var(--green);font-weight:700;}
 
-/* habits */
+/* HABITS */
 .habit-header{display:flex;align-items:center;gap:13px;margin-bottom:11px;}
-.h-score{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:17px;font-weight:700;color:var(--text3);flex-shrink:0;transition:all .3s;}
+.h-score{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:17px;font-weight:700;color:var(--text3);flex-shrink:0;transition:all .3s;}
 .h-score.on{border-color:var(--gold);color:var(--gold);}
 .h-meta{font-size:10px;color:var(--text3);line-height:1.6;}
 .h-meta strong{color:var(--text2);}
@@ -101,118 +100,115 @@ html,body{height:100%;background:#060606;}
 .hcard{background:var(--bg3);border:1px solid var(--border);border-radius:7px;padding:10px;cursor:pointer;transition:border-color .15s;}
 .hcard:hover{border-color:var(--border2);}
 .hcard.done{border-color:var(--green-dim);}
-.hcheck{width:13px;height:13px;border-radius:3px;border:1px solid var(--border2);margin-bottom:7px;display:flex;align-items:center;justify-content:center;}
+.hcheck{width:13px;height:13px;border-radius:3px;border:1px solid var(--border2);margin-bottom:7px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#000;font-weight:700;}
 .hcheck.on{background:var(--gold);border-color:var(--gold);}
-.hcheck.on::after{content:'';font-size:9px;color:#000;font-weight:700;}
 .hname{font-size:11px;font-weight:600;margin-bottom:2px;}
 .htag{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;}
-.hcount{font-family:var(--font-mono);font-size:9px;color:var(--text3);margin-top:5px;}
+.hcount{font-family:var(--mono);font-size:9px;color:var(--text3);margin-top:5px;}
 
-/* tasks */
+/* TASKS */
 .titem{display:flex;align-items:flex-start;gap:8px;padding:7px 5px;border-radius:5px;cursor:pointer;transition:background .1s;}
 .titem:hover{background:var(--bg3);}
-.tcheck{width:13px;height:13px;border-radius:3px;border:1px solid var(--border2);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;}
+.tcheck{width:13px;height:13px;border-radius:3px;border:1px solid var(--border2);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;}
 .tcheck.on{background:var(--gold);border-color:var(--gold);}
-.tcheck.on::after{content:'';font-size:9px;color:#000;font-weight:700;}
 .tname{font-size:12px;color:#c8c8c0;line-height:1.3;}
 .tname.done{text-decoration:line-through;color:var(--text3);}
 .ttag{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-top:2px;}
 .tstar{font-size:10px;color:var(--border2);margin-left:auto;}
 .tstar.hi{color:var(--gold);}
 .task-add{display:flex;gap:5px;margin-top:9px;}
-.task-add input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 10px;font-family:var(--font-sans);font-size:11px;color:var(--text);outline:none;}
+.task-add input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 10px;font-family:var(--sans);font-size:11px;color:var(--text);outline:none;}
 .task-add input::placeholder{color:var(--text3);}
-.task-add button{background:var(--bg4);border:1px solid var(--border2);color:var(--gold);font-family:var(--font-mono);font-size:11px;padding:6px 11px;border-radius:5px;cursor:pointer;}
+.task-add button{background:var(--bg4);border:1px solid var(--border2);color:var(--gold);font-family:var(--mono);font-size:11px;padding:6px 11px;border-radius:5px;cursor:pointer;}
 
-/* goals */
+/* GOALS */
 .goals-list{display:flex;flex-direction:column;gap:8px;}
 .goal-item{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px;}
 .glabel{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
-.ginput{background:none;border:none;border-bottom:1px solid var(--border);outline:none;color:var(--text);font-family:var(--font-sans);font-size:12px;width:100%;padding-bottom:3px;}
+.ginput{background:none;border:none;border-bottom:1px solid var(--border);outline:none;color:var(--text);font-family:var(--sans);font-size:12px;width:100%;padding-bottom:3px;}
 .ginput::placeholder{color:var(--border2);}
 .gsaved{font-size:12px;color:var(--gold);font-weight:600;}
 .gedit{font-size:9px;color:var(--text3);margin-top:3px;cursor:pointer;}
+.pbar{height:2px;background:var(--border);border-radius:1px;overflow:hidden;margin-top:7px;}
+.pfill{height:100%;background:var(--gold);border-radius:1px;transition:width .5s;}
 
-/* calendar */
+/* CALENDAR */
 .cal-week{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:10px;}
 .cal-day{text-align:center;padding:4px 2px;border-radius:4px;}
 .cal-day .dn{font-size:9px;color:var(--text3);text-transform:uppercase;margin-bottom:3px;}
-.cal-day .dd{font-family:var(--font-mono);font-size:12px;color:var(--text3);}
+.cal-day .dd{font-family:var(--mono);font-size:12px;color:var(--text3);}
 .cal-day.today{background:var(--gold);}
 .cal-day.today .dn,.cal-day.today .dd{color:#000;}
 .cal-day.today .dd{font-weight:700;}
 .cal-event{display:flex;gap:7px;padding:6px 8px;border-radius:5px;background:var(--bg3);align-items:flex-start;margin-bottom:4px;}
 .cal-dot{width:6px;height:6px;border-radius:50%;margin-top:3px;flex-shrink:0;}
-.cal-time{font-family:var(--font-mono);font-size:9px;color:var(--text3);min-width:34px;margin-top:1px;}
+.cal-time{font-family:var(--mono);font-size:9px;color:var(--text3);min-width:34px;margin-top:1px;}
 .cal-title{font-size:11px;color:#c8c8c0;}
 .now-line{border-top:1px solid rgba(200,169,110,.2);display:flex;align-items:center;gap:6px;margin:3px 0;}
 .now-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
-.now-lbl{font-family:var(--font-mono);font-size:9px;color:var(--gold);}
+.now-lbl{font-family:var(--mono);font-size:9px;color:var(--gold);}
 
-/* nutrition */
-.kcal-big{font-family:var(--font-mono);font-size:30px;font-weight:700;margin:5px 0 2px;transition:color .3s;}
+/* NUTRITION */
+.kcal-big{font-family:var(--mono);font-size:30px;font-weight:700;margin:5px 0 2px;transition:color .3s;}
 .kcal-lbl{font-size:10px;color:var(--text3);margin-bottom:7px;}
 .macros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:9px;}
-.macro{font-family:var(--font-mono);font-size:10px;color:var(--text3);}
-.pbar{height:2px;background:var(--border);border-radius:1px;overflow:hidden;margin-bottom:9px;}
-.pfill{height:100%;background:var(--gold);border-radius:1px;transition:width .5s;}
-.meal-input{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-family:var(--font-sans);font-size:11px;color:var(--text);width:100%;outline:none;margin-bottom:8px;}
+.macro{font-family:var(--mono);font-size:10px;color:var(--text3);}
+.nutr-bar{height:2px;background:var(--border);border-radius:1px;overflow:hidden;margin-bottom:9px;}
+.nutr-fill{height:100%;background:var(--gold);border-radius:1px;transition:width .5s;}
+.meal-input{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-family:var(--sans);font-size:11px;color:var(--text);width:100%;outline:none;margin-bottom:8px;}
 .meal-input::placeholder{color:var(--text3);}
 .no-meals{font-size:10px;color:var(--border2);text-align:center;padding:10px 0;}
 .meal-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);}
 .meal-n{font-size:11px;color:var(--text2);}
-.meal-k{font-family:var(--font-mono);font-size:10px;color:var(--gold);}
+.meal-k{font-family:var(--mono);font-size:10px;color:var(--gold);}
 
-/*  RESALE  */
+/* RESALE */
 .resale-page{display:flex;flex-direction:column;height:calc(100vh - var(--tab-h));}
 .r-topbar{display:flex;align-items:center;gap:8px;padding:10px 18px;border-bottom:1px solid var(--border);background:var(--bg2);flex-shrink:0;flex-wrap:wrap;row-gap:6px;}
-.r-topbar h2{font-size:13px;font-weight:700;margin-right:4px;}
-.rtab{background:none;border:1px solid var(--border);color:var(--text3);font-family:var(--font-sans);font-size:10px;padding:4px 10px;border-radius:4px;cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
+.r-topbar h2{font-size:13px;font-weight:700;margin-right:4px;color:var(--text);}
+.rtab{background:none;border:1px solid var(--border);color:var(--text3);font-family:var(--sans);font-size:10px;padding:4px 10px;border-radius:4px;cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
 .rtab.active{background:var(--gold);color:#000;border-color:var(--gold);}
 .r-stats{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);flex-shrink:0;}
 .rstat{background:var(--bg2);padding:10px 14px;}
 .rstat label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:3px;}
-.rstat .rv{font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--gold);}
+.rstat .rv{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--gold);}
 .rstat .rv.pos{color:var(--green);}
 .rstat .rv.neg{color:var(--red);}
 .rstat .rsub{font-size:9px;color:var(--text3);}
 .r-controls{display:flex;gap:6px;align-items:center;padding:10px 18px;border-bottom:1px solid var(--border);flex-shrink:0;flex-wrap:wrap;row-gap:6px;}
-.inv-search{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 11px;font-family:var(--font-sans);font-size:12px;color:var(--text);outline:none;min-width:200px;flex:1;}
+.inv-search{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 11px;font-family:var(--sans);font-size:12px;color:var(--text);outline:none;min-width:200px;flex:1;}
 .inv-search::placeholder{color:var(--text3);}
-.r-select{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 10px;font-family:var(--font-sans);font-size:11px;color:var(--text2);outline:none;cursor:pointer;}
+.r-select{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 10px;font-family:var(--sans);font-size:11px;color:var(--text2);outline:none;cursor:pointer;}
 .r-select option{background:var(--bg3);}
-.r-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text3);font-family:var(--font-sans);font-size:10px;padding:6px 11px;border-radius:5px;cursor:pointer;text-transform:uppercase;letter-spacing:.05em;transition:all .15s;white-space:nowrap;}
-.r-btn:hover{border-color:var(--border2);color:var(--text2);}
-.r-btn.active{background:var(--gold);color:#000;border-color:var(--gold);}
+.r-btn{background:var(--bg3);border:1px solid var(--border2);color:var(--gold);font-family:var(--sans);font-size:11px;padding:6px 14px;border-radius:5px;cursor:pointer;font-weight:700;white-space:nowrap;}
+.r-btn:hover{background:var(--bg4);}
 .inv-table-wrap{overflow:auto;flex:1;}
 .inv-table{width:100%;border-collapse:collapse;font-size:11px;}
 .inv-table th{background:var(--bg2);color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:.1em;padding:8px 11px;text-align:left;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border);white-space:nowrap;font-weight:400;cursor:pointer;user-select:none;}
 .inv-table th:hover{color:var(--text2);}
-.inv-table th.sort-asc::after{content:' ';color:var(--gold);}
-.inv-table th.sort-desc::after{content:' ';color:var(--gold);}
 .inv-table td{padding:9px 11px;border-bottom:1px solid var(--border);vertical-align:middle;color:var(--text2);}
 .inv-table tr:hover td{background:var(--bg3);}
 .item-name{color:var(--text);font-weight:600;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.status-pill{display:inline-flex;align-items:center;padding:3px 8px;border-radius:3px;font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;white-space:nowrap;}
+.pill-s{display:inline-flex;align-items:center;padding:3px 8px;border-radius:3px;font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;white-space:nowrap;}
 .s-sold{background:var(--green-bg);color:var(--green);border:1px solid var(--green-dim);}
 .s-unsold{background:#141414;color:var(--text3);border:1px solid var(--border);}
 .s-return{background:var(--red-bg);color:var(--red);border:1px solid var(--red-dim);}
 .s-kept{background:var(--gold-dark);color:var(--gold);border:1px solid var(--gold-dim);}
-.profit-pos{color:var(--green);font-family:var(--font-mono);font-size:11px;}
-.profit-neg{color:var(--red);font-family:var(--font-mono);font-size:11px;}
-.profit-zero{color:var(--text3);font-family:var(--font-mono);font-size:11px;}
+.profit-pos{color:var(--green);font-family:var(--mono);font-size:11px;}
+.profit-neg{color:var(--red);font-family:var(--mono);font-size:11px;}
+.profit-zero{color:var(--text3);font-family:var(--mono);font-size:11px;}
 .warn-badge{background:#1f1510;color:#e09052;border:1px solid #6b3a1f;padding:2px 6px;border-radius:3px;font-size:8px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;}
-.note-cell{background:none;border:none;border-bottom:1px solid var(--border);outline:none;color:var(--text2);font-family:var(--font-sans);font-size:11px;width:120px;padding:2px 4px;}
+.note-cell{background:none;border:none;border-bottom:1px solid var(--border);outline:none;color:var(--text2);font-family:var(--sans);font-size:11px;width:120px;padding:2px 4px;}
 .note-cell::placeholder{color:var(--border2);}
-.loading-row td{text-align:center;padding:30px;color:var(--text3);font-family:var(--font-mono);font-size:11px;}
+.loading-row td{text-align:center;padding:30px;color:var(--text3);font-family:var(--mono);font-size:11px;}
 
-/*  FINANCE  */
+/* FINANCE */
 .finance-page{padding:18px 20px;overflow-y:auto;max-height:calc(100vh - var(--tab-h));}
-.fin-header{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;font-family:var(--font-mono);}
-.fin-platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+.fin-header{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;font-family:var(--mono);}
+.fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
 .fin-card{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:14px;}
 .fin-card-label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:7px;}
-.fin-card-amount{font-family:var(--font-mono);font-size:22px;font-weight:700;color:var(--gold);margin-bottom:3px;}
+.fin-card-amount{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--gold);margin-bottom:3px;}
 .fin-card-sub{font-size:10px;color:var(--text3);}
 .fin-card-bar{height:2px;background:var(--border);border-radius:1px;margin-top:9px;overflow:hidden;}
 .fin-card-fill{height:100%;background:var(--gold);border-radius:1px;}
@@ -221,28 +217,24 @@ html,body{height:100%;background:#060606;}
 .fin-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);}
 .fin-row:last-child{border-bottom:none;}
 .fin-row-label{font-size:12px;color:var(--text2);}
-.fin-row-val{font-family:var(--font-mono);font-size:12px;font-weight:700;}
+.fin-row-val{font-family:var(--mono);font-size:12px;font-weight:700;}
 .fin-row-val.pos{color:var(--green);}
 .fin-row-val.neg{color:var(--red);}
 .fin-row-val.gold{color:var(--gold);}
-
-/* expense logger */
 .exp-form{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;align-items:center;}
-.exp-form input,.exp-form select{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 10px;font-family:var(--font-sans);font-size:11px;color:var(--text);outline:none;}
+.exp-form input,.exp-form select{background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:6px 10px;font-family:var(--sans);font-size:11px;color:var(--text);outline:none;}
 .exp-form input::placeholder{color:var(--text3);}
-.exp-form .exp-btn{background:var(--gold);border:none;color:#000;font-family:var(--font-sans);font-size:11px;font-weight:700;padding:6px 14px;border-radius:5px;cursor:pointer;}
-.exp-list{display:flex;flex-direction:column;gap:4px;}
-.exp-item{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border-radius:6px;border:1px solid var(--border);}
+.exp-btn{background:var(--gold);border:none;color:#000;font-family:var(--sans);font-size:11px;font-weight:700;padding:6px 14px;border-radius:5px;cursor:pointer;}
+.exp-item{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border-radius:6px;border:1px solid var(--border);margin-bottom:4px;}
 .exp-item .ei-name{font-size:12px;color:var(--text2);}
-.exp-item .ei-type{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;background:var(--bg4);border:1px solid var(--border);padding:2px 6px;border-radius:3px;}
-.exp-item .ei-amt{font-family:var(--font-mono);font-size:12px;color:var(--red);font-weight:700;}
+.exp-item .ei-type{font-size:9px;color:var(--text3);text-transform:uppercase;background:var(--bg4);border:1px solid var(--border);padding:2px 6px;border-radius:3px;}
+.exp-item .ei-amt{font-family:var(--mono);font-size:12px;color:var(--red);font-weight:700;}
 .exp-item .ei-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;padding:0 4px;}
-.exp-item .ei-del:hover{color:var(--red);}
 .exp-total{display:flex;justify-content:space-between;padding:9px 10px;background:var(--red-bg);border:1px solid var(--red-dim);border-radius:6px;margin-top:8px;}
 .exp-total label{font-size:10px;color:var(--red);text-transform:uppercase;letter-spacing:.1em;}
-.exp-total .v{font-family:var(--font-mono);font-size:15px;color:var(--red);font-weight:700;}
+.exp-total .v{font-family:var(--mono);font-size:15px;color:var(--red);font-weight:700;}
 
-/*  CONTENT  */
+/* CONTENT */
 .content-page{padding:18px 20px;overflow-y:auto;max-height:calc(100vh - var(--tab-h));}
 .content-tips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
 .tip-card{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:14px;}
@@ -256,22 +248,21 @@ html,body{height:100%;background:#060606;}
 .post-item{display:flex;align-items:center;gap:9px;padding:10px;background:var(--bg3);border:1px solid var(--border);border-radius:7px;margin-bottom:6px;}
 .post-platform{font-size:9px;color:var(--text3);text-transform:uppercase;background:var(--bg4);border:1px solid var(--border);padding:3px 7px;border-radius:3px;letter-spacing:.06em;min-width:58px;text-align:center;white-space:nowrap;}
 .post-topic{flex:1;font-size:12px;color:var(--text2);}
-.post-date{font-family:var(--font-mono);font-size:9px;color:var(--text3);white-space:nowrap;}
+.post-date{font-family:var(--mono);font-size:9px;color:var(--text3);white-space:nowrap;}
 .post-status{font-size:9px;padding:3px 7px;border-radius:3px;white-space:nowrap;}
 .ps-live{background:var(--green-bg);color:var(--green);border:1px solid var(--green-dim);}
 .ps-draft{background:#141414;color:var(--text3);border:1px solid var(--border);}
-.add-post-btn{background:var(--bg3);border:1px dashed var(--border);border-radius:7px;padding:11px;color:var(--text3);font-family:var(--font-sans);font-size:11px;cursor:pointer;width:100%;text-align:center;transition:all .15s;}
+.add-post-btn{background:var(--bg3);border:1px dashed var(--border);border-radius:7px;padding:11px;color:var(--text3);font-family:var(--sans);font-size:11px;cursor:pointer;width:100%;text-align:center;}
 .add-post-btn:hover{border-color:var(--border2);color:var(--text2);}
 
 .plat-mercari{background:#2d1a4a;color:#b39ddb;border:1px solid #7e57c2;}
-.plat-ebay{background:#1a2a1a;color:#ffee58;border:1px solid #f9a825;}
-.plat-stockx{background:#1a1a2a;color:#64b5f6;border:1px solid #1976d2;}
-.plat-inperson{background:#1a2a1a;color:#81c784;border:1px solid #388e3c;}
-.plat-tiktok{background:#1a1a1a;color:#f48fb1;border:1px solid #c2185b;}
+.plat-ebay{background:#2a2200;color:#ffee58;border:1px solid #f9a825;}
+.plat-stockx{background:#001a2a;color:#64b5f6;border:1px solid #1976d2;}
+.plat-inperson{background:#0a2a0a;color:#81c784;border:1px solid #388e3c;}
+.plat-tiktok{background:#1a0a1a;color:#f48fb1;border:1px solid #c2185b;}
 .plat-cashout{background:#2a1a00;color:#ffb74d;border:1px solid #e65100;}
-.plat-whatnot{background:#1a1a2a;color:#ce93d8;border:1px solid #7b1fa2;}
-.plat-fbttiktok{background:#1a1a1a;color:#f48fb1;border:1px solid #c2185b;}
-.plat-locations{background:#1a2a2a;color:#80deea;border:1px solid #00838f;}
+.plat-whatnot{background:#0a0a2a;color:#ce93d8;border:1px solid #7b1fa2;}
+.plat-locations{background:#001a1a;color:#80deea;border:1px solid #00838f;}
 .plat-unsold{background:#141414;color:#6a6a6a;border:1px solid #1e1e1e;}
 .plat-return{background:#1a0808;color:#e05252;border:1px solid #6b1f1f;}
 .plat-kept{background:#3a2806;color:#c8a96e;border:1px solid #8b6914;}
@@ -287,14 +278,13 @@ html,body{height:100%;background:#060606;}
     <button class="tab" onclick="switchTab('content')">Content</button>
     <button class="tab" onclick="switchTab('finance')">Finance</button>
   </div>
-  <div class="topbar-right" id="tr-time"> : </div>
+  <div class="topbar-right" id="tr-time">-- : --</div>
 </div>
 
 <!-- HOME -->
 <div id="page-home" class="page active">
 <div class="home-grid">
 
-  <!-- OPERATOR -->
   <div class="panel" style="grid-column:1;grid-row:1;">
     <div class="plabel"><span class="n">01</span> // OPERATOR <span style="margin-left:auto"><span class="online-dot"></span>ONLINE</span></div>
     <div class="avatar">T</div>
@@ -303,18 +293,17 @@ html,body{height:100%;background:#060606;}
     <div class="focus-txt">Building the brand. Stack the bag.</div>
     <div class="divider"></div>
     <div class="stat-row">
-      <div class="stat"><label>Streak</label><div class="v" id="streak-disp">0 days</div></div>
+      <div class="stat"><label>Streak</label><div class="v">0 days</div></div>
       <div class="stat"><label>2026 Profit</label><div class="v">$7,291</div></div>
     </div>
     <div class="pills">
-      <div class="pill">TT <span id="tt-f"></span></div>
-      <div class="pill">IG <span id="ig-f"></span></div>
+      <div class="pill">TT <span id="tt-f">--</span></div>
+      <div class="pill">IG <span id="ig-f">--</span></div>
       <div class="pill">TTS <span style="color:var(--green)">ON</span></div>
-      <div class="pill">EBAY <span style="color:var(--green)"></span></div>
+      <div class="pill">EBAY <span style="color:var(--green)">ON</span></div>
     </div>
   </div>
 
-  <!-- SESSION -->
   <div class="panel" style="grid-column:2;grid-row:1;">
     <div class="plabel"><span class="n">02</span> // SESSION</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
@@ -323,19 +312,18 @@ html,body{height:100%;background:#060606;}
         <div class="session-meta" id="session-date">LOADING...</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
-        <div class="clock" id="clock-disp">:<sup></sup></div>
+        <div class="clock" id="clock-disp">--:--<sup>--</sup></div>
         <div style="font-size:9px;color:var(--text3);letter-spacing:.1em;">LOCAL TIME</div>
       </div>
     </div>
     <div class="capture-bar">
-      <span style="font-family:var(--font-mono);font-size:10px;color:var(--text3);"></span>
+      <span style="font-family:var(--mono);font-size:10px;color:var(--text3);">//</span>
       <input type="text" id="cap-in" placeholder="Capture a thought, task, or idea..."/>
-      <button class="cap-btn" onclick="captureNote()"> CAPTURE</button>
+      <button class="cap-btn" onclick="captureNote()">CAPTURE</button>
     </div>
     <div id="captured"></div>
   </div>
 
-  <!-- GOALS -->
   <div class="panel" style="grid-column:3;grid-row:1 / 3;">
     <div class="plabel"><span class="n">09</span> // GOALS</div>
     <div class="goals-list">
@@ -351,48 +339,44 @@ html,body{height:100%;background:#060606;}
         <div class="glabel">This year</div>
         <div id="yg-wrap"><input class="ginput" id="yg" placeholder="Yearly goal..." onkeydown="if(event.key==='Enter')saveGoal('y')"/></div>
       </div>
-      <!-- 2026 profit goal -->
       <div class="goal-item" style="background:var(--green-bg);border-color:var(--green-dim);">
         <div class="glabel" style="color:var(--green);">2026 Profit Goal</div>
-        <div style="font-family:var(--font-mono);font-size:18px;color:var(--green);font-weight:700;">$7,291 / $15,000</div>
-        <div class="pbar" style="margin-top:7px;background:#0f2a0f;"><div class="pfill" style="width:48.6%;background:var(--green);"></div></div>
+        <div style="font-family:var(--mono);font-size:18px;color:var(--green);font-weight:700;">$7,291 / $15,000</div>
+        <div class="pbar" style="background:#0f2a0f;"><div class="pfill" style="width:48.6%;background:var(--green);"></div></div>
         <div style="font-size:9px;color:var(--green-dim);margin-top:3px;">48.6% to goal</div>
       </div>
-      <!-- DAILY SALES -->
       <div class="goal-item">
         <div class="glabel">Daily Sales Log</div>
-        <div class="daily-sales-grid">
+        <div class="ds-grid">
           <div class="ds-cell"><label>eBay</label><input type="text" id="ds-ebay" placeholder="$0" oninput="calcDaily()"/></div>
           <div class="ds-cell"><label>Mercari</label><input type="text" id="ds-mercari" placeholder="$0" oninput="calcDaily()"/></div>
           <div class="ds-cell"><label>TikTok</label><input type="text" id="ds-tiktok" placeholder="$0" oninput="calcDaily()"/></div>
           <div class="ds-cell"><label>In Person</label><input type="text" id="ds-inperson" placeholder="$0" oninput="calcDaily()"/></div>
         </div>
         <div class="ds-total">
-          <label>Today's Total</label>
+          <label>Today Total</label>
           <div class="v" id="ds-total">$0.00</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- FINANCE PULSE -->
   <div class="panel" style="grid-column:1;grid-row:2;">
     <div class="plabel"><span class="n">07</span> // FINANCE PULSE</div>
-    <div class="fp-badge"> $7,291.89 YTD</div>
+    <div class="fp-badge">^ $7,291.89 YTD</div>
     <svg class="sparkline" viewBox="0 0 220 30" preserveAspectRatio="none">
       <polyline points="0,27 40,22 80,18 120,13 160,10 220,6" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity=".5"/>
     </svg>
     <div class="fp-grid">
-      <div class="fp-cell"><label>TikTok Shop</label><div class="amt">$2,853</div><div class="sub"> #1 channel</div></div>
-      <div class="fp-cell"><label>eBay</label><div class="amt">$2,088</div><div class="sub"> #2 earner</div></div>
-      <div class="fp-cell"><label>Mercari</label><div class="amt">$1,394</div><div class="sub"> steady</div></div>
-      <div class="fp-cell"><label>In Person</label><div class="amt">$485</div><div class="sub"> growing</div></div>
+      <div class="fp-cell"><label>TikTok Shop</label><div class="amt">$2,853</div><div class="sub">^ #1 channel</div></div>
+      <div class="fp-cell"><label>eBay</label><div class="amt">$2,088</div><div class="sub">^ #2 earner</div></div>
+      <div class="fp-cell"><label>Mercari</label><div class="amt">$1,394</div><div class="sub">steady</div></div>
+      <div class="fp-cell"><label>In Person</label><div class="amt">$485</div><div class="sub">growing</div></div>
       <div class="fp-cell"><label>Cashout</label><div class="amt">$262</div><div class="sub">Amazon</div></div>
       <div class="fp-cell"><label>StockX</label><div class="amt">$207</div><div class="sub">selective</div></div>
     </div>
   </div>
 
-  <!-- HABITS -->
   <div class="panel" style="grid-column:2;grid-row:2;">
     <div class="plabel"><span class="n">03</span> // HABITS <span style="margin-left:auto;color:var(--text3);" id="h-score-lbl">0/6 - 0%</span></div>
     <div class="habit-header">
@@ -410,7 +394,6 @@ html,body{height:100%;background:#060606;}
     <div class="habits-grid" id="habits-grid"></div>
   </div>
 
-  <!-- TASKS -->
   <div class="panel" style="grid-column:1;grid-row:3;">
     <div class="plabel"><span class="n">06</span> // TODAY - KEY <span style="margin-left:auto;color:var(--gold);" id="task-count">5</span></div>
     <div id="tasks-list"></div>
@@ -420,15 +403,13 @@ html,body{height:100%;background:#060606;}
     </div>
   </div>
 
-  <!-- CALENDAR -->
   <div class="panel" style="grid-column:2;grid-row:3;">
     <div class="plabel"><span class="n">04</span> // CALENDAR <span style="margin-left:auto;color:var(--text3);" id="cal-month"></span></div>
     <div class="cal-week" id="cal-week"></div>
-    <div style="font-size:9px;color:var(--text3);margin-bottom:7px;letter-spacing:.08em;" id="cal-count">TODAY -  EVENTS</div>
+    <div style="font-size:9px;color:var(--text3);margin-bottom:7px;letter-spacing:.08em;" id="cal-count">TODAY - 4 EVENTS</div>
     <div id="cal-events"></div>
   </div>
 
-  <!-- NUTRITION -->
   <div class="panel" style="grid-column:3;grid-row:3;">
     <div class="plabel"><span class="n">08</span> // NUTRITION <span style="margin-left:auto;color:var(--text3);">TODAY</span></div>
     <div class="kcal-big" id="kcal-big" style="color:var(--border);">0</div>
@@ -438,8 +419,8 @@ html,body{height:100%;background:#060606;}
       <span class="macro" id="carb-d">0g carbs</span>
       <span class="macro" id="fat-d">0g fat</span>
     </div>
-    <div class="pbar"><div class="pfill" id="kcal-bar" style="width:0%"></div></div>
-    <input class="meal-input" type="text" id="meal-in" placeholder='Log  "chicken, rice, broccoli"' onkeydown="if(event.key==='Enter')logMeal()"/>
+    <div class="nutr-bar"><div class="nutr-fill" id="kcal-bar" style="width:0%"></div></div>
+    <input class="meal-input" type="text" id="meal-in" placeholder='Log a meal - e.g. chicken, rice' onkeydown="if(event.key==='Enter')logMeal()"/>
     <div id="meals-list"><div class="no-meals">No meals logged yet.</div></div>
   </div>
 
@@ -454,9 +435,9 @@ html,body{height:100%;background:#060606;}
     <button class="rtab" id="rf-unsold" onclick="setFilter('unsold')">Unsold</button>
     <button class="rtab" id="rf-sold" onclick="setFilter('sold')">Sold</button>
     <button class="rtab" id="rf-return" onclick="setFilter('return')">Returned</button>
-    <button class="rtab" id="rf-warn" onclick="setFilter('warn')"> Can't Return</button>
-    <button class="r-btn" onclick="loadSheet()" style="margin-left:auto;"> Refresh</button>
-    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text3);" id="inv-count"></span>
+    <button class="rtab" id="rf-warn" onclick="setFilter('warn')">! Cant Return</button>
+    <button class="r-btn" onclick="loadSheet()" style="margin-left:auto;">Refresh</button>
+    <span style="font-family:var(--mono);font-size:10px;color:var(--text3);" id="inv-count">--</span>
   </div>
   <div class="r-stats">
     <div class="rstat"><label>Total Profit</label><div class="rv pos">$7,291.89</div><div class="rsub">all platforms</div></div>
@@ -464,7 +445,7 @@ html,body{height:100%;background:#060606;}
     <div class="rstat"><label>eBay</label><div class="rv pos">$2,088.81</div><div class="rsub">most volume</div></div>
     <div class="rstat"><label>Mercari</label><div class="rv pos">$1,394.59</div><div class="rsub">steady</div></div>
     <div class="rstat"><label>Expenses</label><div class="rv neg">-$414.78</div><div class="rsub">supplies</div></div>
-    <div class="rstat"><label>Net After Exp</label><div class="rv pos">$6,877.11</div><div class="rsub">true take-home</div></div>
+    <div class="rstat"><label>Net After Exp</label><div class="rv pos">$6,877.11</div><div class="rsub">take-home</div></div>
   </div>
   <div class="r-controls">
     <input class="inv-search" type="text" id="inv-search" placeholder="Search item, platform, size..." oninput="renderTable()"/>
@@ -477,12 +458,11 @@ html,body{height:100%;background:#060606;}
     </select>
     <select class="r-select" id="sort-col" onchange="renderTable()">
       <option value="">Sort by...</option>
-      <option value="profit-desc">Profit </option>
-      <option value="profit-asc">Profit </option>
-      <option value="cost-desc">Cost </option>
-      <option value="cost-asc">Cost </option>
-      <option value="date-desc">Date Sold </option>
-      <option value="date-asc">Date Sold </option>
+      <option value="profit-desc">Profit High</option>
+      <option value="profit-asc">Profit Low</option>
+      <option value="cost-desc">Cost High</option>
+      <option value="cost-asc">Cost Low</option>
+      <option value="date-desc">Date Sold New</option>
       <option value="name-asc">Name A-Z</option>
     </select>
   </div>
@@ -491,16 +471,12 @@ html,body{height:100%;background:#060606;}
       <thead>
         <tr>
           <th>Item</th><th>From</th><th>Size</th>
-          <th onclick="cycleSortCol('cost')">Cost</th>
-          <th onclick="cycleSortCol('sold')">Sold For</th>
-          <th onclick="cycleSortCol('profit')">Profit</th>
-          <th onclick="cycleSortCol('platform')">Platform</th>
-          <th onclick="cycleSortCol('dateSold')">Date Sold</th>
-          <th>Status</th><th>Notes</th>
+          <th>Cost</th><th>Sold For</th><th>Profit</th>
+          <th>Platform</th><th>Date Sold</th><th>Status</th><th>Notes</th>
         </tr>
       </thead>
       <tbody id="inv-body">
-        <tr class="loading-row"><td colspan="10"> Loading inventory from Google Sheets...</td></tr>
+        <tr class="loading-row"><td colspan="10">Loading inventory from Google Sheets...</td></tr>
       </tbody>
     </table>
   </div>
@@ -510,20 +486,20 @@ html,body{height:100%;background:#060606;}
 <div id="page-content" class="page content-page">
   <div class="fin-header">@thernmedia - Content Tracker</div>
   <div class="content-tips">
-    <div class="tip-card"><div class="tip-title">Reels Reach</div><div class="tip-val">~300</div><div class="tip-sub">Average views. Consistency unlocks the algorithm  post every day even if it's short.</div></div>
-    <div class="tip-card"><div class="tip-title">Best Format</div><div class="tip-val">Reels</div><div class="tip-sub">Text overlay + punchy hook beats carousels for discovery. Carousels don't hit the FYP.</div></div>
-    <div class="tip-card"><div class="tip-title">Topics Done</div><div class="tip-val">20+</div><div class="tip-sub">Compound interest, credit score, Roth IRA, net worth, debt payoff, passive income  all used.</div></div>
+    <div class="tip-card"><div class="tip-title">Reels Reach</div><div class="tip-val">~300</div><div class="tip-sub">Average views. Post every day to unlock the algorithm.</div></div>
+    <div class="tip-card"><div class="tip-title">Best Format</div><div class="tip-val">Reels</div><div class="tip-sub">Text overlay + punchy hook beats carousels for discovery on IG.</div></div>
+    <div class="tip-card"><div class="tip-title">Topics Done</div><div class="tip-val">20+</div><div class="tip-sub">Compound interest, credit score, Roth IRA, net worth, debt payoff and more.</div></div>
     <div class="tip-card"><div class="tip-title">Next Milestone</div><div class="tip-val">200 followers</div><div class="tip-sub">Trial Reels unlock at 200 on Instagram. Daily posts get you there fastest.</div></div>
   </div>
   <div class="insight-block">
     <div class="insight-title">Strategy Insight</div>
-    <div class="insight-body">Your reels hit <strong>~300 views</strong> which means the hook is working but the profile isn't converting. <strong>Fix: end every reel with a direct follow CTA</strong> tied to exactly what they just learned  "follow if you want more moves like this." Your real advantage is relatability  you're building from scratch, doing retail arb, juggling school. <strong>Show the process, not just the results</strong>. That's what Rai Tryna can't replicate because he started with capital.</div>
+    <div class="insight-body">Your reels hit <strong>~300 views</strong> which means the hook is working but your profile is not converting. <strong>Fix: end every reel with a direct follow CTA</strong> tied to exactly what they just learned. Your advantage is relatability -- you are building from scratch, doing retail arb, juggling school. <strong>Show the process, not just the results.</strong></div>
   </div>
   <div class="insight-block">
     <div class="insight-title">Post Tracker</div>
     <div id="post-tracker">
       <div class="post-item"><div class="post-platform">Instagram</div><div class="post-topic">$100/month compound growth overlay reel</div><div class="post-date">Recent</div><div class="post-status ps-live">Live</div></div>
-      <div class="post-item"><div class="post-platform">TikTok</div><div class="post-topic">Small daily amounts  big yearly results</div><div class="post-date">Recent</div><div class="post-status ps-live">Live</div></div>
+      <div class="post-item"><div class="post-platform">TikTok</div><div class="post-topic">Small daily amounts - big yearly results</div><div class="post-date">Recent</div><div class="post-status ps-live">Live</div></div>
       <div class="post-item"><div class="post-platform">Instagram</div><div class="post-topic">Credit score quick wins carousel</div><div class="post-date">Past</div><div class="post-status ps-live">Live</div></div>
     </div>
     <button class="add-post-btn" style="margin-top:8px;" onclick="addPost()">+ Log a new post</button>
@@ -532,8 +508,8 @@ html,body{height:100%;background:#060606;}
 
 <!-- FINANCE -->
 <div id="page-finance" class="page finance-page">
-  <div class="fin-header">TH Sales  Financial Overview 2026</div>
-  <div class="fin-platform-grid">
+  <div class="fin-header">TH Sales -- Financial Overview 2026</div>
+  <div class="fin-grid">
     <div class="fin-card"><div class="fin-card-label">TikTok Shop</div><div class="fin-card-amount">$2,853</div><div class="fin-card-sub">Revenue $7,255 - Cost $4,401</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:39%"></div></div></div>
     <div class="fin-card"><div class="fin-card-label">eBay</div><div class="fin-card-amount">$2,088</div><div class="fin-card-sub">Revenue $6,718 - Cost $4,629</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:28.6%"></div></div></div>
     <div class="fin-card"><div class="fin-card-label">Mercari</div><div class="fin-card-amount">$1,394</div><div class="fin-card-sub">Revenue $5,707 - Cost $4,306</div><div class="fin-card-bar"><div class="fin-card-fill" style="width:19.1%"></div></div></div>
@@ -544,7 +520,7 @@ html,body{height:100%;background:#060606;}
   <div class="fin-section">
     <div class="fin-section-title">P&L Summary</div>
     <div class="fin-row"><span class="fin-row-label">Total Gross Profit (all platforms)</span><span class="fin-row-val pos">+$7,291.89</span></div>
-    <div class="fin-row"><span class="fin-row-label">Business Expenses (boxes, supplies, scale, etc)</span><span class="fin-row-val neg">-$414.78</span></div>
+    <div class="fin-row"><span class="fin-row-label">Business Expenses (boxes, supplies, scale)</span><span class="fin-row-val neg">-$414.78</span></div>
     <div class="fin-row"><span class="fin-row-label">Subscriptions</span><span class="fin-row-val neg">-$245.31</span></div>
     <div class="fin-row" style="border-top:1px solid var(--gold-dark);padding-top:9px;margin-top:3px;"><span class="fin-row-label" style="color:var(--text);font-weight:700;">Net Take-Home 2026</span><span class="fin-row-val gold" style="font-size:15px;">+$6,631.80</span></div>
   </div>
@@ -557,82 +533,51 @@ html,body{height:100%;background:#060606;}
     <div class="fin-row"><span class="fin-row-label">Phantom Luna 2 Elite (Mercari)</span><span class="fin-row-val pos">+$61.64</span></div>
   </div>
   <div class="fin-section">
-    <div class="fin-section-title">Current Losers / At Risk</div>
-    <div class="fin-row"><span class="fin-row-label">Ultra Software Zip-Up Pink 2  Unsold</span><span class="fin-row-val neg">-$343.52</span></div>
-    <div class="fin-row"><span class="fin-row-label">Samba OG ID1481 unsold 5  Need price drop</span><span class="fin-row-val neg">-$248.55</span></div>
-    <div class="fin-row"><span class="fin-row-label">Skullector Killer Klowns 2  Unsold</span><span class="fin-row-val neg">-$155.14</span></div>
-    <div class="fin-row"><span class="fin-row-label">Royal Blue AJ1 553558-124  Cant Return</span><span class="fin-row-val neg">-$140.00</span></div>
-    <div class="fin-row"><span class="fin-row-label">2026 Club Cameron Kit  Listed low</span><span class="fin-row-val neg">-$138.84</span></div>
+    <div class="fin-section-title">At Risk / Unsold</div>
+    <div class="fin-row"><span class="fin-row-label">Ultra Software Zip-Up Pink x2 -- Unsold</span><span class="fin-row-val neg">-$343.52</span></div>
+    <div class="fin-row"><span class="fin-row-label">Samba OG ID1481 unsold x5 -- Need price drop</span><span class="fin-row-val neg">-$248.55</span></div>
+    <div class="fin-row"><span class="fin-row-label">Skullector Killer Klowns x2 -- Unsold</span><span class="fin-row-val neg">-$155.14</span></div>
+    <div class="fin-row"><span class="fin-row-label">Royal Blue AJ1 -- Cant Return</span><span class="fin-row-val neg">-$140.00</span></div>
+    <div class="fin-row"><span class="fin-row-label">2026 Club Cameron Kit -- Listed low</span><span class="fin-row-val neg">-$138.84</span></div>
   </div>
-
-  <!-- EXPENSE LOGGER -->
   <div class="fin-section">
-    <div class="fin-section-title">Expense Logger</div>
+    <div class="fin-section-title">Add Expense</div>
     <div class="exp-form">
       <input type="text" id="exp-name" placeholder="Expense name..." style="flex:2;min-width:140px;"/>
-      <select id="exp-type">
-        <option>Shipping Supplies</option><option>Subscriptions</option>
-        <option>Gas</option><option>Food</option><option>Tools</option><option>Other</option>
-      </select>
-      <input type="number" id="exp-amt" placeholder="$0.00" step="0.01" style="width:90px;"/>
+      <select id="exp-type"><option>Shipping Supplies</option><option>Subscriptions</option><option>Gas</option><option>Food</option><option>Tools</option><option>Other</option></select>
+      <input type="number" id="exp-amt" placeholder="0.00" step="0.01" style="width:90px;"/>
       <button class="exp-btn" onclick="addExpense()">+ Add</button>
     </div>
-    <div class="exp-list" id="exp-list"></div>
+    <div id="exp-list"></div>
     <div class="exp-total" id="exp-total" style="display:none;">
-      <label>Total Logged Expenses</label>
+      <label>Total Logged</label>
       <div class="v" id="exp-total-val">$0.00</div>
     </div>
   </div>
 </div>
 
-</div><!-- .os -->
-
+</div>
 <script>
-//  CSV URL 
-const CSV_URL = '/api/sheet';
+var CSV_URL = '/api/sheet';
+var rawRows = [];
+var notes = {};
+var invFilter = 'all';
+var sortKey = '';
+var sortDir = -1;
+var expenses = [];
 
-//  INVENTORY STATE 
-let rawRows = [];
-let notes = {};        // per-row user notes (keyed by index)
-let invFilter = 'all';
-let sortKey = '';
-let sortDir = 1;
-let expenses = [];
-
-//  LOAD SHEET 
 async function loadSheet() {
-  document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10"> Loading inventory...</td></tr>';
+  document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">Loading inventory...</td></tr>';
   try {
-    const res = await fetch(CSV_URL + '?t=' + Date.now());
-    const data = await res.json();
-    rawRows = parseJSON(data);
+    var res = await fetch(CSV_URL + '?t=' + Date.now());
+    var data = await res.json();
+    rawRows = parseData(data);
     renderTable();
+  calcLiveFinance(data);
   } catch(e) {
-    document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10"> Could not load sheet.</td></tr>';
+    document.getElementById('inv-body').innerHTML = '<tr class="loading-row"><td colspan="10">Could not load sheet. Error: ' + e.message + '</td></tr>';
+    console.error(e);
   }
-}
-
-function parseJSON(data) {
-  const rows = [];
-  // row 0 is header, skip it
-  for (let i = 1; i < data.length; i++) {
-    const r = data[i];
-    const item  = String(r[0]||'').trim();
-    const from  = String(r[1]||'').trim();
-    const size  = String(r[2]||'').trim();
-    const cost  = parseMoney(r[6]);
-    const soldAmt = parseMoney(r[7]);
-    const profit= parseMoney(r[8]);
-    const status= String(r[9]||'').trim();
-    const paymt = String(r[10]||'').trim();
-    const datePurch = String(r[11]||'').trim();
-    const dateSold  = String(r[12]||'').trim();
-    const orderNum  = String(r[13]||'').trim();
-    if (!item) continue;
-    const warn = orderNum.toUpperCase().includes('CANT RETURN') ? 'CANT RETURN' : '';
-    rows.push({ item, from, size, cost, soldAmt, profit, status, paymt, datePurch, dateSold, orderNum, warn });
-  }
-  return rows;
 }
 
 function parseMoney(s) {
@@ -642,14 +587,33 @@ function parseMoney(s) {
   return isNaN(n) ? 0 : n;
 }
 
-//  RENDER TABLE 
-function renderTable() {
-  const q = (document.getElementById('inv-search')?.value || '').toLowerCase();
-  const pfilt = document.getElementById('filter-platform')?.value || '';
-  const sortSel = document.getElementById('sort-col')?.value || '';
+function parseData(data) {
+  var rows = [];
+  for (var i = 1; i < data.length; i++) {
+    var r = data[i];
+    var item = String(r[0]||'').trim();
+    var from = String(r[1]||'').trim();
+    var size = String(r[2]||'').trim();
+    var cost = parseMoney(r[6]);
+    var soldAmt = parseMoney(r[7]);
+    var profit = parseMoney(r[8]);
+    var status = String(r[9]||'').trim();
+    var dateSold = String(r[12]||'').trim();
+    var orderNum = String(r[13]||'').trim();
+    if (!item) continue;
+    var warn = orderNum.toUpperCase().indexOf('CANT RETURN') >= 0 ? 'CANT RETURN' : '';
+    rows.push({item:item, from:from, size:size, cost:cost, soldAmt:soldAmt, profit:profit, status:status, dateSold:dateSold, orderNum:orderNum, warn:warn});
+  }
+  return rows;
+}
 
-  let rows = rawRows.filter((r, i) => {
-    if (q && !r.item.toLowerCase().includes(q) && !r.from.toLowerCase().includes(q) && !r.size.toLowerCase().includes(q) && !(r.status||'').toLowerCase().includes(q)) return false;
+function renderTable() {
+  var q = (document.getElementById('inv-search').value||'').toLowerCase();
+  var pfilt = document.getElementById('filter-platform').value||'';
+  var sortSel = document.getElementById('sort-col').value||'';
+
+  var rows = rawRows.filter(function(r) {
+    if (q && r.item.toLowerCase().indexOf(q)<0 && r.from.toLowerCase().indexOf(q)<0 && r.size.toLowerCase().indexOf(q)<0 && (r.status||'').toLowerCase().indexOf(q)<0) return false;
     if (pfilt && r.status !== pfilt) return false;
     if (invFilter === 'unsold') return r.status === 'Unsold' || !r.status;
     if (invFilter === 'sold') return r.dateSold && r.status !== 'Return/Cancel' && r.status !== 'Kept' && r.status !== 'Unsold';
@@ -658,1534 +622,118 @@ function renderTable() {
     return true;
   });
 
-  // sort
-  let sk = sortKey || (sortSel.split('-')[0]);
-  let sd = sortDir;
   if (sortSel) {
-    sk = sortSel.split('-')[0];
-    sd = sortSel.endsWith('desc') ? -1 : 1;
-  }
-  if (sk) {
-    rows.sort((a, b) => {
-      let av = a[sk], bv = b[sk];
-      if (sk === 'profit' || sk === 'cost' || sk === 'sold') { av = parseFloat(av)||0; bv = parseFloat(bv)||0; }
-      else if (sk === 'dateSold') { av = av ? new Date(av) : new Date(0); bv = bv ? new Date(bv) : new Date(0); }
-      else { av = (av||'').toLowerCase(); bv = (bv||'').toLowerCase(); }
-      return av < bv ? -sd : av > bv ? sd : 0;
+    var sk2 = sortSel.split('-')[0];
+    var sd2 = sortSel.indexOf('desc') >= 0 ? -1 : 1;
+    rows.sort(function(a,b) {
+      var av = a[sk2], bv = b[sk2];
+      if (sk2==='profit'||sk2==='cost'||sk2==='soldAmt') { av=parseMoney(av)||0; bv=parseMoney(bv)||0; }
+      else { av=(av||'').toLowerCase(); bv=(bv||'').toLowerCase(); }
+      return av<bv?-sd2:av>bv?sd2:0;
+    });
+  } else {
+    rows.sort(function(a,b) {
+      var sa=(a.status||'Unsold').toLowerCase(), sb=(b.status||'Unsold').toLowerCase();
+      return sa<sb?-1:sa>sb?1:0;
     });
   }
 
-  document.getElementById('inv-count').textContent = `${rows.length} items`;
-
-  const body = document.getElementById('inv-body');
+  document.getElementById('inv-count').textContent = rows.length + ' items';
+  var body = document.getElementById('inv-body');
   if (!rows.length) { body.innerHTML = '<tr class="loading-row"><td colspan="10">No items match.</td></tr>'; return; }
 
-  body.innerHTML = rows.map((r, idx) => {
-    const origIdx = rawRows.indexOf(r);
-    const sc = getStatusClass(r.status);
-    const sl = r.status || 'Unsold';
-    const pc = r.profit > 0.1 ? 'profit-pos' : r.profit < -0.1 ? 'profit-neg' : 'profit-zero';
-    const ps = r.profit > 0 ? '+' : '';
-    const noteVal = notes[origIdx] || '';
-    return `<tr>
-      <td><span class="item-name" title="${r.item}">${r.item}</span></td>
-      <td>${r.from}</td>
-      <td>${r.size}</td>
-      <td class="profit-zero">$${r.cost.toFixed(2)}</td>
-      <td class="profit-zero">${r.soldAmt ? '$'+r.soldAmt.toFixed(2) : ''}</td>
-      <td class="${pc}">${ps}$${r.profit.toFixed(2)}</td>
-      <td><span class="status-pill ${sc}">${sl}</span></td>
-      <td style="font-family:var(--font-mono);font-size:10px;color:var(--text3);">${r.dateSold || ''}</td>
-      <td><span class="status-pill ${sc}">${sl}</span></td>
-      <td>${r.warn ? `<span class="warn-badge"> ${r.warn}</span>` : ''}<input class="note-cell" placeholder="Add note..." value="${noteVal}" oninput="saveNote(${origIdx},this.value)"/></td>
-    </tr>`;
+  body.innerHTML = rows.map(function(r, idx) {
+    var origIdx = rawRows.indexOf(r);
+    var sl = r.status||'Unsold';
+    var sc = sl==='Return/Cancel'?'s-return':sl==='Kept'?'s-kept':(sl==='Unsold')?'s-unsold':'s-sold';
+    var pc2='plat-unsold';
+    if(sl==='Mercari')pc2='plat-mercari';
+    else if(sl==='Ebay'||sl==='eBay')pc2='plat-ebay';
+    else if(sl==='StockX')pc2='plat-stockx';
+    else if(sl==='In Person')pc2='plat-inperson';
+    else if(sl.indexOf('Tiktok')>=0||sl.indexOf('TikTok')>=0)pc2='plat-tiktok';
+    else if(sl==='Cashout')pc2='plat-cashout';
+    else if(sl==='Whatnot')pc2='plat-whatnot';
+    else if(sl==='Locations Sold')pc2='plat-locations';
+    else if(sl==='Return/Cancel')pc2='plat-return';
+    else if(sl==='Kept')pc2='plat-kept';
+    else if(sl!=='Unsold')pc2='plat-inperson';
+    var pc = r.profit>0.1?'profit-pos':r.profit<-0.1?'profit-neg':'profit-zero';
+    var ps = r.profit>0?'+':'';
+    var noteVal = (notes[origIdx]||'').replace(/"/g,'&quot;');
+    return '<tr>'
+      +'<td><span class="item-name" title="'+r.item+'">'+r.item+'</span></td>'
+      +'<td>'+r.from+'</td>'
+      +'<td>'+r.size+'</td>'
+      +'<td class="profit-zero">$'+r.cost.toFixed(2)+'</td>'
+      +'<td class="profit-zero">'+(r.soldAmt?'$'+r.soldAmt.toFixed(2):'--')+'</td>'
+      +'<td class="'+pc+'">'+ps+'$'+r.profit.toFixed(2)+'</td>'
+      +'<td><span class="pill-s '+pc2+'">'+sl+'</span></td>'
+      +'<td style="font-family:var(--mono);font-size:10px;color:var(--text3);">'+(r.dateSold||'--')+'</td>'
+      +'<td><span class="pill-s '+pc2+'">'+sl+'</span></td>'
+      +'<td>'+(r.warn?'<span class="warn-badge">! '+r.warn+'</span>':'')+'<input class="note-cell" placeholder="Note..." value="'+noteVal+'" oninput="notes['+origIdx+']=this.value"/></td>'
+      +'</tr>';
   }).join('');
-}
-
-function saveNote(idx, val) { notes[idx] = val; }
-
-function getStatusClass(s) {
-  if (!s || s === 'Unsold') return 's-unsold';
-  if (s === 'Return/Cancel') return 's-return';
-  if (s === 'Kept') return 's-kept';
-  return 's-sold';
 }
 
 
 function calcLiveFinance(data) {
-  // Calculate live totals from inventory sheet profit column (col 8)
-  var totals = {Mercari:0, Ebay:0, StockX:0, 'In Person':0, Cashout:0, 'FBT Tiktok':0, Whatnot:0, 'Locations Sold':0};
-  var todayStr = new Date().toLocaleDateString('en-US');
-  var todayEbay=0, todayMercari=0, todayTiktok=0, todayInperson=0;
+  var totals = {Mercari:0,Ebay:0,StockX:0};
+  totals['In Person']=0; totals['Cashout']=0; totals['FBT Tiktok']=0;
+  totals['Whatnot']=0; totals['Locations Sold']=0;
+  var today = new Date(); today.setHours(0,0,0,0);
+  var todayEbay=0,todayMercari=0,todayTiktok=0,todayPerson=0;
   for (var i=1; i<data.length; i++) {
-    var row = data[i];
-    var profit = parseMoney(row[8]);
-    var status = String(row[9]||'').trim();
-    var dateSold = String(row[12]||'').trim();
-    if (!status || status==='Unsold' || status==='Return/Cancel' || status==='Kept') continue;
-    if (profit === 0) continue;
-    if (totals.hasOwnProperty(status)) totals[status] += profit;
-    // Check if sold today
+    var row=data[i];
+    var profit=parseMoney(row[8]);
+    var status=String(row[9]||'').trim();
+    var dateSold=String(row[12]||'').trim();
+    if (!status||status==='Unsold'||status==='Return/Cancel'||status==='Kept') continue;
+    if (profit===0) continue;
+    if (totals.hasOwnProperty(status)) totals[status]+=profit;
     if (dateSold) {
       try {
-        var d = new Date(dateSold);
-        var ds = d.toLocaleDateString('en-US');
-        if (ds === todayStr) {
-          if (status==='Ebay'||status==='eBay') todayEbay+=profit;
-          else if (status==='Mercari') todayMercari+=profit;
-          else if (status==='FBT Tiktok') todayTiktok+=profit;
-          else if (status==='In Person') todayInperson+=profit;
+        var d=new Date(dateSold); d.setHours(0,0,0,0);
+        if (d.getTime()===today.getTime()) {
+          if(status==='Ebay') todayEbay+=profit;
+          else if(status==='Mercari') todayMercari+=profit;
+          else if(status==='FBT Tiktok') todayTiktok+=profit;
+          else if(status==='In Person') todayPerson+=profit;
         }
-      } catch(e){}
+      } catch(err){}
     }
   }
-  var total = Object.values(totals).reduce(function(s,v){return s+v;},0);
-  // Update Finance Pulse on home
-  var cells = {
-    'TikTok Shop': totals['FBT Tiktok']||0,
-    'eBay': totals['Ebay']||0,
-    'Mercari': totals['Mercari']||0,
-    'In Person': totals['In Person']||0,
-    'Cashout': totals['Cashout']||0,
-    'StockX': totals['StockX']||0
-  };
-  var amts = document.querySelectorAll('.fp-cell .amt');
-  var vals = Object.values(cells);
-  amts.forEach(function(el,i){ if(vals[i]!==undefined && vals[i]>0) el.textContent='
-  invFilter = f;
-  ['all','unsold','sold','return','warn'].forEach(x => {
-    document.getElementById('rf-'+x).classList.toggle('active', x === f);
-  });
-  renderTable();
-}
-
-function cycleSortCol(col) {
-  if (sortKey === col) sortDir = -sortDir;
-  else { sortKey = col; sortDir = -1; }
-  renderTable();
-}
-
-//  TABS 
-function switchTab(tab) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+tab).classList.add('active');
-  const order = ['home','resale','content','finance'];
-  document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
-  if (tab === 'resale' && rawRows.length === 0) loadSheet();
-}
-
-//  HABITS 
-const HABITS = [
-  {name:'Post content',tag:'BRAND',goal:1},
-  {name:'List inventory',tag:'RESALE',goal:3},
-  {name:'Film a reel',tag:'CONTENT',goal:1},
-  {name:'Check metrics',tag:'OPS',goal:1},
-  {name:'Morning routine',tag:'HEALTH',goal:1},
-  {name:'Read 10 mins',tag:'GROWTH',goal:1},
-];
-let habitDone = new Array(6).fill(false);
-function buildHabits() {
-  const grid = document.getElementById('habits-grid');
-  grid.innerHTML = '';
-  HABITS.forEach((h, i) => {
-    const c = document.createElement('div');
-    c.className = 'hcard'+(habitDone[i]?' done':'');
-    c.innerHTML = `<div class="hcheck${habitDone[i]?' on':''}"></div><div class="hname">${h.name}</div><div class="htag">${h.tag}</div><div class="hcount">${habitDone[i]?'1':'0'}/${h.goal}</div>`;
-    c.onclick = () => { habitDone[i]=!habitDone[i]; buildHabits(); updateHabitScore(); };
-    grid.appendChild(c);
-  });
-}
-function updateHabitScore() {
-  const done = habitDone.filter(Boolean).length;
-  const pct = Math.round(done/HABITS.length*100);
-  const circ = document.getElementById('h-score-circle');
-  circ.textContent = done;
-  circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} - ${pct}%`;
-  const msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
-  document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
-  for (let j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
-}
-
-//  TASKS 
-let TASKS = [
-  {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
-  {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
-  {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
-  {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs  5 unsold',tag:'RESALE',priority:true,done:false},
-];
-function buildTasks() {
-  const list = document.getElementById('tasks-list');
-  list.innerHTML = '';
-  let remaining = 0;
-  TASKS.forEach((t, i) => {
-    if (!t.done) remaining++;
-    const el = document.createElement('div');
-    el.className = 'titem';
-    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}"></div>`;
-    el.onclick = () => { TASKS[i].done=!TASKS[i].done; buildTasks(); };
-    list.appendChild(el);
-  });
-  document.getElementById('task-count').textContent = remaining;
-}
-function addTask() {
-  const inp = document.getElementById('task-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  TASKS.push({name:v,tag:'PERSONAL',priority:false,done:false});
-  inp.value = '';
-  buildTasks();
-}
-
-//  GOALS 
-const goals = {w:'',m:'',y:''};
-function saveGoal(t) {
-  const val = document.getElementById(t+'g').value.trim();
-  if (!val) return;
-  goals[t] = val;
-  const wrap = document.getElementById(t+'g-wrap');
-  wrap.innerHTML = `<div class="gsaved">${val}</div><div class="gedit" onclick="editGoal('${t}')">edit</div>`;
-}
-function editGoal(t) {
-  document.getElementById(t+'g-wrap').innerHTML = `<input class="ginput" id="${t}g" value="${goals[t]}" onkeydown="if(event.key==='Enter')saveGoal('${t}')" autofocus/>`;
-  document.getElementById(t+'g').focus();
-}
-
-//  CAPTURE 
-let capturedNotes = [];
-function captureNote() {
-  const inp = document.getElementById('cap-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  capturedNotes.unshift(v);
-  inp.value = '';
-  document.getElementById('captured').innerHTML = capturedNotes.slice(0,3).map(n=>`<div class="note-chip">${n}</div>`).join('');
-}
-document.getElementById('cap-in').addEventListener('keydown', e=>{ if(e.key==='Enter') captureNote(); });
-
-//  DAILY SALES 
-function calcDaily() {
-  const ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
-  const total = ids.reduce((s,id)=>{
-    const v = parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0;
-    return s+v;
-  },0);
-  document.getElementById('ds-total').textContent = '$'+total.toFixed(2);
-}
-
-//  NUTRITION 
-let meals = [];
-function logMeal() {
-  const inp = document.getElementById('meal-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  meals.push({name:v, kcal:Math.floor(Math.random()*300)+200, protein:Math.floor(Math.random()*30)+10, carbs:Math.floor(Math.random()*40)+20, fat:Math.floor(Math.random()*15)+5});
-  inp.value = '';
-  renderMeals();
-}
-document.getElementById('meal-in').addEventListener('keydown',e=>{if(e.key==='Enter')logMeal();});
-function renderMeals() {
-  const tk=meals.reduce((s,m)=>s+m.kcal,0), tp=meals.reduce((s,m)=>s+m.protein,0), tc=meals.reduce((s,m)=>s+m.carbs,0), tf=meals.reduce((s,m)=>s+m.fat,0);
-  const big=document.getElementById('kcal-big');
-  big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
-  document.getElementById('prot-d').textContent=tp+'g protein';
-  document.getElementById('carb-d').textContent=tc+'g carbs';
-  document.getElementById('fat-d').textContent=tf+'g fat';
-  document.getElementById('kcal-bar').style.width=Math.min(tk/2200*100,100)+'%';
-  const list=document.getElementById('meals-list');
-  if(!meals.length){list.innerHTML='<div class="no-meals">No meals logged yet.</div>';return;}
-  list.innerHTML=meals.map(m=>`<div class="meal-row"><span class="meal-n">${m.name}</span><span class="meal-k">${m.kcal} kcal</span></div>`).join('');
-}
-
-//  CALENDAR 
-function buildCalendar() {
-  const now=new Date(), today=now.getDate();
-  const dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  document.getElementById('cal-month').textContent=mn[now.getMonth()]+' '+now.getFullYear();
-  const week=document.getElementById('cal-week'); week.innerHTML='';
-  for(let i=0;i<7;i++){
-    const d=new Date(now); d.setDate(today+(i-3));
-    const div=document.createElement('div');
-    div.className='cal-day'+(i===3?' today':'');
-    div.innerHTML=`<div class="dn">${dn[d.getDay()]}</div><div class="dd">${d.getDate()}</div>`;
-    week.appendChild(div);
-  }
-  const events=[
-    {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
-    {time:'11:00',title:'Film reel content',color:'var(--green)'},
-    {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items  eBay/Mercari',color:'var(--blue)'},
-  ];
-  document.getElementById('cal-count').textContent=`TODAY - ${events.length} EVENTS`;
-  const ev=document.getElementById('cal-events'); ev.innerHTML='';
-  events.forEach(e=>{
-    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW - ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
-    const el=document.createElement('div');el.className='cal-event';el.innerHTML=`<div class="cal-dot" style="background:${e.color}"></div><div class="cal-time">${e.time}</div><div class="cal-title">${e.title}</div>`;ev.appendChild(el);
-  });
-}
-
-//  CLOCK 
-function updateClock() {
-  const now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
-  const ampm=h>=12?'PM':'AM', h12=h%12||12;
-  document.getElementById('clock-disp').innerHTML=`${h12}:${m}<sup>${ampm}</sup>`;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
-  document.getElementById('greeting-txt').innerHTML=`${g}, <em>Thomas.</em>`;
-  document.getElementById('session-date').textContent=`${days[now.getDay()].toUpperCase()}, ${months[now.getMonth()].toUpperCase()} ${now.getDate()}`;
-  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} - <span>${h12}:${m} ${ampm}</span>`;
-}
-
-//  EXPENSES 
-function addExpense() {
-  const name=document.getElementById('exp-name').value.trim();
-  const type=document.getElementById('exp-type').value;
-  const amt=parseFloat(document.getElementById('exp-amt').value)||0;
-  if(!name||!amt)return;
-  expenses.push({name,type,amt});
-  document.getElementById('exp-name').value='';
-  document.getElementById('exp-amt').value='';
-  renderExpenses();
-}
-function removeExpense(i) { expenses.splice(i,1); renderExpenses(); }
-function renderExpenses() {
-  const list=document.getElementById('exp-list');
-  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})"></button></div>`).join('');
-  const total=expenses.reduce((s,e)=>s+e.amt,0);
-  const tot=document.getElementById('exp-total');
-  tot.style.display=expenses.length?'flex':'none';
-  document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
-}
-
-//  CONTENT POSTS 
-function addPost() {
-  const platform=prompt('Platform (Instagram / TikTok / Both):');
-  const topic=prompt('Post topic or title:');
-  if(!platform||!topic)return;
-  const now=new Date();
-  const el=document.createElement('div');
-  el.className='post-item';
-  el.innerHTML=`<div class="post-platform">${platform}</div><div class="post-topic">${topic}</div><div class="post-date">${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}</div><div class="post-status ps-live">Live</div>`;
-  document.getElementById('post-tracker').appendChild(el);
-}
-
-//  INIT 
-setInterval(updateClock,1000);
-updateClock();
-buildCalendar();
-buildHabits();
-updateHabitScore();
-buildTasks();
-renderExpenses();
-</script>
-</body>
-</html>
-+vals[i].toFixed(0).replace(/B(?=(d{3})+(?!d))/g,','); });
-  // Update YTD badge
-  var badge = document.querySelector('.fp-badge');
-  if(badge && total>0) badge.textContent='^ 
-  invFilter = f;
-  ['all','unsold','sold','return','warn'].forEach(x => {
-    document.getElementById('rf-'+x).classList.toggle('active', x === f);
-  });
-  renderTable();
-}
-
-function cycleSortCol(col) {
-  if (sortKey === col) sortDir = -sortDir;
-  else { sortKey = col; sortDir = -1; }
-  renderTable();
-}
-
-//  TABS 
-function switchTab(tab) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+tab).classList.add('active');
-  const order = ['home','resale','content','finance'];
-  document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
-  if (tab === 'resale' && rawRows.length === 0) loadSheet();
-}
-
-//  HABITS 
-const HABITS = [
-  {name:'Post content',tag:'BRAND',goal:1},
-  {name:'List inventory',tag:'RESALE',goal:3},
-  {name:'Film a reel',tag:'CONTENT',goal:1},
-  {name:'Check metrics',tag:'OPS',goal:1},
-  {name:'Morning routine',tag:'HEALTH',goal:1},
-  {name:'Read 10 mins',tag:'GROWTH',goal:1},
-];
-let habitDone = new Array(6).fill(false);
-function buildHabits() {
-  const grid = document.getElementById('habits-grid');
-  grid.innerHTML = '';
-  HABITS.forEach((h, i) => {
-    const c = document.createElement('div');
-    c.className = 'hcard'+(habitDone[i]?' done':'');
-    c.innerHTML = `<div class="hcheck${habitDone[i]?' on':''}"></div><div class="hname">${h.name}</div><div class="htag">${h.tag}</div><div class="hcount">${habitDone[i]?'1':'0'}/${h.goal}</div>`;
-    c.onclick = () => { habitDone[i]=!habitDone[i]; buildHabits(); updateHabitScore(); };
-    grid.appendChild(c);
-  });
-}
-function updateHabitScore() {
-  const done = habitDone.filter(Boolean).length;
-  const pct = Math.round(done/HABITS.length*100);
-  const circ = document.getElementById('h-score-circle');
-  circ.textContent = done;
-  circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} - ${pct}%`;
-  const msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
-  document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
-  for (let j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
-}
-
-//  TASKS 
-let TASKS = [
-  {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
-  {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
-  {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
-  {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs  5 unsold',tag:'RESALE',priority:true,done:false},
-];
-function buildTasks() {
-  const list = document.getElementById('tasks-list');
-  list.innerHTML = '';
-  let remaining = 0;
-  TASKS.forEach((t, i) => {
-    if (!t.done) remaining++;
-    const el = document.createElement('div');
-    el.className = 'titem';
-    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}"></div>`;
-    el.onclick = () => { TASKS[i].done=!TASKS[i].done; buildTasks(); };
-    list.appendChild(el);
-  });
-  document.getElementById('task-count').textContent = remaining;
-}
-function addTask() {
-  const inp = document.getElementById('task-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  TASKS.push({name:v,tag:'PERSONAL',priority:false,done:false});
-  inp.value = '';
-  buildTasks();
-}
-
-//  GOALS 
-const goals = {w:'',m:'',y:''};
-function saveGoal(t) {
-  const val = document.getElementById(t+'g').value.trim();
-  if (!val) return;
-  goals[t] = val;
-  const wrap = document.getElementById(t+'g-wrap');
-  wrap.innerHTML = `<div class="gsaved">${val}</div><div class="gedit" onclick="editGoal('${t}')">edit</div>`;
-}
-function editGoal(t) {
-  document.getElementById(t+'g-wrap').innerHTML = `<input class="ginput" id="${t}g" value="${goals[t]}" onkeydown="if(event.key==='Enter')saveGoal('${t}')" autofocus/>`;
-  document.getElementById(t+'g').focus();
-}
-
-//  CAPTURE 
-let capturedNotes = [];
-function captureNote() {
-  const inp = document.getElementById('cap-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  capturedNotes.unshift(v);
-  inp.value = '';
-  document.getElementById('captured').innerHTML = capturedNotes.slice(0,3).map(n=>`<div class="note-chip">${n}</div>`).join('');
-}
-document.getElementById('cap-in').addEventListener('keydown', e=>{ if(e.key==='Enter') captureNote(); });
-
-//  DAILY SALES 
-function calcDaily() {
-  const ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
-  const total = ids.reduce((s,id)=>{
-    const v = parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0;
-    return s+v;
-  },0);
-  document.getElementById('ds-total').textContent = '$'+total.toFixed(2);
-}
-
-//  NUTRITION 
-let meals = [];
-function logMeal() {
-  const inp = document.getElementById('meal-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  meals.push({name:v, kcal:Math.floor(Math.random()*300)+200, protein:Math.floor(Math.random()*30)+10, carbs:Math.floor(Math.random()*40)+20, fat:Math.floor(Math.random()*15)+5});
-  inp.value = '';
-  renderMeals();
-}
-document.getElementById('meal-in').addEventListener('keydown',e=>{if(e.key==='Enter')logMeal();});
-function renderMeals() {
-  const tk=meals.reduce((s,m)=>s+m.kcal,0), tp=meals.reduce((s,m)=>s+m.protein,0), tc=meals.reduce((s,m)=>s+m.carbs,0), tf=meals.reduce((s,m)=>s+m.fat,0);
-  const big=document.getElementById('kcal-big');
-  big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
-  document.getElementById('prot-d').textContent=tp+'g protein';
-  document.getElementById('carb-d').textContent=tc+'g carbs';
-  document.getElementById('fat-d').textContent=tf+'g fat';
-  document.getElementById('kcal-bar').style.width=Math.min(tk/2200*100,100)+'%';
-  const list=document.getElementById('meals-list');
-  if(!meals.length){list.innerHTML='<div class="no-meals">No meals logged yet.</div>';return;}
-  list.innerHTML=meals.map(m=>`<div class="meal-row"><span class="meal-n">${m.name}</span><span class="meal-k">${m.kcal} kcal</span></div>`).join('');
-}
-
-//  CALENDAR 
-function buildCalendar() {
-  const now=new Date(), today=now.getDate();
-  const dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  document.getElementById('cal-month').textContent=mn[now.getMonth()]+' '+now.getFullYear();
-  const week=document.getElementById('cal-week'); week.innerHTML='';
-  for(let i=0;i<7;i++){
-    const d=new Date(now); d.setDate(today+(i-3));
-    const div=document.createElement('div');
-    div.className='cal-day'+(i===3?' today':'');
-    div.innerHTML=`<div class="dn">${dn[d.getDay()]}</div><div class="dd">${d.getDate()}</div>`;
-    week.appendChild(div);
-  }
-  const events=[
-    {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
-    {time:'11:00',title:'Film reel content',color:'var(--green)'},
-    {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items  eBay/Mercari',color:'var(--blue)'},
-  ];
-  document.getElementById('cal-count').textContent=`TODAY - ${events.length} EVENTS`;
-  const ev=document.getElementById('cal-events'); ev.innerHTML='';
-  events.forEach(e=>{
-    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW - ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
-    const el=document.createElement('div');el.className='cal-event';el.innerHTML=`<div class="cal-dot" style="background:${e.color}"></div><div class="cal-time">${e.time}</div><div class="cal-title">${e.title}</div>`;ev.appendChild(el);
-  });
-}
-
-//  CLOCK 
-function updateClock() {
-  const now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
-  const ampm=h>=12?'PM':'AM', h12=h%12||12;
-  document.getElementById('clock-disp').innerHTML=`${h12}:${m}<sup>${ampm}</sup>`;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
-  document.getElementById('greeting-txt').innerHTML=`${g}, <em>Thomas.</em>`;
-  document.getElementById('session-date').textContent=`${days[now.getDay()].toUpperCase()}, ${months[now.getMonth()].toUpperCase()} ${now.getDate()}`;
-  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} - <span>${h12}:${m} ${ampm}</span>`;
-}
-
-//  EXPENSES 
-function addExpense() {
-  const name=document.getElementById('exp-name').value.trim();
-  const type=document.getElementById('exp-type').value;
-  const amt=parseFloat(document.getElementById('exp-amt').value)||0;
-  if(!name||!amt)return;
-  expenses.push({name,type,amt});
-  document.getElementById('exp-name').value='';
-  document.getElementById('exp-amt').value='';
-  renderExpenses();
-}
-function removeExpense(i) { expenses.splice(i,1); renderExpenses(); }
-function renderExpenses() {
-  const list=document.getElementById('exp-list');
-  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})"></button></div>`).join('');
-  const total=expenses.reduce((s,e)=>s+e.amt,0);
-  const tot=document.getElementById('exp-total');
-  tot.style.display=expenses.length?'flex':'none';
-  document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
-}
-
-//  CONTENT POSTS 
-function addPost() {
-  const platform=prompt('Platform (Instagram / TikTok / Both):');
-  const topic=prompt('Post topic or title:');
-  if(!platform||!topic)return;
-  const now=new Date();
-  const el=document.createElement('div');
-  el.className='post-item';
-  el.innerHTML=`<div class="post-platform">${platform}</div><div class="post-topic">${topic}</div><div class="post-date">${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}</div><div class="post-status ps-live">Live</div>`;
-  document.getElementById('post-tracker').appendChild(el);
-}
-
-//  INIT 
-setInterval(updateClock,1000);
-updateClock();
-buildCalendar();
-buildHabits();
-updateHabitScore();
-buildTasks();
-renderExpenses();
-</script>
-</body>
-</html>
-+total.toFixed(2).replace(/B(?=(d{3})+(?!d))/g,',')+' YTD';
-  // Update daily sales inputs if today has sales
-  if(todayEbay) document.getElementById('ds-ebay').value='
-  invFilter = f;
-  ['all','unsold','sold','return','warn'].forEach(x => {
-    document.getElementById('rf-'+x).classList.toggle('active', x === f);
-  });
-  renderTable();
-}
-
-function cycleSortCol(col) {
-  if (sortKey === col) sortDir = -sortDir;
-  else { sortKey = col; sortDir = -1; }
-  renderTable();
-}
-
-//  TABS 
-function switchTab(tab) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+tab).classList.add('active');
-  const order = ['home','resale','content','finance'];
-  document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
-  if (tab === 'resale' && rawRows.length === 0) loadSheet();
-}
-
-//  HABITS 
-const HABITS = [
-  {name:'Post content',tag:'BRAND',goal:1},
-  {name:'List inventory',tag:'RESALE',goal:3},
-  {name:'Film a reel',tag:'CONTENT',goal:1},
-  {name:'Check metrics',tag:'OPS',goal:1},
-  {name:'Morning routine',tag:'HEALTH',goal:1},
-  {name:'Read 10 mins',tag:'GROWTH',goal:1},
-];
-let habitDone = new Array(6).fill(false);
-function buildHabits() {
-  const grid = document.getElementById('habits-grid');
-  grid.innerHTML = '';
-  HABITS.forEach((h, i) => {
-    const c = document.createElement('div');
-    c.className = 'hcard'+(habitDone[i]?' done':'');
-    c.innerHTML = `<div class="hcheck${habitDone[i]?' on':''}"></div><div class="hname">${h.name}</div><div class="htag">${h.tag}</div><div class="hcount">${habitDone[i]?'1':'0'}/${h.goal}</div>`;
-    c.onclick = () => { habitDone[i]=!habitDone[i]; buildHabits(); updateHabitScore(); };
-    grid.appendChild(c);
-  });
-}
-function updateHabitScore() {
-  const done = habitDone.filter(Boolean).length;
-  const pct = Math.round(done/HABITS.length*100);
-  const circ = document.getElementById('h-score-circle');
-  circ.textContent = done;
-  circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} - ${pct}%`;
-  const msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
-  document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
-  for (let j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
-}
-
-//  TASKS 
-let TASKS = [
-  {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
-  {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
-  {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
-  {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs  5 unsold',tag:'RESALE',priority:true,done:false},
-];
-function buildTasks() {
-  const list = document.getElementById('tasks-list');
-  list.innerHTML = '';
-  let remaining = 0;
-  TASKS.forEach((t, i) => {
-    if (!t.done) remaining++;
-    const el = document.createElement('div');
-    el.className = 'titem';
-    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}"></div>`;
-    el.onclick = () => { TASKS[i].done=!TASKS[i].done; buildTasks(); };
-    list.appendChild(el);
-  });
-  document.getElementById('task-count').textContent = remaining;
-}
-function addTask() {
-  const inp = document.getElementById('task-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  TASKS.push({name:v,tag:'PERSONAL',priority:false,done:false});
-  inp.value = '';
-  buildTasks();
-}
-
-//  GOALS 
-const goals = {w:'',m:'',y:''};
-function saveGoal(t) {
-  const val = document.getElementById(t+'g').value.trim();
-  if (!val) return;
-  goals[t] = val;
-  const wrap = document.getElementById(t+'g-wrap');
-  wrap.innerHTML = `<div class="gsaved">${val}</div><div class="gedit" onclick="editGoal('${t}')">edit</div>`;
-}
-function editGoal(t) {
-  document.getElementById(t+'g-wrap').innerHTML = `<input class="ginput" id="${t}g" value="${goals[t]}" onkeydown="if(event.key==='Enter')saveGoal('${t}')" autofocus/>`;
-  document.getElementById(t+'g').focus();
-}
-
-//  CAPTURE 
-let capturedNotes = [];
-function captureNote() {
-  const inp = document.getElementById('cap-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  capturedNotes.unshift(v);
-  inp.value = '';
-  document.getElementById('captured').innerHTML = capturedNotes.slice(0,3).map(n=>`<div class="note-chip">${n}</div>`).join('');
-}
-document.getElementById('cap-in').addEventListener('keydown', e=>{ if(e.key==='Enter') captureNote(); });
-
-//  DAILY SALES 
-function calcDaily() {
-  const ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
-  const total = ids.reduce((s,id)=>{
-    const v = parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0;
-    return s+v;
-  },0);
-  document.getElementById('ds-total').textContent = '$'+total.toFixed(2);
-}
-
-//  NUTRITION 
-let meals = [];
-function logMeal() {
-  const inp = document.getElementById('meal-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  meals.push({name:v, kcal:Math.floor(Math.random()*300)+200, protein:Math.floor(Math.random()*30)+10, carbs:Math.floor(Math.random()*40)+20, fat:Math.floor(Math.random()*15)+5});
-  inp.value = '';
-  renderMeals();
-}
-document.getElementById('meal-in').addEventListener('keydown',e=>{if(e.key==='Enter')logMeal();});
-function renderMeals() {
-  const tk=meals.reduce((s,m)=>s+m.kcal,0), tp=meals.reduce((s,m)=>s+m.protein,0), tc=meals.reduce((s,m)=>s+m.carbs,0), tf=meals.reduce((s,m)=>s+m.fat,0);
-  const big=document.getElementById('kcal-big');
-  big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
-  document.getElementById('prot-d').textContent=tp+'g protein';
-  document.getElementById('carb-d').textContent=tc+'g carbs';
-  document.getElementById('fat-d').textContent=tf+'g fat';
-  document.getElementById('kcal-bar').style.width=Math.min(tk/2200*100,100)+'%';
-  const list=document.getElementById('meals-list');
-  if(!meals.length){list.innerHTML='<div class="no-meals">No meals logged yet.</div>';return;}
-  list.innerHTML=meals.map(m=>`<div class="meal-row"><span class="meal-n">${m.name}</span><span class="meal-k">${m.kcal} kcal</span></div>`).join('');
-}
-
-//  CALENDAR 
-function buildCalendar() {
-  const now=new Date(), today=now.getDate();
-  const dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  document.getElementById('cal-month').textContent=mn[now.getMonth()]+' '+now.getFullYear();
-  const week=document.getElementById('cal-week'); week.innerHTML='';
-  for(let i=0;i<7;i++){
-    const d=new Date(now); d.setDate(today+(i-3));
-    const div=document.createElement('div');
-    div.className='cal-day'+(i===3?' today':'');
-    div.innerHTML=`<div class="dn">${dn[d.getDay()]}</div><div class="dd">${d.getDate()}</div>`;
-    week.appendChild(div);
-  }
-  const events=[
-    {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
-    {time:'11:00',title:'Film reel content',color:'var(--green)'},
-    {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items  eBay/Mercari',color:'var(--blue)'},
-  ];
-  document.getElementById('cal-count').textContent=`TODAY - ${events.length} EVENTS`;
-  const ev=document.getElementById('cal-events'); ev.innerHTML='';
-  events.forEach(e=>{
-    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW - ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
-    const el=document.createElement('div');el.className='cal-event';el.innerHTML=`<div class="cal-dot" style="background:${e.color}"></div><div class="cal-time">${e.time}</div><div class="cal-title">${e.title}</div>`;ev.appendChild(el);
-  });
-}
-
-//  CLOCK 
-function updateClock() {
-  const now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
-  const ampm=h>=12?'PM':'AM', h12=h%12||12;
-  document.getElementById('clock-disp').innerHTML=`${h12}:${m}<sup>${ampm}</sup>`;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
-  document.getElementById('greeting-txt').innerHTML=`${g}, <em>Thomas.</em>`;
-  document.getElementById('session-date').textContent=`${days[now.getDay()].toUpperCase()}, ${months[now.getMonth()].toUpperCase()} ${now.getDate()}`;
-  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} - <span>${h12}:${m} ${ampm}</span>`;
-}
-
-//  EXPENSES 
-function addExpense() {
-  const name=document.getElementById('exp-name').value.trim();
-  const type=document.getElementById('exp-type').value;
-  const amt=parseFloat(document.getElementById('exp-amt').value)||0;
-  if(!name||!amt)return;
-  expenses.push({name,type,amt});
-  document.getElementById('exp-name').value='';
-  document.getElementById('exp-amt').value='';
-  renderExpenses();
-}
-function removeExpense(i) { expenses.splice(i,1); renderExpenses(); }
-function renderExpenses() {
-  const list=document.getElementById('exp-list');
-  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})"></button></div>`).join('');
-  const total=expenses.reduce((s,e)=>s+e.amt,0);
-  const tot=document.getElementById('exp-total');
-  tot.style.display=expenses.length?'flex':'none';
-  document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
-}
-
-//  CONTENT POSTS 
-function addPost() {
-  const platform=prompt('Platform (Instagram / TikTok / Both):');
-  const topic=prompt('Post topic or title:');
-  if(!platform||!topic)return;
-  const now=new Date();
-  const el=document.createElement('div');
-  el.className='post-item';
-  el.innerHTML=`<div class="post-platform">${platform}</div><div class="post-topic">${topic}</div><div class="post-date">${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}</div><div class="post-status ps-live">Live</div>`;
-  document.getElementById('post-tracker').appendChild(el);
-}
-
-//  INIT 
-setInterval(updateClock,1000);
-updateClock();
-buildCalendar();
-buildHabits();
-updateHabitScore();
-buildTasks();
-renderExpenses();
-</script>
-</body>
-</html>
-+todayEbay.toFixed(2);
-  if(todayMercari) document.getElementById('ds-mercari').value='
-  invFilter = f;
-  ['all','unsold','sold','return','warn'].forEach(x => {
-    document.getElementById('rf-'+x).classList.toggle('active', x === f);
-  });
-  renderTable();
-}
-
-function cycleSortCol(col) {
-  if (sortKey === col) sortDir = -sortDir;
-  else { sortKey = col; sortDir = -1; }
-  renderTable();
-}
-
-//  TABS 
-function switchTab(tab) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+tab).classList.add('active');
-  const order = ['home','resale','content','finance'];
-  document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
-  if (tab === 'resale' && rawRows.length === 0) loadSheet();
-}
-
-//  HABITS 
-const HABITS = [
-  {name:'Post content',tag:'BRAND',goal:1},
-  {name:'List inventory',tag:'RESALE',goal:3},
-  {name:'Film a reel',tag:'CONTENT',goal:1},
-  {name:'Check metrics',tag:'OPS',goal:1},
-  {name:'Morning routine',tag:'HEALTH',goal:1},
-  {name:'Read 10 mins',tag:'GROWTH',goal:1},
-];
-let habitDone = new Array(6).fill(false);
-function buildHabits() {
-  const grid = document.getElementById('habits-grid');
-  grid.innerHTML = '';
-  HABITS.forEach((h, i) => {
-    const c = document.createElement('div');
-    c.className = 'hcard'+(habitDone[i]?' done':'');
-    c.innerHTML = `<div class="hcheck${habitDone[i]?' on':''}"></div><div class="hname">${h.name}</div><div class="htag">${h.tag}</div><div class="hcount">${habitDone[i]?'1':'0'}/${h.goal}</div>`;
-    c.onclick = () => { habitDone[i]=!habitDone[i]; buildHabits(); updateHabitScore(); };
-    grid.appendChild(c);
-  });
-}
-function updateHabitScore() {
-  const done = habitDone.filter(Boolean).length;
-  const pct = Math.round(done/HABITS.length*100);
-  const circ = document.getElementById('h-score-circle');
-  circ.textContent = done;
-  circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} - ${pct}%`;
-  const msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
-  document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
-  for (let j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
-}
-
-//  TASKS 
-let TASKS = [
-  {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
-  {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
-  {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
-  {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs  5 unsold',tag:'RESALE',priority:true,done:false},
-];
-function buildTasks() {
-  const list = document.getElementById('tasks-list');
-  list.innerHTML = '';
-  let remaining = 0;
-  TASKS.forEach((t, i) => {
-    if (!t.done) remaining++;
-    const el = document.createElement('div');
-    el.className = 'titem';
-    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}"></div>`;
-    el.onclick = () => { TASKS[i].done=!TASKS[i].done; buildTasks(); };
-    list.appendChild(el);
-  });
-  document.getElementById('task-count').textContent = remaining;
-}
-function addTask() {
-  const inp = document.getElementById('task-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  TASKS.push({name:v,tag:'PERSONAL',priority:false,done:false});
-  inp.value = '';
-  buildTasks();
-}
-
-//  GOALS 
-const goals = {w:'',m:'',y:''};
-function saveGoal(t) {
-  const val = document.getElementById(t+'g').value.trim();
-  if (!val) return;
-  goals[t] = val;
-  const wrap = document.getElementById(t+'g-wrap');
-  wrap.innerHTML = `<div class="gsaved">${val}</div><div class="gedit" onclick="editGoal('${t}')">edit</div>`;
-}
-function editGoal(t) {
-  document.getElementById(t+'g-wrap').innerHTML = `<input class="ginput" id="${t}g" value="${goals[t]}" onkeydown="if(event.key==='Enter')saveGoal('${t}')" autofocus/>`;
-  document.getElementById(t+'g').focus();
-}
-
-//  CAPTURE 
-let capturedNotes = [];
-function captureNote() {
-  const inp = document.getElementById('cap-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  capturedNotes.unshift(v);
-  inp.value = '';
-  document.getElementById('captured').innerHTML = capturedNotes.slice(0,3).map(n=>`<div class="note-chip">${n}</div>`).join('');
-}
-document.getElementById('cap-in').addEventListener('keydown', e=>{ if(e.key==='Enter') captureNote(); });
-
-//  DAILY SALES 
-function calcDaily() {
-  const ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
-  const total = ids.reduce((s,id)=>{
-    const v = parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0;
-    return s+v;
-  },0);
-  document.getElementById('ds-total').textContent = '$'+total.toFixed(2);
-}
-
-//  NUTRITION 
-let meals = [];
-function logMeal() {
-  const inp = document.getElementById('meal-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  meals.push({name:v, kcal:Math.floor(Math.random()*300)+200, protein:Math.floor(Math.random()*30)+10, carbs:Math.floor(Math.random()*40)+20, fat:Math.floor(Math.random()*15)+5});
-  inp.value = '';
-  renderMeals();
-}
-document.getElementById('meal-in').addEventListener('keydown',e=>{if(e.key==='Enter')logMeal();});
-function renderMeals() {
-  const tk=meals.reduce((s,m)=>s+m.kcal,0), tp=meals.reduce((s,m)=>s+m.protein,0), tc=meals.reduce((s,m)=>s+m.carbs,0), tf=meals.reduce((s,m)=>s+m.fat,0);
-  const big=document.getElementById('kcal-big');
-  big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
-  document.getElementById('prot-d').textContent=tp+'g protein';
-  document.getElementById('carb-d').textContent=tc+'g carbs';
-  document.getElementById('fat-d').textContent=tf+'g fat';
-  document.getElementById('kcal-bar').style.width=Math.min(tk/2200*100,100)+'%';
-  const list=document.getElementById('meals-list');
-  if(!meals.length){list.innerHTML='<div class="no-meals">No meals logged yet.</div>';return;}
-  list.innerHTML=meals.map(m=>`<div class="meal-row"><span class="meal-n">${m.name}</span><span class="meal-k">${m.kcal} kcal</span></div>`).join('');
-}
-
-//  CALENDAR 
-function buildCalendar() {
-  const now=new Date(), today=now.getDate();
-  const dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  document.getElementById('cal-month').textContent=mn[now.getMonth()]+' '+now.getFullYear();
-  const week=document.getElementById('cal-week'); week.innerHTML='';
-  for(let i=0;i<7;i++){
-    const d=new Date(now); d.setDate(today+(i-3));
-    const div=document.createElement('div');
-    div.className='cal-day'+(i===3?' today':'');
-    div.innerHTML=`<div class="dn">${dn[d.getDay()]}</div><div class="dd">${d.getDate()}</div>`;
-    week.appendChild(div);
-  }
-  const events=[
-    {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
-    {time:'11:00',title:'Film reel content',color:'var(--green)'},
-    {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items  eBay/Mercari',color:'var(--blue)'},
-  ];
-  document.getElementById('cal-count').textContent=`TODAY - ${events.length} EVENTS`;
-  const ev=document.getElementById('cal-events'); ev.innerHTML='';
-  events.forEach(e=>{
-    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW - ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
-    const el=document.createElement('div');el.className='cal-event';el.innerHTML=`<div class="cal-dot" style="background:${e.color}"></div><div class="cal-time">${e.time}</div><div class="cal-title">${e.title}</div>`;ev.appendChild(el);
-  });
-}
-
-//  CLOCK 
-function updateClock() {
-  const now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
-  const ampm=h>=12?'PM':'AM', h12=h%12||12;
-  document.getElementById('clock-disp').innerHTML=`${h12}:${m}<sup>${ampm}</sup>`;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
-  document.getElementById('greeting-txt').innerHTML=`${g}, <em>Thomas.</em>`;
-  document.getElementById('session-date').textContent=`${days[now.getDay()].toUpperCase()}, ${months[now.getMonth()].toUpperCase()} ${now.getDate()}`;
-  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} - <span>${h12}:${m} ${ampm}</span>`;
-}
-
-//  EXPENSES 
-function addExpense() {
-  const name=document.getElementById('exp-name').value.trim();
-  const type=document.getElementById('exp-type').value;
-  const amt=parseFloat(document.getElementById('exp-amt').value)||0;
-  if(!name||!amt)return;
-  expenses.push({name,type,amt});
-  document.getElementById('exp-name').value='';
-  document.getElementById('exp-amt').value='';
-  renderExpenses();
-}
-function removeExpense(i) { expenses.splice(i,1); renderExpenses(); }
-function renderExpenses() {
-  const list=document.getElementById('exp-list');
-  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})"></button></div>`).join('');
-  const total=expenses.reduce((s,e)=>s+e.amt,0);
-  const tot=document.getElementById('exp-total');
-  tot.style.display=expenses.length?'flex':'none';
-  document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
-}
-
-//  CONTENT POSTS 
-function addPost() {
-  const platform=prompt('Platform (Instagram / TikTok / Both):');
-  const topic=prompt('Post topic or title:');
-  if(!platform||!topic)return;
-  const now=new Date();
-  const el=document.createElement('div');
-  el.className='post-item';
-  el.innerHTML=`<div class="post-platform">${platform}</div><div class="post-topic">${topic}</div><div class="post-date">${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}</div><div class="post-status ps-live">Live</div>`;
-  document.getElementById('post-tracker').appendChild(el);
-}
-
-//  INIT 
-setInterval(updateClock,1000);
-updateClock();
-buildCalendar();
-buildHabits();
-updateHabitScore();
-buildTasks();
-renderExpenses();
-</script>
-</body>
-</html>
-+todayMercari.toFixed(2);
-  if(todayTiktok) document.getElementById('ds-tiktok').value='
-  invFilter = f;
-  ['all','unsold','sold','return','warn'].forEach(x => {
-    document.getElementById('rf-'+x).classList.toggle('active', x === f);
-  });
-  renderTable();
-}
-
-function cycleSortCol(col) {
-  if (sortKey === col) sortDir = -sortDir;
-  else { sortKey = col; sortDir = -1; }
-  renderTable();
-}
-
-//  TABS 
-function switchTab(tab) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+tab).classList.add('active');
-  const order = ['home','resale','content','finance'];
-  document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
-  if (tab === 'resale' && rawRows.length === 0) loadSheet();
-}
-
-//  HABITS 
-const HABITS = [
-  {name:'Post content',tag:'BRAND',goal:1},
-  {name:'List inventory',tag:'RESALE',goal:3},
-  {name:'Film a reel',tag:'CONTENT',goal:1},
-  {name:'Check metrics',tag:'OPS',goal:1},
-  {name:'Morning routine',tag:'HEALTH',goal:1},
-  {name:'Read 10 mins',tag:'GROWTH',goal:1},
-];
-let habitDone = new Array(6).fill(false);
-function buildHabits() {
-  const grid = document.getElementById('habits-grid');
-  grid.innerHTML = '';
-  HABITS.forEach((h, i) => {
-    const c = document.createElement('div');
-    c.className = 'hcard'+(habitDone[i]?' done':'');
-    c.innerHTML = `<div class="hcheck${habitDone[i]?' on':''}"></div><div class="hname">${h.name}</div><div class="htag">${h.tag}</div><div class="hcount">${habitDone[i]?'1':'0'}/${h.goal}</div>`;
-    c.onclick = () => { habitDone[i]=!habitDone[i]; buildHabits(); updateHabitScore(); };
-    grid.appendChild(c);
-  });
-}
-function updateHabitScore() {
-  const done = habitDone.filter(Boolean).length;
-  const pct = Math.round(done/HABITS.length*100);
-  const circ = document.getElementById('h-score-circle');
-  circ.textContent = done;
-  circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} - ${pct}%`;
-  const msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
-  document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
-  for (let j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
-}
-
-//  TASKS 
-let TASKS = [
-  {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
-  {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
-  {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
-  {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs  5 unsold',tag:'RESALE',priority:true,done:false},
-];
-function buildTasks() {
-  const list = document.getElementById('tasks-list');
-  list.innerHTML = '';
-  let remaining = 0;
-  TASKS.forEach((t, i) => {
-    if (!t.done) remaining++;
-    const el = document.createElement('div');
-    el.className = 'titem';
-    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}"></div>`;
-    el.onclick = () => { TASKS[i].done=!TASKS[i].done; buildTasks(); };
-    list.appendChild(el);
-  });
-  document.getElementById('task-count').textContent = remaining;
-}
-function addTask() {
-  const inp = document.getElementById('task-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  TASKS.push({name:v,tag:'PERSONAL',priority:false,done:false});
-  inp.value = '';
-  buildTasks();
-}
-
-//  GOALS 
-const goals = {w:'',m:'',y:''};
-function saveGoal(t) {
-  const val = document.getElementById(t+'g').value.trim();
-  if (!val) return;
-  goals[t] = val;
-  const wrap = document.getElementById(t+'g-wrap');
-  wrap.innerHTML = `<div class="gsaved">${val}</div><div class="gedit" onclick="editGoal('${t}')">edit</div>`;
-}
-function editGoal(t) {
-  document.getElementById(t+'g-wrap').innerHTML = `<input class="ginput" id="${t}g" value="${goals[t]}" onkeydown="if(event.key==='Enter')saveGoal('${t}')" autofocus/>`;
-  document.getElementById(t+'g').focus();
-}
-
-//  CAPTURE 
-let capturedNotes = [];
-function captureNote() {
-  const inp = document.getElementById('cap-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  capturedNotes.unshift(v);
-  inp.value = '';
-  document.getElementById('captured').innerHTML = capturedNotes.slice(0,3).map(n=>`<div class="note-chip">${n}</div>`).join('');
-}
-document.getElementById('cap-in').addEventListener('keydown', e=>{ if(e.key==='Enter') captureNote(); });
-
-//  DAILY SALES 
-function calcDaily() {
-  const ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
-  const total = ids.reduce((s,id)=>{
-    const v = parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0;
-    return s+v;
-  },0);
-  document.getElementById('ds-total').textContent = '$'+total.toFixed(2);
-}
-
-//  NUTRITION 
-let meals = [];
-function logMeal() {
-  const inp = document.getElementById('meal-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  meals.push({name:v, kcal:Math.floor(Math.random()*300)+200, protein:Math.floor(Math.random()*30)+10, carbs:Math.floor(Math.random()*40)+20, fat:Math.floor(Math.random()*15)+5});
-  inp.value = '';
-  renderMeals();
-}
-document.getElementById('meal-in').addEventListener('keydown',e=>{if(e.key==='Enter')logMeal();});
-function renderMeals() {
-  const tk=meals.reduce((s,m)=>s+m.kcal,0), tp=meals.reduce((s,m)=>s+m.protein,0), tc=meals.reduce((s,m)=>s+m.carbs,0), tf=meals.reduce((s,m)=>s+m.fat,0);
-  const big=document.getElementById('kcal-big');
-  big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
-  document.getElementById('prot-d').textContent=tp+'g protein';
-  document.getElementById('carb-d').textContent=tc+'g carbs';
-  document.getElementById('fat-d').textContent=tf+'g fat';
-  document.getElementById('kcal-bar').style.width=Math.min(tk/2200*100,100)+'%';
-  const list=document.getElementById('meals-list');
-  if(!meals.length){list.innerHTML='<div class="no-meals">No meals logged yet.</div>';return;}
-  list.innerHTML=meals.map(m=>`<div class="meal-row"><span class="meal-n">${m.name}</span><span class="meal-k">${m.kcal} kcal</span></div>`).join('');
-}
-
-//  CALENDAR 
-function buildCalendar() {
-  const now=new Date(), today=now.getDate();
-  const dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  document.getElementById('cal-month').textContent=mn[now.getMonth()]+' '+now.getFullYear();
-  const week=document.getElementById('cal-week'); week.innerHTML='';
-  for(let i=0;i<7;i++){
-    const d=new Date(now); d.setDate(today+(i-3));
-    const div=document.createElement('div');
-    div.className='cal-day'+(i===3?' today':'');
-    div.innerHTML=`<div class="dn">${dn[d.getDay()]}</div><div class="dd">${d.getDate()}</div>`;
-    week.appendChild(div);
-  }
-  const events=[
-    {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
-    {time:'11:00',title:'Film reel content',color:'var(--green)'},
-    {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items  eBay/Mercari',color:'var(--blue)'},
-  ];
-  document.getElementById('cal-count').textContent=`TODAY - ${events.length} EVENTS`;
-  const ev=document.getElementById('cal-events'); ev.innerHTML='';
-  events.forEach(e=>{
-    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW - ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
-    const el=document.createElement('div');el.className='cal-event';el.innerHTML=`<div class="cal-dot" style="background:${e.color}"></div><div class="cal-time">${e.time}</div><div class="cal-title">${e.title}</div>`;ev.appendChild(el);
-  });
-}
-
-//  CLOCK 
-function updateClock() {
-  const now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
-  const ampm=h>=12?'PM':'AM', h12=h%12||12;
-  document.getElementById('clock-disp').innerHTML=`${h12}:${m}<sup>${ampm}</sup>`;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
-  document.getElementById('greeting-txt').innerHTML=`${g}, <em>Thomas.</em>`;
-  document.getElementById('session-date').textContent=`${days[now.getDay()].toUpperCase()}, ${months[now.getMonth()].toUpperCase()} ${now.getDate()}`;
-  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} - <span>${h12}:${m} ${ampm}</span>`;
-}
-
-//  EXPENSES 
-function addExpense() {
-  const name=document.getElementById('exp-name').value.trim();
-  const type=document.getElementById('exp-type').value;
-  const amt=parseFloat(document.getElementById('exp-amt').value)||0;
-  if(!name||!amt)return;
-  expenses.push({name,type,amt});
-  document.getElementById('exp-name').value='';
-  document.getElementById('exp-amt').value='';
-  renderExpenses();
-}
-function removeExpense(i) { expenses.splice(i,1); renderExpenses(); }
-function renderExpenses() {
-  const list=document.getElementById('exp-list');
-  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})"></button></div>`).join('');
-  const total=expenses.reduce((s,e)=>s+e.amt,0);
-  const tot=document.getElementById('exp-total');
-  tot.style.display=expenses.length?'flex':'none';
-  document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
-}
-
-//  CONTENT POSTS 
-function addPost() {
-  const platform=prompt('Platform (Instagram / TikTok / Both):');
-  const topic=prompt('Post topic or title:');
-  if(!platform||!topic)return;
-  const now=new Date();
-  const el=document.createElement('div');
-  el.className='post-item';
-  el.innerHTML=`<div class="post-platform">${platform}</div><div class="post-topic">${topic}</div><div class="post-date">${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}</div><div class="post-status ps-live">Live</div>`;
-  document.getElementById('post-tracker').appendChild(el);
-}
-
-//  INIT 
-setInterval(updateClock,1000);
-updateClock();
-buildCalendar();
-buildHabits();
-updateHabitScore();
-buildTasks();
-renderExpenses();
-</script>
-</body>
-</html>
-+todayTiktok.toFixed(2);
-  if(todayInperson) document.getElementById('ds-inperson').value='
-  invFilter = f;
-  ['all','unsold','sold','return','warn'].forEach(x => {
-    document.getElementById('rf-'+x).classList.toggle('active', x === f);
-  });
-  renderTable();
-}
-
-function cycleSortCol(col) {
-  if (sortKey === col) sortDir = -sortDir;
-  else { sortKey = col; sortDir = -1; }
-  renderTable();
-}
-
-//  TABS 
-function switchTab(tab) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+tab).classList.add('active');
-  const order = ['home','resale','content','finance'];
-  document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
-  if (tab === 'resale' && rawRows.length === 0) loadSheet();
-}
-
-//  HABITS 
-const HABITS = [
-  {name:'Post content',tag:'BRAND',goal:1},
-  {name:'List inventory',tag:'RESALE',goal:3},
-  {name:'Film a reel',tag:'CONTENT',goal:1},
-  {name:'Check metrics',tag:'OPS',goal:1},
-  {name:'Morning routine',tag:'HEALTH',goal:1},
-  {name:'Read 10 mins',tag:'GROWTH',goal:1},
-];
-let habitDone = new Array(6).fill(false);
-function buildHabits() {
-  const grid = document.getElementById('habits-grid');
-  grid.innerHTML = '';
-  HABITS.forEach((h, i) => {
-    const c = document.createElement('div');
-    c.className = 'hcard'+(habitDone[i]?' done':'');
-    c.innerHTML = `<div class="hcheck${habitDone[i]?' on':''}"></div><div class="hname">${h.name}</div><div class="htag">${h.tag}</div><div class="hcount">${habitDone[i]?'1':'0'}/${h.goal}</div>`;
-    c.onclick = () => { habitDone[i]=!habitDone[i]; buildHabits(); updateHabitScore(); };
-    grid.appendChild(c);
-  });
-}
-function updateHabitScore() {
-  const done = habitDone.filter(Boolean).length;
-  const pct = Math.round(done/HABITS.length*100);
-  const circ = document.getElementById('h-score-circle');
-  circ.textContent = done;
-  circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} - ${pct}%`;
-  const msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
-  document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
-  for (let j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
-}
-
-//  TASKS 
-let TASKS = [
-  {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
-  {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
-  {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
-  {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs  5 unsold',tag:'RESALE',priority:true,done:false},
-];
-function buildTasks() {
-  const list = document.getElementById('tasks-list');
-  list.innerHTML = '';
-  let remaining = 0;
-  TASKS.forEach((t, i) => {
-    if (!t.done) remaining++;
-    const el = document.createElement('div');
-    el.className = 'titem';
-    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}"></div>`;
-    el.onclick = () => { TASKS[i].done=!TASKS[i].done; buildTasks(); };
-    list.appendChild(el);
-  });
-  document.getElementById('task-count').textContent = remaining;
-}
-function addTask() {
-  const inp = document.getElementById('task-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  TASKS.push({name:v,tag:'PERSONAL',priority:false,done:false});
-  inp.value = '';
-  buildTasks();
-}
-
-//  GOALS 
-const goals = {w:'',m:'',y:''};
-function saveGoal(t) {
-  const val = document.getElementById(t+'g').value.trim();
-  if (!val) return;
-  goals[t] = val;
-  const wrap = document.getElementById(t+'g-wrap');
-  wrap.innerHTML = `<div class="gsaved">${val}</div><div class="gedit" onclick="editGoal('${t}')">edit</div>`;
-}
-function editGoal(t) {
-  document.getElementById(t+'g-wrap').innerHTML = `<input class="ginput" id="${t}g" value="${goals[t]}" onkeydown="if(event.key==='Enter')saveGoal('${t}')" autofocus/>`;
-  document.getElementById(t+'g').focus();
-}
-
-//  CAPTURE 
-let capturedNotes = [];
-function captureNote() {
-  const inp = document.getElementById('cap-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  capturedNotes.unshift(v);
-  inp.value = '';
-  document.getElementById('captured').innerHTML = capturedNotes.slice(0,3).map(n=>`<div class="note-chip">${n}</div>`).join('');
-}
-document.getElementById('cap-in').addEventListener('keydown', e=>{ if(e.key==='Enter') captureNote(); });
-
-//  DAILY SALES 
-function calcDaily() {
-  const ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
-  const total = ids.reduce((s,id)=>{
-    const v = parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0;
-    return s+v;
-  },0);
-  document.getElementById('ds-total').textContent = '$'+total.toFixed(2);
-}
-
-//  NUTRITION 
-let meals = [];
-function logMeal() {
-  const inp = document.getElementById('meal-in');
-  const v = inp.value.trim();
-  if (!v) return;
-  meals.push({name:v, kcal:Math.floor(Math.random()*300)+200, protein:Math.floor(Math.random()*30)+10, carbs:Math.floor(Math.random()*40)+20, fat:Math.floor(Math.random()*15)+5});
-  inp.value = '';
-  renderMeals();
-}
-document.getElementById('meal-in').addEventListener('keydown',e=>{if(e.key==='Enter')logMeal();});
-function renderMeals() {
-  const tk=meals.reduce((s,m)=>s+m.kcal,0), tp=meals.reduce((s,m)=>s+m.protein,0), tc=meals.reduce((s,m)=>s+m.carbs,0), tf=meals.reduce((s,m)=>s+m.fat,0);
-  const big=document.getElementById('kcal-big');
-  big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
-  document.getElementById('prot-d').textContent=tp+'g protein';
-  document.getElementById('carb-d').textContent=tc+'g carbs';
-  document.getElementById('fat-d').textContent=tf+'g fat';
-  document.getElementById('kcal-bar').style.width=Math.min(tk/2200*100,100)+'%';
-  const list=document.getElementById('meals-list');
-  if(!meals.length){list.innerHTML='<div class="no-meals">No meals logged yet.</div>';return;}
-  list.innerHTML=meals.map(m=>`<div class="meal-row"><span class="meal-n">${m.name}</span><span class="meal-k">${m.kcal} kcal</span></div>`).join('');
-}
-
-//  CALENDAR 
-function buildCalendar() {
-  const now=new Date(), today=now.getDate();
-  const dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  document.getElementById('cal-month').textContent=mn[now.getMonth()]+' '+now.getFullYear();
-  const week=document.getElementById('cal-week'); week.innerHTML='';
-  for(let i=0;i<7;i++){
-    const d=new Date(now); d.setDate(today+(i-3));
-    const div=document.createElement('div');
-    div.className='cal-day'+(i===3?' today':'');
-    div.innerHTML=`<div class="dn">${dn[d.getDay()]}</div><div class="dd">${d.getDate()}</div>`;
-    week.appendChild(div);
-  }
-  const events=[
-    {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
-    {time:'11:00',title:'Film reel content',color:'var(--green)'},
-    {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items  eBay/Mercari',color:'var(--blue)'},
-  ];
-  document.getElementById('cal-count').textContent=`TODAY - ${events.length} EVENTS`;
-  const ev=document.getElementById('cal-events'); ev.innerHTML='';
-  events.forEach(e=>{
-    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW - ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
-    const el=document.createElement('div');el.className='cal-event';el.innerHTML=`<div class="cal-dot" style="background:${e.color}"></div><div class="cal-time">${e.time}</div><div class="cal-title">${e.title}</div>`;ev.appendChild(el);
-  });
-}
-
-//  CLOCK 
-function updateClock() {
-  const now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
-  const ampm=h>=12?'PM':'AM', h12=h%12||12;
-  document.getElementById('clock-disp').innerHTML=`${h12}:${m}<sup>${ampm}</sup>`;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
-  document.getElementById('greeting-txt').innerHTML=`${g}, <em>Thomas.</em>`;
-  document.getElementById('session-date').textContent=`${days[now.getDay()].toUpperCase()}, ${months[now.getMonth()].toUpperCase()} ${now.getDate()}`;
-  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} - <span>${h12}:${m} ${ampm}</span>`;
-}
-
-//  EXPENSES 
-function addExpense() {
-  const name=document.getElementById('exp-name').value.trim();
-  const type=document.getElementById('exp-type').value;
-  const amt=parseFloat(document.getElementById('exp-amt').value)||0;
-  if(!name||!amt)return;
-  expenses.push({name,type,amt});
-  document.getElementById('exp-name').value='';
-  document.getElementById('exp-amt').value='';
-  renderExpenses();
-}
-function removeExpense(i) { expenses.splice(i,1); renderExpenses(); }
-function renderExpenses() {
-  const list=document.getElementById('exp-list');
-  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})"></button></div>`).join('');
-  const total=expenses.reduce((s,e)=>s+e.amt,0);
-  const tot=document.getElementById('exp-total');
-  tot.style.display=expenses.length?'flex':'none';
-  document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
-}
-
-//  CONTENT POSTS 
-function addPost() {
-  const platform=prompt('Platform (Instagram / TikTok / Both):');
-  const topic=prompt('Post topic or title:');
-  if(!platform||!topic)return;
-  const now=new Date();
-  const el=document.createElement('div');
-  el.className='post-item';
-  el.innerHTML=`<div class="post-platform">${platform}</div><div class="post-topic">${topic}</div><div class="post-date">${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}</div><div class="post-status ps-live">Live</div>`;
-  document.getElementById('post-tracker').appendChild(el);
-}
-
-//  INIT 
-setInterval(updateClock,1000);
-updateClock();
-buildCalendar();
-buildHabits();
-updateHabitScore();
-buildTasks();
-renderExpenses();
-</script>
-</body>
-</html>
-+todayInperson.toFixed(2);
+  var total=Object.keys(totals).reduce(function(s,k){return s+totals[k];},0);
+  function fmt(n){return '$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+  var amts=document.querySelectorAll('.fp-cell .amt');
+  var order=['FBT Tiktok','Ebay','Mercari','In Person','Cashout','StockX'];
+  amts.forEach(function(el,i){var k=order[i];if(k&&totals[k]>0)el.textContent=fmt(totals[k]);});
+  var badge=document.querySelector('.fp-badge');
+  if(badge&&total>0) badge.textContent='^ '+fmt(total)+' YTD';
+  if(todayEbay){var e=document.getElementById('ds-ebay');if(e)e.value='$'+todayEbay.toFixed(2);}
+  if(todayMercari){var m=document.getElementById('ds-mercari');if(m)m.value='$'+todayMercari.toFixed(2);}
+  if(todayTiktok){var t=document.getElementById('ds-tiktok');if(t)t.value='$'+todayTiktok.toFixed(2);}
+  if(todayPerson){var p=document.getElementById('ds-inperson');if(p)p.value='$'+todayPerson.toFixed(2);}
   calcDaily();
 }
 function setFilter(f) {
   invFilter = f;
-  ['all','unsold','sold','return','warn'].forEach(x => {
-    document.getElementById('rf-'+x).classList.toggle('active', x === f);
+  ['all','unsold','sold','return','warn'].forEach(function(x) {
+    document.getElementById('rf-'+x).classList.toggle('active', x===f);
   });
   renderTable();
 }
 
-function cycleSortCol(col) {
-  if (sortKey === col) sortDir = -sortDir;
-  else { sortKey = col; sortDir = -1; }
-  renderTable();
-}
-
-//  TABS 
 function switchTab(tab) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
   document.getElementById('page-'+tab).classList.add('active');
-  const order = ['home','resale','content','finance'];
+  var order = ['home','resale','content','finance'];
   document.querySelectorAll('.tab')[order.indexOf(tab)].classList.add('active');
-  if (tab === 'resale' && rawRows.length === 0) loadSheet();
+  if (tab==='resale' && rawRows.length===0) loadSheet();
 }
 
-//  HABITS 
-const HABITS = [
+var HABITS = [
   {name:'Post content',tag:'BRAND',goal:1},
   {name:'List inventory',tag:'RESALE',goal:3},
   {name:'Film a reel',tag:'CONTENT',goal:1},
@@ -2193,196 +741,189 @@ const HABITS = [
   {name:'Morning routine',tag:'HEALTH',goal:1},
   {name:'Read 10 mins',tag:'GROWTH',goal:1},
 ];
-let habitDone = new Array(6).fill(false);
+var habitDone = [false,false,false,false,false,false];
+
 function buildHabits() {
-  const grid = document.getElementById('habits-grid');
+  var grid = document.getElementById('habits-grid');
   grid.innerHTML = '';
-  HABITS.forEach((h, i) => {
-    const c = document.createElement('div');
+  HABITS.forEach(function(h,i) {
+    var c = document.createElement('div');
     c.className = 'hcard'+(habitDone[i]?' done':'');
-    c.innerHTML = `<div class="hcheck${habitDone[i]?' on':''}"></div><div class="hname">${h.name}</div><div class="htag">${h.tag}</div><div class="hcount">${habitDone[i]?'1':'0'}/${h.goal}</div>`;
-    c.onclick = () => { habitDone[i]=!habitDone[i]; buildHabits(); updateHabitScore(); };
+    c.innerHTML = '<div class="hcheck'+(habitDone[i]?' on':'')+'">'+(habitDone[i]?'v':'')+'</div><div class="hname">'+h.name+'</div><div class="htag">'+h.tag+'</div><div class="hcount">'+(habitDone[i]?'1':'0')+'/'+h.goal+'</div>';
+    c.onclick = function(){habitDone[i]=!habitDone[i];buildHabits();updateHabitScore();};
     grid.appendChild(c);
   });
 }
+
 function updateHabitScore() {
-  const done = habitDone.filter(Boolean).length;
-  const pct = Math.round(done/HABITS.length*100);
-  const circ = document.getElementById('h-score-circle');
+  var done = habitDone.filter(Boolean).length;
+  var pct = Math.round(done/HABITS.length*100);
+  var circ = document.getElementById('h-score-circle');
   circ.textContent = done;
   circ.className = 'h-score'+(done>0?' on':'');
-  document.getElementById('h-score-lbl').textContent = `${done}/${HABITS.length} - ${pct}%`;
-  const msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
+  document.getElementById('h-score-lbl').textContent = done+'/'+HABITS.length+' - '+pct+'%';
+  var msgs = ['Start with one.','Keep going!','Building momentum.','Solid session.','Almost there!','Perfect day!'];
   document.getElementById('h-encourage').textContent = msgs[Math.min(done,5)];
-  for (let j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
+  for (var j=0;j<6;j++) document.getElementById('hb'+j).className = 'hbar'+(j<done?' on':'');
 }
 
-//  TASKS 
-let TASKS = [
+var TASKS = [
   {name:'Post reel on @thernmedia',tag:'CONTENT',priority:true,done:false},
   {name:'List 3+ items on eBay/Mercari',tag:'RESALE',priority:true,done:false},
   {name:'Check TikTok Shop orders',tag:'OPS',priority:false,done:false},
   {name:'Take inventory photos',tag:'RESALE',priority:true,done:false},
-  {name:'Price drop Samba OGs  5 unsold',tag:'RESALE',priority:true,done:false},
+  {name:'Price drop Samba OGs - 5 unsold',tag:'RESALE',priority:true,done:false},
 ];
+
 function buildTasks() {
-  const list = document.getElementById('tasks-list');
+  var list = document.getElementById('tasks-list');
   list.innerHTML = '';
-  let remaining = 0;
-  TASKS.forEach((t, i) => {
+  var remaining = 0;
+  TASKS.forEach(function(t,i) {
     if (!t.done) remaining++;
-    const el = document.createElement('div');
+    var el = document.createElement('div');
     el.className = 'titem';
-    el.innerHTML = `<div class="tcheck${t.done?' on':''}"></div><div style="flex:1"><div class="tname${t.done?' done':''}">${t.name}</div><div class="ttag">${t.tag}</div></div><div class="tstar${t.priority?' hi':''}"></div>`;
-    el.onclick = () => { TASKS[i].done=!TASKS[i].done; buildTasks(); };
+    el.innerHTML = '<div class="tcheck'+(t.done?' on':'')+'">'+(t.done?'v':'')+'</div><div style="flex:1"><div class="tname'+(t.done?' done':'')+'">'+t.name+'</div><div class="ttag">'+t.tag+'</div></div><div class="tstar'+(t.priority?' hi':'')+'">*</div>';
+    el.onclick = function(){TASKS[i].done=!TASKS[i].done;buildTasks();};
     list.appendChild(el);
   });
   document.getElementById('task-count').textContent = remaining;
 }
+
 function addTask() {
-  const inp = document.getElementById('task-in');
-  const v = inp.value.trim();
+  var inp = document.getElementById('task-in');
+  var v = inp.value.trim();
   if (!v) return;
   TASKS.push({name:v,tag:'PERSONAL',priority:false,done:false});
-  inp.value = '';
+  inp.value='';
   buildTasks();
 }
 
-//  GOALS 
-const goals = {w:'',m:'',y:''};
+var goals = {w:'',m:'',y:''};
 function saveGoal(t) {
-  const val = document.getElementById(t+'g').value.trim();
+  var val = document.getElementById(t+'g').value.trim();
   if (!val) return;
-  goals[t] = val;
-  const wrap = document.getElementById(t+'g-wrap');
-  wrap.innerHTML = `<div class="gsaved">${val}</div><div class="gedit" onclick="editGoal('${t}')">edit</div>`;
+  goals[t]=val;
+  document.getElementById(t+'g-wrap').innerHTML='<div class="gsaved">'+val+'</div><div class="gedit" onclick="editGoal(\''+t+'\')">edit</div>';
 }
 function editGoal(t) {
-  document.getElementById(t+'g-wrap').innerHTML = `<input class="ginput" id="${t}g" value="${goals[t]}" onkeydown="if(event.key==='Enter')saveGoal('${t}')" autofocus/>`;
+  document.getElementById(t+'g-wrap').innerHTML='<input class="ginput" id="'+t+'g" value="'+goals[t]+'" onkeydown="if(event.key===\'Enter\')saveGoal(\''+t+'\')" autofocus/>';
   document.getElementById(t+'g').focus();
 }
 
-//  CAPTURE 
-let capturedNotes = [];
+var capturedNotes = [];
 function captureNote() {
-  const inp = document.getElementById('cap-in');
-  const v = inp.value.trim();
+  var inp = document.getElementById('cap-in');
+  var v = inp.value.trim();
   if (!v) return;
   capturedNotes.unshift(v);
-  inp.value = '';
-  document.getElementById('captured').innerHTML = capturedNotes.slice(0,3).map(n=>`<div class="note-chip">${n}</div>`).join('');
+  inp.value='';
+  document.getElementById('captured').innerHTML=capturedNotes.slice(0,3).map(function(n){return '<div class="note-chip">'+n+'</div>';}).join('');
 }
-document.getElementById('cap-in').addEventListener('keydown', e=>{ if(e.key==='Enter') captureNote(); });
+document.getElementById('cap-in').addEventListener('keydown',function(e){if(e.key==='Enter')captureNote();});
 
-//  DAILY SALES 
 function calcDaily() {
-  const ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
-  const total = ids.reduce((s,id)=>{
-    const v = parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0;
-    return s+v;
-  },0);
-  document.getElementById('ds-total').textContent = '$'+total.toFixed(2);
+  var ids = ['ds-ebay','ds-mercari','ds-tiktok','ds-inperson'];
+  var total = ids.reduce(function(s,id){return s+(parseFloat(document.getElementById(id).value.replace(/[$,]/g,''))||0);},0);
+  document.getElementById('ds-total').textContent='$'+total.toFixed(2);
 }
 
-//  NUTRITION 
-let meals = [];
+var meals = [];
 function logMeal() {
-  const inp = document.getElementById('meal-in');
-  const v = inp.value.trim();
+  var inp = document.getElementById('meal-in');
+  var v = inp.value.trim();
   if (!v) return;
-  meals.push({name:v, kcal:Math.floor(Math.random()*300)+200, protein:Math.floor(Math.random()*30)+10, carbs:Math.floor(Math.random()*40)+20, fat:Math.floor(Math.random()*15)+5});
-  inp.value = '';
+  meals.push({name:v,kcal:Math.floor(Math.random()*300)+200,protein:Math.floor(Math.random()*30)+10,carbs:Math.floor(Math.random()*40)+20,fat:Math.floor(Math.random()*15)+5});
+  inp.value='';
   renderMeals();
 }
-document.getElementById('meal-in').addEventListener('keydown',e=>{if(e.key==='Enter')logMeal();});
+document.getElementById('meal-in').addEventListener('keydown',function(e){if(e.key==='Enter')logMeal();});
 function renderMeals() {
-  const tk=meals.reduce((s,m)=>s+m.kcal,0), tp=meals.reduce((s,m)=>s+m.protein,0), tc=meals.reduce((s,m)=>s+m.carbs,0), tf=meals.reduce((s,m)=>s+m.fat,0);
-  const big=document.getElementById('kcal-big');
+  var tk=meals.reduce(function(s,m){return s+m.kcal;},0);
+  var tp=meals.reduce(function(s,m){return s+m.protein;},0);
+  var tc=meals.reduce(function(s,m){return s+m.carbs;},0);
+  var tf=meals.reduce(function(s,m){return s+m.fat;},0);
+  var big=document.getElementById('kcal-big');
   big.textContent=tk; big.style.color=tk>0?'var(--text)':'var(--border)';
   document.getElementById('prot-d').textContent=tp+'g protein';
   document.getElementById('carb-d').textContent=tc+'g carbs';
   document.getElementById('fat-d').textContent=tf+'g fat';
   document.getElementById('kcal-bar').style.width=Math.min(tk/2200*100,100)+'%';
-  const list=document.getElementById('meals-list');
+  var list=document.getElementById('meals-list');
   if(!meals.length){list.innerHTML='<div class="no-meals">No meals logged yet.</div>';return;}
-  list.innerHTML=meals.map(m=>`<div class="meal-row"><span class="meal-n">${m.name}</span><span class="meal-k">${m.kcal} kcal</span></div>`).join('');
+  list.innerHTML=meals.map(function(m){return '<div class="meal-row"><span class="meal-n">'+m.name+'</span><span class="meal-k">'+m.kcal+' kcal</span></div>';}).join('');
 }
 
-//  CALENDAR 
 function buildCalendar() {
-  const now=new Date(), today=now.getDate();
-  const dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  var now=new Date(), today=now.getDate();
+  var dn=['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  var mn=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
   document.getElementById('cal-month').textContent=mn[now.getMonth()]+' '+now.getFullYear();
-  const week=document.getElementById('cal-week'); week.innerHTML='';
-  for(let i=0;i<7;i++){
-    const d=new Date(now); d.setDate(today+(i-3));
-    const div=document.createElement('div');
+  var week=document.getElementById('cal-week'); week.innerHTML='';
+  for(var i=0;i<7;i++){
+    var d=new Date(now); d.setDate(today+(i-3));
+    var div=document.createElement('div');
     div.className='cal-day'+(i===3?' today':'');
-    div.innerHTML=`<div class="dn">${dn[d.getDay()]}</div><div class="dd">${d.getDate()}</div>`;
+    div.innerHTML='<div class="dn">'+dn[d.getDay()]+'</div><div class="dd">'+d.getDate()+'</div>';
     week.appendChild(div);
   }
-  const events=[
+  var events=[
     {time:'09:00',title:'Inventory photo session',color:'var(--gold)'},
     {time:'11:00',title:'Film reel content',color:'var(--green)'},
     {time:'NOW',title:'Check TikTok Shop + platforms',color:'var(--gold)',isNow:true},
-    {time:'15:00',title:'List items  eBay/Mercari',color:'var(--blue)'},
+    {time:'15:00',title:'List items - eBay/Mercari',color:'var(--blue)'},
   ];
-  document.getElementById('cal-count').textContent=`TODAY - ${events.length} EVENTS`;
-  const ev=document.getElementById('cal-events'); ev.innerHTML='';
-  events.forEach(e=>{
-    if(e.isNow){const nl=document.createElement('div');nl.className='now-line';const h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML=`<div class="now-dot"></div><span class="now-lbl">NOW - ${String(h).padStart(2,'0')}:${mi}</span>`;ev.appendChild(nl);}
-    const el=document.createElement('div');el.className='cal-event';el.innerHTML=`<div class="cal-dot" style="background:${e.color}"></div><div class="cal-time">${e.time}</div><div class="cal-title">${e.title}</div>`;ev.appendChild(el);
+  var ev=document.getElementById('cal-events'); ev.innerHTML='';
+  events.forEach(function(e){
+    if(e.isNow){var nl=document.createElement('div');nl.className='now-line';var h=now.getHours(),mi=String(now.getMinutes()).padStart(2,'0');nl.innerHTML='<div class="now-dot"></div><span class="now-lbl">NOW - '+String(h).padStart(2,'0')+':'+mi+'</span>';ev.appendChild(nl);}
+    var el=document.createElement('div');el.className='cal-event';el.innerHTML='<div class="cal-dot" style="background:'+e.color+'"></div><div class="cal-time">'+e.time+'</div><div class="cal-title">'+e.title+'</div>';ev.appendChild(el);
   });
 }
 
-//  CLOCK 
 function updateClock() {
-  const now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
-  const ampm=h>=12?'PM':'AM', h12=h%12||12;
-  document.getElementById('clock-disp').innerHTML=`${h12}:${m}<sup>${ampm}</sup>`;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
-  document.getElementById('greeting-txt').innerHTML=`${g}, <em>Thomas.</em>`;
-  document.getElementById('session-date').textContent=`${days[now.getDay()].toUpperCase()}, ${months[now.getMonth()].toUpperCase()} ${now.getDate()}`;
-  document.getElementById('tr-time').innerHTML=`${days[now.getDay()].slice(0,3).toUpperCase()} ${now.getDate()} - <span>${h12}:${m} ${ampm}</span>`;
+  var now=new Date(), h=now.getHours(), m=String(now.getMinutes()).padStart(2,'0');
+  var ampm=h>=12?'PM':'AM', h12=h%12||12;
+  document.getElementById('clock-disp').innerHTML=h12+':'+m+'<sup>'+ampm+'</sup>';
+  var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
+  document.getElementById('greeting-txt').innerHTML=g+', <em>Thomas.</em>';
+  document.getElementById('session-date').textContent=days[now.getDay()].toUpperCase()+', '+months[now.getMonth()].toUpperCase()+' '+now.getDate();
+  document.getElementById('tr-time').innerHTML=days[now.getDay()].slice(0,3).toUpperCase()+' '+now.getDate()+' - <span>'+h12+':'+m+' '+ampm+'</span>';
 }
 
-//  EXPENSES 
+var expensesList = [];
 function addExpense() {
-  const name=document.getElementById('exp-name').value.trim();
-  const type=document.getElementById('exp-type').value;
-  const amt=parseFloat(document.getElementById('exp-amt').value)||0;
+  var name=document.getElementById('exp-name').value.trim();
+  var type=document.getElementById('exp-type').value;
+  var amt=parseFloat(document.getElementById('exp-amt').value)||0;
   if(!name||!amt)return;
-  expenses.push({name,type,amt});
+  expensesList.push({name:name,type:type,amt:amt});
   document.getElementById('exp-name').value='';
   document.getElementById('exp-amt').value='';
   renderExpenses();
 }
-function removeExpense(i) { expenses.splice(i,1); renderExpenses(); }
+function removeExpense(i){expensesList.splice(i,1);renderExpenses();}
 function renderExpenses() {
-  const list=document.getElementById('exp-list');
-  list.innerHTML=expenses.map((e,i)=>`<div class="exp-item"><span class="ei-name">${e.name}</span><span class="ei-type">${e.type}</span><span class="ei-amt">-$${e.amt.toFixed(2)}</span><button class="ei-del" onclick="removeExpense(${i})"></button></div>`).join('');
-  const total=expenses.reduce((s,e)=>s+e.amt,0);
-  const tot=document.getElementById('exp-total');
-  tot.style.display=expenses.length?'flex':'none';
+  var list=document.getElementById('exp-list');
+  list.innerHTML=expensesList.map(function(e,i){return '<div class="exp-item"><span class="ei-name">'+e.name+'</span><span class="ei-type">'+e.type+'</span><span class="ei-amt">-$'+e.amt.toFixed(2)+'</span><button class="ei-del" onclick="removeExpense('+i+')">x</button></div>';}).join('');
+  var total=expensesList.reduce(function(s,e){return s+e.amt;},0);
+  var tot=document.getElementById('exp-total');
+  tot.style.display=expensesList.length?'flex':'none';
   document.getElementById('exp-total-val').textContent='-$'+total.toFixed(2);
 }
 
-//  CONTENT POSTS 
 function addPost() {
-  const platform=prompt('Platform (Instagram / TikTok / Both):');
-  const topic=prompt('Post topic or title:');
+  var platform=prompt('Platform (Instagram / TikTok / Both):');
+  var topic=prompt('Post topic or title:');
   if(!platform||!topic)return;
-  const now=new Date();
-  const el=document.createElement('div');
+  var now=new Date();
+  var el=document.createElement('div');
   el.className='post-item';
-  el.innerHTML=`<div class="post-platform">${platform}</div><div class="post-topic">${topic}</div><div class="post-date">${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}</div><div class="post-status ps-live">Live</div>`;
+  el.innerHTML='<div class="post-platform">'+platform+'</div><div class="post-topic">'+topic+'</div><div class="post-date">'+(now.getMonth()+1)+'/'+now.getDate()+'/'+now.getFullYear()+'</div><div class="post-status ps-live">Live</div>';
   document.getElementById('post-tracker').appendChild(el);
 }
 
-//  INIT 
 setInterval(updateClock,1000);
 updateClock();
 buildCalendar();
